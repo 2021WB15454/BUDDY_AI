@@ -1,22 +1,34 @@
 """
 DateTime Skill for BUDDY AI Assistant
-Handles date, time, and calendar-related queries
+Handles date, time, and calendar-related queries with timezone support
 """
 
 import asyncio
 import logging
+import os
 from datetime import datetime, timedelta
 from typing import Dict, Any, Optional
+import pytz
 
 
 class DateTimeSkill:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.logger.info("DateTimeSkill initialized.")
+        
+        # Set default timezone (can be configured via environment variable)
+        self.default_timezone = os.environ.get('TIMEZONE', 'Asia/Kolkata')  # Indian timezone as default
+        try:
+            self.tz = pytz.timezone(self.default_timezone)
+        except:
+            # Fallback to UTC if timezone is invalid
+            self.tz = pytz.UTC
+            self.logger.warning(f"Invalid timezone {self.default_timezone}, using UTC")
     
     def _get_current_datetime(self) -> datetime:
-        """Get current date and time"""
-        return datetime.now()
+        """Get current date and time in the configured timezone"""
+        utc_now = datetime.now(pytz.UTC)
+        return utc_now.astimezone(self.tz)
     
     def _format_date(self, dt: datetime, format_type: str = "full") -> str:
         """Format date based on type requested"""
@@ -188,9 +200,13 @@ class DateTimeSkill:
         """Handle comprehensive date/time requests"""
         day_info = self._get_day_info(dt)
         
+        # Get timezone info
+        tz_name = dt.tzinfo.zone if hasattr(dt.tzinfo, 'zone') else str(dt.tzinfo)
+        
         response = f"🕐 **Complete Date & Time Information**\n\n"
         response += f"**📅 Date:** {self._format_date(dt, 'full')}\n"
         response += f"**🕐 Time:** {self._format_time(dt, '12hour')}\n"
+        response += f"**🌍 Timezone:** {tz_name}\n"
         response += f"**📆 Day:** {day_info['day_name']}\n"
         response += f"**📊 Week:** Week {day_info['week_number']} of {day_info['year']}\n"
         response += f"**📈 Quarter:** Q{day_info['quarter']} {day_info['year']}\n"

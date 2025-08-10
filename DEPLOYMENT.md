@@ -18,11 +18,21 @@
    - **Start Command**: `python app.py`
    - **Instance Type**: `Free` (sufficient for testing)
 
-### Step 3: Set Environment Variables (Optional)
+### Step 3: Set Environment Variables (Important!)
 Add these in Render's Environment section:
+- `TIMEZONE`: Your timezone (e.g., `Asia/Kolkata`, `America/New_York`, `Europe/London`)
 - `GOOGLE_API_KEY`: Your Google API key (for advanced features)
 - `OPENAI_API_KEY`: Your OpenAI key (if using GPT features)
 - `ENVIRONMENT`: `production`
+
+**Important Timezone Examples:**
+- India: `Asia/Kolkata`
+- Eastern US: `America/New_York`  
+- Pacific US: `America/Los_Angeles`
+- UK: `Europe/London`
+- Central Europe: `Europe/Paris`
+- Japan: `Asia/Tokyo`
+- Australia: `Australia/Sydney`
 
 ### Step 4: Deploy!
 - Click "Create Web Service"

@@ -11,9 +11,12 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "openai": [
-    "what is the time"
-  ],
+  "openai": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
   "weather": {
     "patterns": [],
     "count": 0,
@@ -41,20 +44,10 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "datetime": [
-    "what time is it",
-    "current time",
-    "show time",
-    "what's the time",
-    "my calendar",
-    "what date is today",
-    "today's date",
-    "what day is it",
-    "what is the time"
-  ],
-  "calendar": [
-    "schedule a meeting",
-    "book appointment",
-    "my calendar"
-  ]
+  "datetime": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  }
 }
