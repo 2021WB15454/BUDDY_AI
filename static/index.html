@@ -989,7 +989,7 @@
                         <i class="fas fa-cloud-sun"></i>
                         <h4>Weather & Forecast</h4>
                         <p>Real-time weather conditions, temperature, humidity, and 7-day forecasts</p>
-                        <div class="feature-example">🌡️ "Weather in Madurai" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
+                        <div class="feature-example">🌡️ "Weather in Tirunelveli" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
                         <div class="feature-shortcut">Alt+W</div>
                         <div class="feature-stats">Updated every 10 minutes</div>
                         <div class="feature-usage-indicator">12</div>
@@ -1094,11 +1094,14 @@
         
         <div class="chat-input">
             <div class="quick-actions">
+                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Tirunelveli?')" title="Get Tirunelveli weather">
+                    <i class="fas fa-cloud-sun"></i> Tirunelveli Weather
+                </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Madurai?')" title="Get Madurai weather">
-                    <i class="fas fa-cloud-sun"></i> Madurai Weather
+                    <i class="fas fa-thermometer-half"></i> Madurai Weather
                 </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Chennai?')" title="Get Chennai weather">
-                    <i class="fas fa-thermometer-half"></i> Chennai Weather
+                    <i class="fas fa-cloud"></i> Chennai Weather
                 </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What time is it now?')" title="Current time and date">
                     <i class="fas fa-clock"></i> Current Time
@@ -1234,11 +1237,13 @@
             initializeSmartSuggestions() {
                 this.commonSuggestions = [
                     "What's the weather like today?",
+                    "Weather in Tirunelveli",
                     "Weather in Madurai",
                     "Weather in Chennai", 
                     "Weather in London",
                     "Weather in Tokyo",
-                    "Current temperature in Madurai",
+                    "Current temperature in Tirunelveli",
+                    "Tirunelveli weather forecast",
                     "Show my tasks for today",
                     "What time is it?",
                     "Tell me a joke",
@@ -1261,10 +1266,31 @@
                 
                 // Popular locations for weather queries
                 this.popularLocations = [
-                    "Madurai", "Chennai", "London", "Tokyo", "New York", 
-                    "Mumbai", "Delhi", "Bangalore", "Paris", "Sydney",
-                    "Singapore", "Dubai", "Berlin", "Vancouver", "Toronto"
+                    "Thirunelveli", "Tirunelveli", "Madurai", "Chennai", "Coimbatore", "Salem", "Trichy", "Tiruchirappalli",
+                    "Vellore", "Thanjavur", "Erode", "Tiruppur", "Dindigul", "Karur", "Thoothukudi", "Tuticorin",
+                    "Kanyakumari", "Nagercoil", "Sivakasi", "Virudhunagar", "Ramanathapuram", "Pudukottai",
+                    "London", "Tokyo", "New York", "Mumbai", "Delhi", "Bangalore", "Kolkata", "Hyderabad",
+                    "Pune", "Ahmedabad", "Jaipur", "Surat", "Lucknow", "Kanpur", "Nagpur", "Indore",
+                    "Paris", "Sydney", "Singapore", "Dubai", "Berlin", "Vancouver", "Toronto", "Los Angeles"
                 ];
+                
+                // Common spelling variations for Indian cities
+                this.cityVariations = {
+                    "thirunelveli": "Tirunelveli",
+                    "tirunelveli": "Tirunelveli", 
+                    "nellaiyappar": "Tirunelveli",
+                    "nellai": "Tirunelveli",
+                    "tiruchirappalli": "Tiruchirappalli",
+                    "trichy": "Tiruchirappalli",
+                    "tanjore": "Thanjavur",
+                    "madras": "Chennai",
+                    "bombay": "Mumbai",
+                    "calcutta": "Kolkata",
+                    "poona": "Pune",
+                    "mysore": "Mysuru",
+                    "cochin": "Kochi",
+                    "trivandrum": "Thiruvananthapuram"
+                };
             }
 
             loadThemePreference() {
@@ -1297,30 +1323,51 @@
                 this.suggestionTimeout = setTimeout(() => {
                     let matches = [];
                     
-                    // Smart weather location detection
+                    // Smart weather location detection with variations
                     if (query.includes('weather') || query.includes('temperature') || query.includes('forecast')) {
+                        // Extract location from query
+                        let locationQuery = query.replace(/weather|temperature|forecast/gi, '').trim();
+                        
+                        // Check for city variations
+                        const normalizedLocation = this.cityVariations[locationQuery] || 
+                            this.popularLocations.find(city => city.toLowerCase().includes(locationQuery));
+                        
+                        if (normalizedLocation) {
+                            matches.push(`Weather in ${normalizedLocation}`);
+                        }
+                        
                         // Add location-specific weather suggestions
                         const locationMatches = this.popularLocations
-                            .filter(location => location.toLowerCase().includes(query.replace(/weather|temperature|forecast/gi, '').trim()))
+                            .filter(location => location.toLowerCase().includes(locationQuery))
                             .map(location => `Weather in ${location}`)
                             .slice(0, 3);
                         matches.push(...locationMatches);
                         
-                        // Add general weather suggestions
-                        const weatherSuggestions = [
-                            "Weather in Madurai",
-                            "Weather in Chennai", 
-                            "Today's weather forecast",
-                            "Current temperature",
-                            "Humidity levels"
-                        ].filter(s => s.toLowerCase().includes(query)).slice(0, 2);
-                        matches.push(...weatherSuggestions);
+                        // Add general weather suggestions for Tamil Nadu cities
+                        if (locationQuery.length > 0) {
+                            const tamilNaduCities = ["Tirunelveli", "Madurai", "Chennai", "Coimbatore", "Salem"];
+                            const cityMatches = tamilNaduCities
+                                .filter(city => city.toLowerCase().includes(locationQuery))
+                                .map(city => `Weather in ${city}`)
+                                .slice(0, 2);
+                            matches.push(...cityMatches);
+                        }
+                    }
+                    
+                    // Handle direct city name queries (like "thirunelveli weather")
+                    const cityMatch = query.match(/^(\w+)\s*(weather|temperature|forecast)$/);
+                    if (cityMatch) {
+                        const cityName = cityMatch[1];
+                        const normalizedCity = this.cityVariations[cityName] || 
+                            this.popularLocations.find(city => city.toLowerCase() === cityName) ||
+                            (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                        matches.unshift(`Weather in ${normalizedCity}`);
                     }
                     
                     // Add general suggestions
                     const generalMatches = this.commonSuggestions
                         .filter(suggestion => suggestion.toLowerCase().includes(query))
-                        .slice(0, 3);
+                        .slice(0, 2);
                     matches.push(...generalMatches);
                     
                     // Remove duplicates and limit to 5
@@ -1359,12 +1406,23 @@
             handleSmartFormatting() {
                 const text = this.messageInput.value.toLowerCase().trim();
                 
+                // Enhanced pattern matching for Indian cities
+                const cityWeatherPattern = /^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem|trichy|tiruchirappalli|vellore|thanjavur|erode|tiruppur|dindigul|karur|thoothukudi|tuticorin|kanyakumari|nagercoil|sivakasi|virudhunagar|london|tokyo|mumbai|delhi|bangalore|kolkata|hyderabad|pune)\s*(weather|temperature|forecast)$/;
+                
                 // Show real-time formatting hints
-                if (text.match(/^(madurai|chennai|london|tokyo|mumbai|delhi) weather$/)) {
-                    const location = text.split(' ')[0];
-                    this.showFormattingSuggestion(`Try: "Weather in ${location.charAt(0).toUpperCase() + location.slice(1)}"`);
+                if (cityWeatherPattern.test(text)) {
+                    const match = text.match(cityWeatherPattern);
+                    const cityName = match[1];
+                    const normalizedCity = this.cityVariations[cityName] || 
+                        (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                    this.showFormattingSuggestion(`Try: "Weather in ${normalizedCity}"`);
                 } else if (text === 'weather') {
-                    this.showFormattingSuggestion('Try: "Weather in Madurai" or specify your location');
+                    this.showFormattingSuggestion('Try: "Weather in Tirunelveli" or specify your location');
+                } else if (text.match(/^(thirunelveli|tirunelveli|madurai|chennai)$/)) {
+                    const cityName = text;
+                    const normalizedCity = this.cityVariations[cityName] || 
+                        (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                    this.showFormattingSuggestion(`Try: "Weather in ${normalizedCity}"`);
                 } else {
                     this.hideFormattingSuggestion();
                 }
@@ -1374,14 +1432,25 @@
                 const text = this.messageInput.value.trim();
                 const lowerText = text.toLowerCase();
                 
-                // Auto-format weather queries
-                if (lowerText.match(/^(madurai|chennai|london|tokyo|mumbai|delhi) weather$/)) {
-                    const location = lowerText.split(' ')[0];
-                    this.messageInput.value = `Weather in ${location.charAt(0).toUpperCase() + location.slice(1)}`;
+                // Enhanced auto-format weather queries with Indian city variations
+                const cityWeatherPattern = /^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem|trichy|tiruchirappalli|vellore|thanjavur|erode|tiruppur|dindigul|karur|thoothukudi|tuticorin|kanyakumari|nagercoil|sivakasi|virudhunagar|london|tokyo|mumbai|delhi|bangalore|kolkata|hyderabad|pune)\s*(weather|temperature|forecast)$/;
+                
+                if (cityWeatherPattern.test(lowerText)) {
+                    const match = lowerText.match(cityWeatherPattern);
+                    const cityName = match[1];
+                    const normalizedCity = this.cityVariations[cityName] || 
+                        (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                    this.messageInput.value = `Weather in ${normalizedCity}`;
                     this.showNotification(`✨ Auto-formatted: "${this.messageInput.value}"`, 'info', 2000);
                 } else if (lowerText === 'weather') {
-                    this.messageInput.value = 'Weather in Madurai';
-                    this.showNotification('✨ Auto-completed with default location: Madurai', 'info', 2000);
+                    this.messageInput.value = 'Weather in Tirunelveli';
+                    this.showNotification('✨ Auto-completed with default location: Tirunelveli', 'info', 2000);
+                } else if (lowerText.match(/^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem)$/)) {
+                    const cityName = lowerText;
+                    const normalizedCity = this.cityVariations[cityName] || 
+                        (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                    this.messageInput.value = `Weather in ${normalizedCity}`;
+                    this.showNotification(`✨ Auto-completed: "${this.messageInput.value}"`, 'info', 2000);
                 }
                 
                 this.hideFormattingSuggestion();
@@ -1686,6 +1755,10 @@
         // Enhanced feature interaction functions with usage tracking
         const featureQueries = {
             weather: [
+                "What's the weather in Tirunelveli?",
+                "Weather in Tirunelveli",
+                "Current temperature in Tirunelveli",
+                "Tirunelveli weather forecast",
                 "What's the weather in Chennai?",
                 "Weather in Madurai",
                 "Today's weather forecast",
@@ -1785,14 +1858,17 @@
             const queries = featureQueries[category];
             let randomQuery = queries[Math.floor(Math.random() * queries.length)];
             
-            // Special handling for weather category to prioritize Madurai
+            // Special handling for weather category to prioritize Tirunelveli and Tamil Nadu cities
             if (category === 'weather') {
                 const weatherQueries = [
+                    "Weather in Tirunelveli",
+                    "What's the weather in Tirunelveli?", 
+                    "Current temperature in Tirunelveli",
+                    "Tirunelveli weather forecast",
                     "Weather in Madurai",
-                    "What's the weather in Madurai?", 
-                    "Current temperature in Madurai",
-                    "Madurai weather forecast",
                     "Weather in Chennai",
+                    "Weather in Coimbatore",
+                    "Weather in Salem",
                     "Weather in London",
                     "Weather in Tokyo"
                 ];
@@ -1834,8 +1910,15 @@
             sendQuickMessage(randomQuery);
             
             // Show enhanced notification with location for weather
-            if (category === 'weather' && randomQuery.includes('Madurai')) {
-                chatUI.showNotification(`🌤️ Checking Madurai weather conditions...`, 'success', 3000);
+            if (category === 'weather' && randomQuery.includes('Tirunelveli')) {
+                chatUI.showNotification(`🌤️ Checking Tirunelveli weather conditions...`, 'success', 3000);
+            } else if (category === 'weather') {
+                const location = randomQuery.match(/Weather in (\w+)/);
+                if (location) {
+                    chatUI.showNotification(`🌤️ Checking ${location[1]} weather conditions...`, 'success', 3000);
+                } else {
+                    chatUI.showNotification(`🌤️ Weather feature activated!`, 'success');
+                }
             } else {
                 chatUI.showNotification(`${category.charAt(0).toUpperCase() + category.slice(1)} feature activated!`, 'success');
             }
@@ -1899,18 +1982,22 @@
             }
         });
 
-        // Enhanced quick message function with smart location detection
+        // Enhanced quick message function with comprehensive location detection
         function sendQuickMessage(message) {
             const input = document.getElementById('messageInput');
             
-            // Smart location detection for weather queries
+            // Smart location detection for weather queries with Indian city variations
             if (message.toLowerCase().includes('weather') && !message.toLowerCase().includes(' in ')) {
-                // If user just typed "weather" or "madurai weather", auto-format it
-                const locationMatch = message.match(/(madurai|chennai|london|tokyo|mumbai|delhi|bangalore|paris|sydney)/i);
+                // Enhanced pattern matching for various city name formats including Tirunelveli
+                const locationMatch = message.match(/(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem|trichy|tiruchirappalli|vellore|thanjavur|erode|tiruppur|dindigul|karur|thoothukudi|tuticorin|kanyakumari|nagercoil|sivakasi|virudhunagar|london|tokyo|mumbai|delhi|bangalore|kolkata|hyderabad|pune|paris|sydney)/i);
                 if (locationMatch) {
-                    message = `What's the weather in ${locationMatch[1]}?`;
+                    const cityName = locationMatch[1].toLowerCase();
+                    // Use cityVariations map if available, otherwise capitalize
+                    const normalizedCity = (chatUI && chatUI.cityVariations && chatUI.cityVariations[cityName]) || 
+                        (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                    message = `What's the weather in ${normalizedCity}?`;
                 } else if (message.toLowerCase() === 'weather') {
-                    message = "What's the weather in Madurai?"; // Default to Madurai
+                    message = "What's the weather in Tirunelveli?"; // Default to Tirunelveli
                 }
             }
             
@@ -1920,12 +2007,18 @@
             input.style.transform = 'scale(1.05)';
             input.style.background = 'rgba(42, 117, 255, 0.1)';
             input.style.borderColor = 'var(--primary-color)';
+            input.style.boxShadow = '0 0 0 3px rgba(42, 117, 255, 0.2)';
             
             // Show location detected notification for weather queries
             if (message.toLowerCase().includes('weather in')) {
                 const location = message.match(/weather in (\w+)/i);
                 if (location) {
-                    chatUI.showNotification(`🌍 Location detected: ${location[1]}`, 'success', 2000);
+                    const cityName = location[1];
+                    if (cityName.toLowerCase().includes('tirunelveli') || cityName.toLowerCase().includes('thirunelveli')) {
+                        chatUI.showNotification(`🌍 Location detected: ${cityName} (திருநெல்வேலி)`, 'success', 3000);
+                    } else {
+                        chatUI.showNotification(`🌍 Location detected: ${cityName}`, 'success', 2000);
+                    }
                 }
             }
             
@@ -1933,8 +2026,9 @@
                 input.style.transform = '';
                 input.style.background = '';
                 input.style.borderColor = '';
+                input.style.boxShadow = '';
                 chatUI.sendMessage();
-            }, 300);
+            }, 400);
         }
 
         // Initialize chat UI when DOM is loaded

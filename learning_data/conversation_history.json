@@ -2954,5 +2954,25 @@
       "entities": {},
       "text": "Show my schedule for today"
     }
+  },
+  {
+    "user_input": "Add task: Call mom",
+    "response": "",
+    "timestamp": "2025-08-11T01:51:43.712336",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "Add task: Call mom"
+    }
+  },
+  {
+    "user_input": "Tell me a programming joke",
+    "response": "",
+    "timestamp": "2025-08-11T01:52:07.364900",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "Tell me a programming joke"
+    }
   }
 ]
