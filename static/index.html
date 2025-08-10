@@ -346,7 +346,7 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
+            transition: all 0.3s ease;
             cursor: pointer;
             border: 1px solid rgba(42, 117, 255, 0.1);
             position: relative;
@@ -354,24 +354,25 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 16px rgba(42, 117, 255, 0.15);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(42, 117, 255, 0.2);
             border-color: var(--primary-color);
         }
 
         .feature-card:active {
-            transform: translateY(-1px);
+            transform: translateY(-2px) scale(1.01);
         }
 
         .feature-card i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover i {
-            transform: scale(1.1);
+            transform: scale(1.2) rotate(5deg);
+            text-shadow: 0 0 20px rgba(42, 117, 255, 0.3);
         }
 
         .feature-card h4 {
@@ -397,6 +398,71 @@
             background: rgba(42, 117, 255, 0.05);
             border-radius: 6px;
             border-left: 2px solid var(--primary-color);
+        }
+
+        .feature-shortcut {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover .feature-shortcut {
+            opacity: 1;
+        }
+
+        .feature-stats {
+            position: absolute;
+            bottom: 4px;
+            right: 8px;
+            font-size: 0.55rem;
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover .feature-stats {
+            opacity: 0.7;
+        }
+
+        /* Category-specific card colors */
+        .weather-card:hover {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .tasks-card:hover {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+
+        .calendar-card:hover {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+        }
+
+        .datetime-card:hover {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%);
+        }
+
+        .entertainment-card:hover {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+        }
+
+        .notes-card:hover {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+        }
+
+        .contacts-card:hover {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+        }
+
+        .ai-card:hover {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
         }
 
         /* Responsive Design */
@@ -454,6 +520,15 @@
                 padding: 0.2rem 0.4rem;
             }
 
+            .feature-shortcut {
+                font-size: 0.55rem;
+                padding: 1px 4px;
+            }
+
+            .feature-stats {
+                font-size: 0.5rem;
+            }
+
             .quick-actions {
                 gap: 0.25rem;
                 flex-wrap: wrap;
@@ -464,6 +539,17 @@
                 padding: 0.4rem 0.6rem;
                 min-height: 36px;
                 white-space: nowrap;
+            }
+
+            /* Disable hover effects on mobile */
+            .feature-card:hover {
+                transform: none;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .feature-shortcut,
+            .feature-stats {
+                display: none; /* Hide on mobile for cleaner look */
             }
         }
 
@@ -490,6 +576,7 @@
 
             .feature-card {
                 padding: 0.5rem;
+                border-radius: 6px;
             }
 
             .feature-card h4 {
@@ -501,15 +588,26 @@
                 margin-bottom: 0.25rem;
             }
 
+            .feature-card i {
+                font-size: 1.3rem;
+            }
+
             .feature-example {
                 font-size: 0.55rem;
                 padding: 0.15rem 0.3rem;
+                margin-top: 0.25rem;
+            }
+
+            .feature-shortcut,
+            .feature-stats {
+                display: none;
             }
 
             .quick-actions {
                 overflow-x: auto;
                 flex-wrap: nowrap;
                 padding: 0.25rem 0;
+                gap: 0.5rem;
             }
 
             .quick-action-btn {
@@ -517,6 +615,12 @@
                 padding: 0.3rem 0.5rem;
                 min-width: auto;
                 flex-shrink: 0;
+            }
+
+            /* Touch-friendly interactions */
+            .feature-card:active {
+                transform: scale(0.95);
+                background: rgba(42, 117, 255, 0.05);
             }
         }
 
@@ -611,53 +715,93 @@
                 <p>I'm here to help you with weather updates, jokes, quotes, task management, and much more. What would you like to know?</p>
                 
                 <div class="features-grid">
-                    <div class="feature-card" onclick="sendQuickMessage('What\'s the weather in my location?')" title="Click to check weather">
+                    <div class="feature-card weather-card" onclick="handleFeatureClick('weather')" 
+                         onmouseenter="showFeaturePreview('weather')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="weather" title="Click to check weather">
                         <i class="fas fa-cloud-sun"></i>
                         <h4>Weather & Forecast</h4>
-                        <p>Get current weather conditions, temperature, humidity, and forecasts for any location</p>
-                        <div class="feature-example">Try: "Weather in Chennai" or "Tomorrow's forecast"</div>
+                        <p>Real-time weather conditions, temperature, humidity, and 7-day forecasts</p>
+                        <div class="feature-example">🌡️ "Weather in Chennai" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
+                        <div class="feature-shortcut">Press W</div>
+                        <div class="feature-stats">Updated every 10 minutes</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('Show my tasks')" title="Click to manage tasks">
+                    <div class="feature-card tasks-card" onclick="handleFeatureClick('tasks')" 
+                         onmouseenter="showFeaturePreview('tasks')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="tasks" title="Click to manage tasks">
                         <i class="fas fa-tasks"></i>
                         <h4>Task Management</h4>
-                        <p>Create, manage, and track your to-do lists and reminders</p>
-                        <div class="feature-example">Try: "Add task: Buy groceries" or "Show completed tasks"</div>
+                        <p>Create, organize, and track your to-do lists with smart reminders</p>
+                        <div class="feature-example">✅ "Add task: Call mom" | 📋 "Show my tasks" | ⏰ "Set reminder"</div>
+                        <div class="feature-shortcut">Press T</div>
+                        <div class="feature-stats">Smart prioritization</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('Show my calendar')" title="Click to view calendar">
+                    <div class="feature-card calendar-card" onclick="handleFeatureClick('calendar')" 
+                         onmouseenter="showFeaturePreview('calendar')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="calendar" title="Click to view calendar">
                         <i class="fas fa-calendar-alt"></i>
                         <h4>Calendar & Events</h4>
-                        <p>Schedule appointments, set reminders, and manage your events</p>
-                        <div class="feature-example">Try: "Add meeting at 3 PM" or "What's my schedule?"</div>
+                        <p>Schedule appointments, meetings, and events with intelligent planning</p>
+                        <div class="feature-example">📅 "Add meeting at 3 PM" | 🗓️ "What's my schedule?" | ⏰ "Free time today"</div>
+                        <div class="feature-shortcut">Press C</div>
+                        <div class="feature-stats">Conflict detection</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('What\'s the time?')" title="Click to check time">
+                    <div class="feature-card datetime-card" onclick="handleFeatureClick('datetime')" 
+                         onmouseenter="showFeaturePreview('datetime')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="datetime" title="Click to check time">
                         <i class="fas fa-clock"></i>
                         <h4>Date & Time</h4>
-                        <p>Get current time, date, timezone information, and time calculations</p>
-                        <div class="feature-example">Try: "What time is it?" or "What day is today?"</div>
+                        <p>Current time, timezone conversion, and date calculations worldwide</p>
+                        <div class="feature-example">🕐 "What time is it?" | 🌍 "Time in Tokyo" | 📊 "Days until Christmas"</div>
+                        <div class="feature-shortcut">Press D</div>
+                        <div class="feature-stats">Real-time updates</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('Tell me a joke')" title="Click for entertainment">
+                    <div class="feature-card entertainment-card" onclick="handleFeatureClick('entertainment')" 
+                         onmouseenter="showFeaturePreview('entertainment')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="entertainment" title="Click for entertainment">
                         <i class="fas fa-laugh"></i>
-                        <h4>Entertainment</h4>
-                        <p>Enjoy jokes, inspirational quotes, and fun conversations</p>
-                        <div class="feature-example">Try: "Tell me a joke" or "Inspire me with a quote"</div>
+                        <h4>Entertainment Hub</h4>
+                        <p>Jokes, inspirational quotes, fun facts, and engaging conversations</p>
+                        <div class="feature-example">😂 "Tell me a programming joke" | ✨ "Inspire me" | 🎯 "Random fact"</div>
+                        <div class="feature-shortcut">Press E</div>
+                        <div class="feature-stats">Daily updates</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('Show my notes')" title="Click to manage notes">
+                    <div class="feature-card notes-card" onclick="handleFeatureClick('notes')" 
+                         onmouseenter="showFeaturePreview('notes')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="notes" title="Click to manage notes">
                         <i class="fas fa-sticky-note"></i>
-                        <h4>Notes & Memory</h4>
-                        <p>Save important information, take notes, and store knowledge</p>
-                        <div class="feature-example">Try: "Save note: Important meeting" or "Show my notes"</div>
+                        <h4>Smart Notes</h4>
+                        <p>Save, organize, and search through your important information</p>
+                        <div class="feature-example">📝 "Save note: Meeting notes" | 🔍 "Find notes about project" | 📚 "All notes"</div>
+                        <div class="feature-shortcut">Press N</div>
+                        <div class="feature-stats">AI-powered search</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('Show my contacts')" title="Click to manage contacts">
+                    <div class="feature-card contacts-card" onclick="handleFeatureClick('contacts')" 
+                         onmouseenter="showFeaturePreview('contacts')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="contacts" title="Click to manage contacts">
                         <i class="fas fa-address-book"></i>
-                        <h4>Contact Management</h4>
-                        <p>Store and manage your contacts, phone numbers, and addresses</p>
-                        <div class="feature-example">Try: "Add contact: John" or "Find contact for Sarah"</div>
+                        <h4>Contact Manager</h4>
+                        <p>Store and organize contacts with smart search and grouping</p>
+                        <div class="feature-example">👤 "Add contact: John Smith" | 🔍 "Find Sarah's number" | 📱 "All contacts"</div>
+                        <div class="feature-shortcut">Press O</div>
+                        <div class="feature-stats">Smart grouping</div>
                     </div>
-                    <div class="feature-card" onclick="sendQuickMessage('What can you help me with?')" title="Click to learn more">
+                    <div class="feature-card ai-card" onclick="handleFeatureClick('ai')" 
+                         onmouseenter="showFeaturePreview('ai')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="ai" title="Click for AI assistance">
                         <i class="fas fa-brain"></i>
                         <h4>AI Intelligence</h4>
-                        <p>Get answers to questions, research topics, and intelligent assistance</p>
-                        <div class="feature-example">Try: "Explain quantum physics" or "Help me plan my day"</div>
+                        <p>Advanced AI assistance for research, analysis, and problem-solving</p>
+                        <div class="feature-example">🧠 "Explain quantum physics" | 💡 "Help plan my day" | 🔬 "Research AI trends"</div>
+                        <div class="feature-shortcut">Press A</div>
+                        <div class="feature-stats">Always learning</div>
                     </div>
                 </div>
             </div>
@@ -867,10 +1011,154 @@
             }
         }
 
-        // Quick message function
+        // Enhanced feature interaction functions
+        const featureQueries = {
+            weather: [
+                "What's the weather in Chennai?",
+                "Today's weather forecast",
+                "Weather conditions now",
+                "Tomorrow's weather"
+            ],
+            tasks: [
+                "Show my tasks",
+                "Add task: Call the dentist",
+                "Create new to-do list",
+                "What tasks do I have?"
+            ],
+            calendar: [
+                "Show my calendar",
+                "What's my schedule today?",
+                "Add meeting tomorrow at 2 PM",
+                "Free time this week"
+            ],
+            datetime: [
+                "What time is it?",
+                "Current date and time",
+                "Time in different timezones",
+                "Days until weekend"
+            ],
+            entertainment: [
+                "Tell me a programming joke",
+                "Inspire me with a quote",
+                "Random fun fact",
+                "Motivational quote"
+            ],
+            notes: [
+                "Show my notes",
+                "Save note: Meeting summary",
+                "Find notes about project",
+                "Create new note"
+            ],
+            contacts: [
+                "Show my contacts",
+                "Add contact: Sarah Johnson",
+                "Find John's phone number",
+                "Contact management"
+            ],
+            ai: [
+                "What can you help me with?",
+                "Explain artificial intelligence",
+                "Help me plan my day",
+                "Research latest tech trends"
+            ]
+        };
+
+        function handleFeatureClick(category) {
+            const queries = featureQueries[category];
+            const randomQuery = queries[Math.floor(Math.random() * queries.length)];
+            
+            // Add visual feedback
+            const card = event.currentTarget;
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                card.style.transform = '';
+            }, 150);
+            
+            // Send the query
+            sendQuickMessage(randomQuery);
+            
+            // Track usage (optional analytics)
+            console.log(`Feature used: ${category} - Query: ${randomQuery}`);
+        }
+
+        function showFeaturePreview(category) {
+            const card = event.currentTarget;
+            const example = card.querySelector('.feature-example');
+            
+            // Add glow effect
+            card.style.boxShadow = '0 0 20px rgba(42, 117, 255, 0.3)';
+            
+            // Show example queries with typing effect
+            if (example && featureQueries[category]) {
+                const queries = featureQueries[category];
+                const randomQuery = queries[Math.floor(Math.random() * queries.length)];
+                example.style.opacity = '1';
+                example.style.transform = 'translateY(0)';
+            }
+        }
+
+        function hideFeaturePreview() {
+            const card = event.currentTarget;
+            card.style.boxShadow = '';
+            
+            const example = card.querySelector('.feature-example');
+            if (example) {
+                example.style.opacity = '';
+                example.style.transform = '';
+            }
+        }
+
+        // Keyboard shortcuts for features
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey) { // Alt + Letter for feature shortcuts
+                switch(e.key.toLowerCase()) {
+                    case 'w':
+                        e.preventDefault();
+                        handleFeatureClick('weather');
+                        break;
+                    case 't':
+                        e.preventDefault();
+                        handleFeatureClick('tasks');
+                        break;
+                    case 'c':
+                        e.preventDefault();
+                        handleFeatureClick('calendar');
+                        break;
+                    case 'd':
+                        e.preventDefault();
+                        handleFeatureClick('datetime');
+                        break;
+                    case 'e':
+                        e.preventDefault();
+                        handleFeatureClick('entertainment');
+                        break;
+                    case 'n':
+                        e.preventDefault();
+                        handleFeatureClick('notes');
+                        break;
+                    case 'o':
+                        e.preventDefault();
+                        handleFeatureClick('contacts');
+                        break;
+                    case 'a':
+                        e.preventDefault();
+                        handleFeatureClick('ai');
+                        break;
+                }
+            }
+        });
+
+        // Quick message function (enhanced)
         function sendQuickMessage(message) {
-            document.getElementById('messageInput').value = message;
-            chatUI.sendMessage();
+            const input = document.getElementById('messageInput');
+            input.value = message;
+            
+            // Add typing animation
+            input.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                input.style.transform = '';
+                chatUI.sendMessage();
+            }, 200);
         }
 
         // Initialize chat UI when DOM is loaded
