@@ -211,9 +211,19 @@ class NLPProcessor:
                     is_educational = True
                     break
         
-        # Intent detection - identity first (highest priority), then specific calendar terms, then datetime
+        # Intent detection - identity first (highest priority), then weather/forecast (high priority), then specific calendar terms, then datetime
         if fuzzy(text, identity_keywords):
             intent = "identity"  # Route identity queries first (highest priority)
+        elif fuzzy(text, weather_keywords):
+            intent = "weather"  # Route weather queries (high priority to avoid datetime conflicts)
+            location = extract_location(user_input)
+            if location:
+                entities["location"] = location
+        elif fuzzy(text, forecast_keywords):
+            intent = "forecast"  # Route forecast queries (high priority)
+            location = extract_location(user_input)
+            if location:
+                entities["location"] = location
         elif fuzzy(text, ["my calendar", "show calendar", "view calendar", "calendar", "my schedule", "show schedule", "schedule", "appointment", "meeting", "event"]):
             intent = "calendar"  # Route calendar-specific queries
         elif fuzzy(text, datetime_keywords):
@@ -242,16 +252,6 @@ class NLPProcessor:
             intent = "openai"  # Route technology/product questions to Gemini
         elif is_educational and not fuzzy(text, health_keywords) and not fuzzy(text, personal_assistant_keywords):
             intent = "openai"  # Route educational questions directly to Gemini (but not health or personal assistant ones)
-        elif fuzzy(text, forecast_keywords):
-            intent = "forecast"
-            location = extract_location(user_input)
-            if location:
-                entities["location"] = location
-        elif fuzzy(text, weather_keywords):
-            intent = "weather"
-            location = extract_location(user_input)
-            if location:
-                entities["location"] = location
         elif fuzzy(text, joke_keywords):
             intent = "joke"
         elif fuzzy(text, quote_keywords):
