@@ -72,9 +72,12 @@ logs/
 
 # API Keys and sensitive data
 .env
+.env.local
+.env.production
 *.key
 config.ini
 secrets.json
+api_keys.txt
 
 # Database files
 *.db

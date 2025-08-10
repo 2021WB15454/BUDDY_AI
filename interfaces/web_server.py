@@ -43,8 +43,19 @@ class WebServer:
             status = await self.buddy.get_status()
             return JSONResponse(content=status)
 
-    async def start(self):
-        self.logger.info("🌐 Starting BUDDY WebServer on http://127.0.0.1:8000 ...")
-        config = uvicorn.Config(self.app, host="127.0.0.1", port=8000, log_level="info")
+    async def start(self, host="127.0.0.1", port=8000):
+        """Start the web server - production ready"""
+        import os
+        
+        # Use environment variables for production hosting
+        host = os.environ.get("HOST", host)
+        port = int(os.environ.get("PORT", port))
+        
+        # For production, bind to all interfaces
+        if os.environ.get("ENVIRONMENT") == "production":
+            host = "0.0.0.0"
+        
+        self.logger.info(f"🌐 Starting BUDDY WebServer on {host}:{port} ...")
+        config = uvicorn.Config(self.app, host=host, port=port, log_level="info")
         server = uvicorn.Server(config)
         await server.serve()

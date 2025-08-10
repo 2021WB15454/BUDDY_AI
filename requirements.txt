@@ -1,1 +1,28 @@
-requests
+# Core dependencies
+requests>=2.31.0
+
+# Web framework and server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Async support
+asyncio-mqtt>=0.11.0
+
+# Text processing and fuzzy matching
+rapidfuzz>=3.5.0
+
+# Audio processing (optional, for voice features)
+# pyaudio>=0.2.11
+# speech-recognition>=3.10.0
+# pyttsx3>=2.90
+
+# Data processing
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Additional AI/ML libraries (optional)
+# openai>=1.0.0
+# google-generativeai>=0.3.0

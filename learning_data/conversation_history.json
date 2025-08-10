@@ -2794,5 +2794,85 @@
       "entities": {},
       "text": "how can you assist me in my tasks"
     }
+  },
+  {
+    "user_input": "Do you love me",
+    "response": "",
+    "timestamp": "2025-08-10T18:30:59.232677",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "Do you love me"
+    }
+  },
+  {
+    "user_input": "then you are like shrihari",
+    "response": "",
+    "timestamp": "2025-08-10T18:31:23.414186",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "then you are like shrihari"
+    }
+  },
+  {
+    "user_input": "No shrihari is my friend",
+    "response": "",
+    "timestamp": "2025-08-10T18:31:58.427575",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "No shrihari is my friend"
+    }
+  },
+  {
+    "user_input": "you are not understanding anything like dhrihari",
+    "response": "",
+    "timestamp": "2025-08-10T18:32:16.065753",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "you are not understanding anything like dhrihari"
+    }
+  },
+  {
+    "user_input": "mental boii",
+    "response": "",
+    "timestamp": "2025-08-10T18:32:37.779281",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "mental boii"
+    }
+  },
+  {
+    "user_input": "how can i complete my 3 weeks pending work in one day",
+    "response": "",
+    "timestamp": "2025-08-10T18:33:41.297190",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "how can i complete my 3 weeks pending work in one day"
+    }
+  },
+  {
+    "user_input": "how you will define men mentality",
+    "response": "",
+    "timestamp": "2025-08-10T19:25:07.746504",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how you will define men mentality"
+    }
+  },
+  {
+    "user_input": "How to propse",
+    "response": "",
+    "timestamp": "2025-08-10T21:24:25.656971",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "How to propse"
+    }
   }
 ]
