@@ -62,16 +62,16 @@ class NLPProcessor:
         quote_keywords = ["quote", "qoute", "inspire", "inspaire", "motivate", "motivation", "motive"] + learned_quotes
         learning_keywords = ["learn", "teach", "remember", "forget", "stats", "learning stats", "show stats", "what have you learned", "good job", "well done", "bad", "wrong", "try again"]
         
-        # Date and time related keywords
+        # Date and time related keywords - very specific for time/date queries only
         datetime_keywords = [
-            # Date queries
-            "date", "today", "current date", "today's date", "todays date", "what is today", "what's today", "whats today", "date today", "today date", "what date", "what's the date", "whats the date", "current day",
+            # Direct time queries (very specific)
+            "what time", "what's the time", "whats the time", "what time is it", "what's the time now", "whats the time now", "what is the time", "current time", "time now", "show time", "tell time", "check time", "get time", "display time",
             
-            # Time queries
-            "time", "current time", "what time", "what's the time", "whats the time", "time now", "current time now", "what time is it", "what's the time now", "whats the time now",
+            # Direct date queries (very specific)  
+            "what date", "what's the date", "whats the date", "what is the date", "current date", "today's date", "todays date", "show date", "tell date", "check date", "get date",
             
-            # Day queries
-            "day", "today's day", "todays day", "what day", "which day", "day today", "day is today", "what day is today", "what day is it", "current day",
+            # Day queries (very specific)
+            "what day", "which day", "what day is today", "what day is it", "current day", "show day", "tell day", "what is the day",
             
             # Month queries
             "month", "current month", "this month", "what month", "which month", "month today", "what month is it", "what's the month", "whats the month",
@@ -96,9 +96,9 @@ class NLPProcessor:
             "note", "notes", "add note", "create note", "new note", "write note", "save note", "note down", "take note", "my notes", "show notes", "list notes", "all notes", "find note", "search note", "note search", "delete note", "remove note", "edit note", "update note", "modify note", "note category", "organize notes", "note folder", "favorite note", "important note", "archive note", "recent notes", "note management", "notebook", "notepad", "memo", "reminder note", "quick note", "note taking"
         ]
         
-        # Calendar & Scheduling keywords
+        # Calendar & Scheduling keywords - more specific
         calendar_keywords = [
-            "schedule", "calendar", "appointment", "meeting", "event", "book appointment", "schedule meeting", "add event", "create appointment", "new meeting", "my schedule", "show schedule", "today's schedule", "tomorrow's schedule", "schedule today", "schedule tomorrow", "upcoming events", "next events", "cancel event", "cancel appointment", "reschedule", "free time", "available time", "when am i free", "busy", "availability", "schedule stats", "calendar stats", "meeting request", "event planning", "time slot", "booking", "agenda"
+            "schedule", "my schedule", "show schedule", "calendar", "my calendar", "show calendar", "view calendar", "appointment", "meeting", "event", "book appointment", "schedule meeting", "add event", "create appointment", "new meeting", "today's schedule", "tomorrow's schedule", "schedule today", "schedule tomorrow", "upcoming events", "next events", "cancel event", "cancel appointment", "reschedule", "free slot", "available slot", "when am i free", "busy", "availability", "schedule stats", "calendar stats", "meeting request", "event planning", "booking slot", "agenda", "plan meeting", "set appointment"
         ]
         
         # Contact Management keywords
@@ -211,15 +211,19 @@ class NLPProcessor:
                     is_educational = True
                     break
         
-        # Intent detection with learning integration - ordered from most specific to most general
-        if fuzzy(text, learning_keywords):
+        # Intent detection - specific calendar terms first, then datetime
+        if fuzzy(text, ["my calendar", "show calendar", "view calendar", "calendar", "my schedule", "show schedule", "schedule", "appointment", "meeting", "event"]):
+            intent = "calendar"  # Route calendar-specific queries first
+        elif fuzzy(text, datetime_keywords):
+            intent = "datetime"  # Route date/time queries to datetime skill
+        elif fuzzy(text, learning_keywords):
             intent = "learning"
         elif fuzzy(text, task_keywords):
             intent = "task_management"  # Route task-related queries to task management skill
         elif fuzzy(text, notes_keywords):
             intent = "notes_management"  # Route notes-related queries to notes management skill
         elif fuzzy(text, calendar_keywords):
-            intent = "calendar"  # Route calendar/scheduling queries to calendar skill (check before datetime)
+            intent = "calendar"  # Route other calendar/scheduling queries
         elif fuzzy(text, contact_keywords):
             intent = "contact_management"  # Route contact-related queries to contact management skill
         elif fuzzy(text, file_keywords):
@@ -228,8 +232,6 @@ class NLPProcessor:
             intent = "communication"  # Route communication-related queries to communication skill
         elif fuzzy(text, research_keywords):
             intent = "research"  # Route research/knowledge queries to research skill
-        elif fuzzy(text, datetime_keywords):
-            intent = "datetime"  # Route date/time queries to datetime skill (check after calendar)
         elif fuzzy(text, identity_keywords):
             intent = "identity"
         elif fuzzy(text, health_keywords):

@@ -8,7 +8,7 @@
     "learning": 15,
     "weather_no_location": 2,
     "health": 57,
-    "datetime": 15
+    "datetime": 18
   },
   "time_preferences": {
     "general_conversation": [
@@ -478,7 +478,10 @@
       16,
       18,
       18,
-      18
+      18,
+      21,
+      21,
+      21
     ]
   }
 }
