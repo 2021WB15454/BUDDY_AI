@@ -1,0 +1,16 @@
+[
+  {
+    "id": "3aa9899f",
+    "title": "a meeting",
+    "description": "Event created from: Schedule a meeting for next Monday",
+    "start_time": "2025-08-10T19:25:29.971955",
+    "end_time": "2025-08-10T20:25:29.971955",
+    "location": "",
+    "attendees": [],
+    "category": "general",
+    "priority": "medium",
+    "status": "scheduled",
+    "reminder_minutes": 15,
+    "created_at": "2025-08-10T18:25:29.971955"
+  }
+]

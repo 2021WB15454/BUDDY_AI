@@ -17,6 +17,13 @@ class SkillManager:
         from skills.health_skill import handle_skill as health_handle_skill
         from skills.personal_assistant_skill import PersonalAssistantSkill
         from skills.datetime_skill import DateTimeSkill
+        from skills.task_management_skill import TaskSkill
+        from skills.notes_management_skill import NotesSkill
+        from skills.calendar_skill import CalendarSkill
+        from skills.contact_skill import ContactSkill
+        from skills.file_management_skill import FileManagementSkill
+        from skills.communication_skill import CommunicationSkill
+        from skills.research_skill import ResearchSkill
         
         # Initialize skills with proper interfaces
         self.skills = {
@@ -28,6 +35,13 @@ class SkillManager:
             "identity": IdentitySkill(),
             "personal_assistant": PersonalAssistantSkill(),
             "datetime": DateTimeSkill(),
+            "task_management": TaskSkill(),
+            "notes_management": NotesSkill(),
+            "calendar": CalendarSkill(),
+            "contact_management": ContactSkill(),
+            "file_management": FileManagementSkill(),
+            "communication": CommunicationSkill(),
+            "research": ResearchSkill(),
         }
         
         # Add health skill with different interface
@@ -50,6 +64,48 @@ class SkillManager:
             if skill:
                 user_input = nlp_result.get('text', '')
                 response = await skill.handle_datetime_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "task_management":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_task_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "notes_management":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_notes_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "calendar":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_calendar_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "contact_management":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_contact_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "file_management":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_file_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "communication":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_communication_query(user_input, context)
+                return {"success": True, "response": response}
+        elif skill_name == "research":
+            skill = self.skills.get(skill_name)
+            if skill:
+                user_input = nlp_result.get('text', '')
+                response = await skill.handle_research_query(user_input, context)
                 return {"success": True, "response": response}
         
         skill = self.skills.get(skill_name)

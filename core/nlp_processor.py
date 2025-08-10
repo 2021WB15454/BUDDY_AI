@@ -86,6 +86,41 @@ class NLPProcessor:
             "calendar", "week", "weekend", "weekday", "day of week", "day of month", "day of year", "week number", "quarter"
         ]
         
+        # Task Management keywords
+        task_keywords = [
+            "task", "tasks", "todo", "to do", "to-do", "add task", "create task", "new task", "task list", "todo list", "my tasks", "show tasks", "list tasks", "all tasks", "pending tasks", "completed tasks", "complete task", "finish task", "mark task", "task done", "task complete", "delete task", "remove task", "cancel task", "update task", "edit task", "modify task", "task priority", "high priority", "urgent task", "important task", "task deadline", "due task", "overdue task", "task category", "work task", "personal task", "task progress", "task stats", "task statistics", "productivity", "task management"
+        ]
+        
+        # Notes Management keywords  
+        notes_keywords = [
+            "note", "notes", "add note", "create note", "new note", "write note", "save note", "note down", "take note", "my notes", "show notes", "list notes", "all notes", "find note", "search note", "note search", "delete note", "remove note", "edit note", "update note", "modify note", "note category", "organize notes", "note folder", "favorite note", "important note", "archive note", "recent notes", "note management", "notebook", "notepad", "memo", "reminder note", "quick note", "note taking"
+        ]
+        
+        # Calendar & Scheduling keywords
+        calendar_keywords = [
+            "schedule", "calendar", "appointment", "meeting", "event", "book appointment", "schedule meeting", "add event", "create appointment", "new meeting", "my schedule", "show schedule", "today's schedule", "tomorrow's schedule", "schedule today", "schedule tomorrow", "upcoming events", "next events", "cancel event", "cancel appointment", "reschedule", "free time", "available time", "when am i free", "busy", "availability", "schedule stats", "calendar stats", "meeting request", "event planning", "time slot", "booking", "agenda"
+        ]
+        
+        # Contact Management keywords
+        contact_keywords = [
+            "contact", "contacts", "add contact", "new contact", "create contact", "contact info", "contact details", "find contact", "search contact", "my contacts", "show contacts", "list contacts", "all contacts", "delete contact", "remove contact", "edit contact", "update contact", "contact book", "address book", "phone book", "contact list", "contact management", "birthday", "birthdays", "upcoming birthdays", "contact history", "communication history", "follow up", "overdue contact", "contact stats", "relationship", "network", "professional contacts", "personal contacts"
+        ]
+        
+        # File & Document Management keywords
+        file_keywords = [
+            "file", "files", "document", "documents", "register document", "track file", "add document", "find document", "search file", "locate document", "my files", "file search", "document search", "organize files", "sort files", "clean up files", "file organization", "backup files", "backup documents", "file backup", "duplicate files", "find duplicates", "storage stats", "file stats", "document stats", "file management", "document management", "file system", "folder", "directory", "archive", "file type", "file size", "file category"
+        ]
+        
+        # Email & Communication keywords
+        communication_keywords = [
+            "email", "emails", "compose email", "write email", "draft email", "send email", "email template", "email templates", "create template", "use template", "communication", "communicate", "message", "messaging", "log communication", "log email", "log call", "communication history", "email history", "conversation history", "follow up", "follow-up", "pending follow", "email stats", "communication stats", "email suggestions", "email help", "help write", "template usage", "email draft", "email composition", "professional email", "business email"
+        ]
+        
+        # Research & Knowledge keywords
+        research_keywords = [
+            "research", "research topic", "new research", "research project", "study", "learn", "learning", "knowledge", "add knowledge", "save knowledge", "knowledge base", "find information", "search knowledge", "what do i know about", "learning goal", "study goal", "learn about", "research session", "study session", "log research", "knowledge review", "review knowledge", "what needs review", "research progress", "learning progress", "my research", "research stats", "learning stats", "knowledge stats", "research management", "knowledge management", "study plan", "learning plan", "academic", "education", "information", "insights", "findings"
+        ]
+        
         # Technology and product recommendation keywords
         tech_keywords = [
             # Mobile/Phone brands and models
@@ -176,11 +211,25 @@ class NLPProcessor:
                     is_educational = True
                     break
         
-        # Intent detection with learning integration
+        # Intent detection with learning integration - ordered from most specific to most general
         if fuzzy(text, learning_keywords):
             intent = "learning"
+        elif fuzzy(text, task_keywords):
+            intent = "task_management"  # Route task-related queries to task management skill
+        elif fuzzy(text, notes_keywords):
+            intent = "notes_management"  # Route notes-related queries to notes management skill
+        elif fuzzy(text, calendar_keywords):
+            intent = "calendar"  # Route calendar/scheduling queries to calendar skill (check before datetime)
+        elif fuzzy(text, contact_keywords):
+            intent = "contact_management"  # Route contact-related queries to contact management skill
+        elif fuzzy(text, file_keywords):
+            intent = "file_management"  # Route file-related queries to file management skill
+        elif fuzzy(text, communication_keywords):
+            intent = "communication"  # Route communication-related queries to communication skill
+        elif fuzzy(text, research_keywords):
+            intent = "research"  # Route research/knowledge queries to research skill
         elif fuzzy(text, datetime_keywords):
-            intent = "datetime"  # Route date/time queries to datetime skill
+            intent = "datetime"  # Route date/time queries to datetime skill (check after calendar)
         elif fuzzy(text, identity_keywords):
             intent = "identity"
         elif fuzzy(text, health_keywords):

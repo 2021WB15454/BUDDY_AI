@@ -77,6 +77,27 @@ class DecisionEngine:
         elif intent == "personal_assistant":
             self.logger.debug(f"🔍 Routing to personal assistant skill")
             response = await self.skill_manager.handle_skill("personal_assistant", nlp_result, conversation_context)
+        elif intent == "task_management":
+            self.logger.debug(f"🔍 Routing to task management skill")
+            response = await self.skill_manager.handle_skill("task_management", nlp_result, conversation_context)
+        elif intent == "notes_management":
+            self.logger.debug(f"🔍 Routing to notes management skill")
+            response = await self.skill_manager.handle_skill("notes_management", nlp_result, conversation_context)
+        elif intent == "calendar":
+            self.logger.debug(f"🔍 Routing to calendar skill")
+            response = await self.skill_manager.handle_skill("calendar", nlp_result, conversation_context)
+        elif intent == "contact_management":
+            self.logger.debug(f"🔍 Routing to contact management skill")
+            response = await self.skill_manager.handle_skill("contact_management", nlp_result, conversation_context)
+        elif intent == "file_management":
+            self.logger.debug(f"🔍 Routing to file management skill")
+            response = await self.skill_manager.handle_skill("file_management", nlp_result, conversation_context)
+        elif intent == "communication":
+            self.logger.debug(f"🔍 Routing to communication skill")
+            response = await self.skill_manager.handle_skill("communication", nlp_result, conversation_context)
+        elif intent == "research":
+            self.logger.debug(f"🔍 Routing to research skill")
+            response = await self.skill_manager.handle_skill("research", nlp_result, conversation_context)
         elif intent == "openai":
             self.logger.debug(f"🔍 Routing to Gemini for openai intent")
             # Route all unmatched queries to Gemini

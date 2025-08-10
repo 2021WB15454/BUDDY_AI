@@ -29,12 +29,9 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "learning": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "learning": [
+    "research machine learning topics"
+  ],
   "weather_no_location": [
     "what's the weather"
   ],
@@ -44,10 +41,33 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "datetime": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  }
+  "datetime": [
+    "schedule a meeting for tomorrow"
+  ],
+  "task_management": [
+    "create a task to finish the project",
+    "create a new task called 'finish project'"
+  ],
+  "notes_management": [
+    "add a note about the meeting",
+    "add a note about today's meeting"
+  ],
+  "contact_management": [
+    "add john's contact information",
+    "add a contact named john smith"
+  ],
+  "file_management": [
+    "find my documents",
+    "track a document called report.pdf"
+  ],
+  "communication": [
+    "draft an email to the team"
+  ],
+  "research": [
+    "research artificial intelligence"
+  ],
+  "calendar": [
+    "schedule a meeting for tomorrow",
+    "schedule a meeting for next monday"
+  ]
 }
