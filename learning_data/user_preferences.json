@@ -1,12 +1,12 @@
 {
   "intent_frequency": {
     "general_conversation": 114,
-    "weather": 35,
-    "openai": 293,
+    "weather": 38,
+    "openai": 296,
     "joke": 27,
     "identity": 243,
     "learning": 21,
-    "weather_no_location": 2,
+    "weather_no_location": 3,
     "health": 57,
     "datetime": 21
   },
@@ -148,7 +148,10 @@
       23,
       23,
       23,
-      23
+      23,
+      0,
+      0,
+      0
     ],
     "openai": [
       22,
@@ -164,9 +167,6 @@
       22,
       22,
       22,
-      22,
-      22,
-      22,
       23,
       23,
       23,
@@ -250,7 +250,10 @@
       19,
       21,
       21,
-      21
+      21,
+      0,
+      0,
+      0
     ],
     "joke": [
       18,
@@ -408,7 +411,8 @@
     ],
     "weather_no_location": [
       21,
-      21
+      21,
+      0
     ],
     "health": [
       22,

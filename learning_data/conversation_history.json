@@ -2914,5 +2914,25 @@
       "entities": {},
       "text": "get stats"
     }
+  },
+  {
+    "user_input": "What's the weather?",
+    "response": "",
+    "timestamp": "2025-08-11T00:40:18.899409",
+    "metadata": {
+      "intent": "weather",
+      "entities": {},
+      "text": "What's the weather?"
+    }
+  },
+  {
+    "user_input": "indonesia",
+    "response": "",
+    "timestamp": "2025-08-11T00:40:29.382131",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "indonesia"
+    }
   }
 ]
