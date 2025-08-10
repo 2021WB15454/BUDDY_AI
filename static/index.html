@@ -677,6 +677,270 @@
             }
         }
 
+        /* Advanced interaction enhancements */
+        .message-actions {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            display: none;
+            gap: 5px;
+        }
+
+        .message:hover .message-actions {
+            display: flex;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 4px;
+            padding: 3px 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        .action-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .suggestion-chips {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .suggestion-chip {
+            background: rgba(42, 117, 255, 0.1);
+            border: 1px solid rgba(42, 117, 255, 0.2);
+            border-radius: 16px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .suggestion-chip:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .voice-control {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .voice-control:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .voice-control.active {
+            background: var(--danger-color);
+            animation: pulse-record 1.5s infinite;
+        }
+
+        @keyframes pulse-record {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        .message-timestamp {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .message:hover .message-timestamp {
+            opacity: 1;
+        }
+
+        .smart-notifications {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            max-width: 300px;
+        }
+
+        .notification {
+            background: white;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            box-shadow: var(--shadow);
+            animation: slideInRight 0.3s ease-out;
+            position: relative;
+        }
+
+        .notification.success {
+            border-left-color: var(--accent-color);
+        }
+
+        .notification.error {
+            border-left-color: var(--danger-color);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .smart-search {
+            position: relative;
+        }
+
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+
+        .search-suggestion {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s ease;
+        }
+
+        .search-suggestion:hover {
+            background: var(--secondary-color);
+        }
+
+        .search-suggestion:last-child {
+            border-bottom: none;
+        }
+
+        .feature-usage-indicator {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            font-size: 0.6rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-usage-indicator {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .chat-container.dark-theme {
+            --secondary-color: #1a1a1a;
+            --text-dark: #e9ecef;
+            --text-light: #adb5bd;
+            --border-color: #343a40;
+        }
+
+        .dark-theme {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+        }
+
+        .dark-theme .chat-container {
+            background: #212529;
+        }
+
+        .dark-theme .message.bot .message-content {
+            background: #343a40;
+            color: var(--text-dark);
+        }
+
+        .dark-theme .chat-input {
+            background: #212529;
+            border-top-color: var(--border-color);
+        }
+
+        .dark-theme #messageInput {
+            background: #343a40;
+            color: var(--text-dark);
+            border-color: var(--border-color);
+        }
+
+        .dark-theme .feature-card {
+            background: #343a40;
+        }
+
+        .dark-theme .quick-action-btn {
+            background: #343a40;
+            color: var(--text-dark);
+            border-color: var(--border-color);
+        }
+
         /* Print styles */
         @media print {
             body {
@@ -689,7 +953,7 @@
                 max-height: none;
             }
 
-            .chat-input, .quick-actions {
+            .chat-input, .quick-actions, .voice-control, .theme-toggle {
                 display: none;
             }
         }
@@ -698,6 +962,9 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light theme">
+                <i class="fas fa-moon"></i> Theme
+            </button>
             <div class="status-indicator">
                 <div class="status-dot"></div>
                 <span>Online</span>
@@ -723,8 +990,9 @@
                         <h4>Weather & Forecast</h4>
                         <p>Real-time weather conditions, temperature, humidity, and 7-day forecasts</p>
                         <div class="feature-example">🌡️ "Weather in Chennai" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
-                        <div class="feature-shortcut">Press W</div>
+                        <div class="feature-shortcut">Alt+W</div>
                         <div class="feature-stats">Updated every 10 minutes</div>
+                        <div class="feature-usage-indicator">12</div>
                     </div>
                     <div class="feature-card tasks-card" onclick="handleFeatureClick('tasks')" 
                          onmouseenter="showFeaturePreview('tasks')" 
@@ -734,8 +1002,9 @@
                         <h4>Task Management</h4>
                         <p>Create, organize, and track your to-do lists with smart reminders</p>
                         <div class="feature-example">✅ "Add task: Call mom" | 📋 "Show my tasks" | ⏰ "Set reminder"</div>
-                        <div class="feature-shortcut">Press T</div>
+                        <div class="feature-shortcut">Alt+T</div>
                         <div class="feature-stats">Smart prioritization</div>
+                        <div class="feature-usage-indicator">8</div>
                     </div>
                     <div class="feature-card calendar-card" onclick="handleFeatureClick('calendar')" 
                          onmouseenter="showFeaturePreview('calendar')" 
@@ -745,8 +1014,9 @@
                         <h4>Calendar & Events</h4>
                         <p>Schedule appointments, meetings, and events with intelligent planning</p>
                         <div class="feature-example">📅 "Add meeting at 3 PM" | 🗓️ "What's my schedule?" | ⏰ "Free time today"</div>
-                        <div class="feature-shortcut">Press C</div>
+                        <div class="feature-shortcut">Alt+C</div>
                         <div class="feature-stats">Conflict detection</div>
+                        <div class="feature-usage-indicator">5</div>
                     </div>
                     <div class="feature-card datetime-card" onclick="handleFeatureClick('datetime')" 
                          onmouseenter="showFeaturePreview('datetime')" 
@@ -756,8 +1026,9 @@
                         <h4>Date & Time</h4>
                         <p>Current time, timezone conversion, and date calculations worldwide</p>
                         <div class="feature-example">🕐 "What time is it?" | 🌍 "Time in Tokyo" | 📊 "Days until Christmas"</div>
-                        <div class="feature-shortcut">Press D</div>
+                        <div class="feature-shortcut">Alt+D</div>
                         <div class="feature-stats">Real-time updates</div>
+                        <div class="feature-usage-indicator">15</div>
                     </div>
                     <div class="feature-card entertainment-card" onclick="handleFeatureClick('entertainment')" 
                          onmouseenter="showFeaturePreview('entertainment')" 
@@ -767,8 +1038,9 @@
                         <h4>Entertainment Hub</h4>
                         <p>Jokes, inspirational quotes, fun facts, and engaging conversations</p>
                         <div class="feature-example">😂 "Tell me a programming joke" | ✨ "Inspire me" | 🎯 "Random fact"</div>
-                        <div class="feature-shortcut">Press E</div>
+                        <div class="feature-shortcut">Alt+E</div>
                         <div class="feature-stats">Daily updates</div>
+                        <div class="feature-usage-indicator">22</div>
                     </div>
                     <div class="feature-card notes-card" onclick="handleFeatureClick('notes')" 
                          onmouseenter="showFeaturePreview('notes')" 
@@ -778,8 +1050,9 @@
                         <h4>Smart Notes</h4>
                         <p>Save, organize, and search through your important information</p>
                         <div class="feature-example">📝 "Save note: Meeting notes" | 🔍 "Find notes about project" | 📚 "All notes"</div>
-                        <div class="feature-shortcut">Press N</div>
+                        <div class="feature-shortcut">Alt+N</div>
                         <div class="feature-stats">AI-powered search</div>
+                        <div class="feature-usage-indicator">7</div>
                     </div>
                     <div class="feature-card contacts-card" onclick="handleFeatureClick('contacts')" 
                          onmouseenter="showFeaturePreview('contacts')" 
@@ -789,8 +1062,9 @@
                         <h4>Contact Manager</h4>
                         <p>Store and organize contacts with smart search and grouping</p>
                         <div class="feature-example">👤 "Add contact: John Smith" | 🔍 "Find Sarah's number" | 📱 "All contacts"</div>
-                        <div class="feature-shortcut">Press O</div>
+                        <div class="feature-shortcut">Alt+O</div>
                         <div class="feature-stats">Smart grouping</div>
+                        <div class="feature-usage-indicator">3</div>
                     </div>
                     <div class="feature-card ai-card" onclick="handleFeatureClick('ai')" 
                          onmouseenter="showFeaturePreview('ai')" 
@@ -800,8 +1074,9 @@
                         <h4>AI Intelligence</h4>
                         <p>Advanced AI assistance for research, analysis, and problem-solving</p>
                         <div class="feature-example">🧠 "Explain quantum physics" | 💡 "Help plan my day" | 🔬 "Research AI trends"</div>
-                        <div class="feature-shortcut">Press A</div>
+                        <div class="feature-shortcut">Alt+A</div>
                         <div class="feature-stats">Always learning</div>
+                        <div class="feature-usage-indicator">18</div>
                     </div>
                 </div>
             </div>
@@ -840,7 +1115,7 @@
             </div>
             
             <div class="input-container">
-                <div class="input-wrapper">
+                <div class="input-wrapper smart-search">
                     <textarea 
                         id="messageInput" 
                         placeholder="Type your message here..." 
@@ -848,6 +1123,7 @@
                         autocomplete="off"
                         spellcheck="true"
                     ></textarea>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
                 </div>
                 <button id="sendButton" type="button" aria-label="Send message">
                     <i class="fas fa-paper-plane"></i>
@@ -856,6 +1132,14 @@
         </div>
     </div>
 
+    <!-- Voice Control Button -->
+    <button class="voice-control" id="voiceButton" onclick="toggleVoiceRecording()" title="Voice input (Click to start/stop)">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <!-- Smart Notifications Container -->
+    <div class="smart-notifications" id="notificationsContainer"></div>
+
     <script>
         class BuddyChatUI {
             constructor() {
@@ -863,12 +1147,20 @@
                 this.messageInput = document.getElementById('messageInput');
                 this.sendButton = document.getElementById('sendButton');
                 this.typingIndicator = document.getElementById('typingIndicator');
+                this.searchSuggestions = document.getElementById('searchSuggestions');
+                this.notificationsContainer = document.getElementById('notificationsContainer');
                 
                 this.isTyping = false;
                 this.messageQueue = [];
+                this.isRecording = false;
+                this.recognition = null;
+                this.suggestionTimeout = null;
                 
                 this.initializeEventListeners();
+                this.initializeVoiceRecognition();
+                this.initializeSmartSuggestions();
                 this.adjustTextareaHeight();
+                this.loadThemePreference();
             }
 
             initializeEventListeners() {
@@ -883,14 +1175,75 @@
                     }
                 });
 
-                // Auto-resize textarea
+                // Auto-resize textarea and show suggestions
                 this.messageInput.addEventListener('input', () => {
                     this.adjustTextareaHeight();
                     this.updateSendButtonState();
+                    this.showSmartSuggestions();
+                });
+
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.smart-search')) {
+                        this.hideSuggestions();
+                    }
                 });
 
                 // Initial button state
                 this.updateSendButtonState();
+            }
+
+            initializeVoiceRecognition() {
+                if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                    this.recognition = new SpeechRecognition();
+                    this.recognition.continuous = false;
+                    this.recognition.interimResults = false;
+                    this.recognition.lang = 'en-US';
+
+                    this.recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        this.messageInput.value = transcript;
+                        this.adjustTextareaHeight();
+                        this.updateSendButtonState();
+                        this.showNotification('Voice input captured: "' + transcript + '"', 'success');
+                    };
+
+                    this.recognition.onerror = (event) => {
+                        this.showNotification('Voice recognition error: ' + event.error, 'error');
+                        this.stopVoiceRecording();
+                    };
+
+                    this.recognition.onend = () => {
+                        this.stopVoiceRecording();
+                    };
+                } else {
+                    document.getElementById('voiceButton').style.display = 'none';
+                }
+            }
+
+            initializeSmartSuggestions() {
+                this.commonSuggestions = [
+                    "What's the weather like today?",
+                    "Show my tasks for today",
+                    "What time is it?",
+                    "Tell me a joke",
+                    "Add a new task",
+                    "What's my schedule?",
+                    "Inspire me with a quote",
+                    "Help me plan my day",
+                    "Check the forecast",
+                    "Save a note",
+                    "Find my contacts",
+                    "Research something"
+                ];
+            }
+
+            loadThemePreference() {
+                const savedTheme = localStorage.getItem('buddyTheme');
+                if (savedTheme === 'dark') {
+                    this.toggleTheme(false);
+                }
             }
 
             adjustTextareaHeight() {
@@ -904,6 +1257,67 @@
                 this.sendButton.disabled = !hasText || this.isTyping;
             }
 
+            showSmartSuggestions() {
+                clearTimeout(this.suggestionTimeout);
+                const query = this.messageInput.value.trim().toLowerCase();
+                
+                if (query.length < 2) {
+                    this.hideSuggestions();
+                    return;
+                }
+
+                this.suggestionTimeout = setTimeout(() => {
+                    const matches = this.commonSuggestions.filter(suggestion => 
+                        suggestion.toLowerCase().includes(query)
+                    ).slice(0, 5);
+
+                    if (matches.length > 0) {
+                        this.displaySuggestions(matches);
+                    } else {
+                        this.hideSuggestions();
+                    }
+                }, 300);
+            }
+
+            displaySuggestions(suggestions) {
+                this.searchSuggestions.innerHTML = '';
+                suggestions.forEach(suggestion => {
+                    const div = document.createElement('div');
+                    div.className = 'search-suggestion';
+                    div.textContent = suggestion;
+                    div.addEventListener('click', () => {
+                        this.messageInput.value = suggestion;
+                        this.hideSuggestions();
+                        this.adjustTextareaHeight();
+                        this.updateSendButtonState();
+                        this.messageInput.focus();
+                    });
+                    this.searchSuggestions.appendChild(div);
+                });
+                this.searchSuggestions.style.display = 'block';
+            }
+
+            hideSuggestions() {
+                this.searchSuggestions.style.display = 'none';
+            }
+
+            showNotification(message, type = 'info', duration = 4000) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `
+                    ${message}
+                    <button class="notification-close" onclick="this.parentElement.remove()">×</button>
+                `;
+                
+                this.notificationsContainer.appendChild(notification);
+                
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, duration);
+            }
+
             async sendMessage() {
                 const text = this.messageInput.value.trim();
                 if (!text || this.isTyping) return;
@@ -913,6 +1327,7 @@
                 this.messageInput.value = '';
                 this.adjustTextareaHeight();
                 this.updateSendButtonState();
+                this.hideSuggestions();
 
                 // Show typing indicator
                 this.showTyping();
@@ -942,6 +1357,7 @@
                     console.error('Error:', error);
                     this.hideTyping();
                     this.addMessage('Sorry, I encountered an error. Please try again.', 'bot', true);
+                    this.showNotification('Connection error. Please check your internet.', 'error');
                 }
             }
 
@@ -975,11 +1391,62 @@
                 // Format message with basic markdown-like support
                 content.innerHTML = this.formatMessage(text);
                 
+                // Add timestamp
+                const timestamp = document.createElement('div');
+                timestamp.className = 'message-timestamp';
+                timestamp.textContent = new Date().toLocaleTimeString();
+                content.appendChild(timestamp);
+                
+                // Add message actions for bot messages
+                if (sender === 'bot') {
+                    const actions = document.createElement('div');
+                    actions.className = 'message-actions';
+                    actions.innerHTML = `
+                        <button class="action-btn" onclick="copyMessage(this)" title="Copy message">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="action-btn" onclick="shareMessage(this)" title="Share message">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    `;
+                    content.appendChild(actions);
+                    
+                    // Add suggestion chips for bot responses
+                    if (!isError) {
+                        setTimeout(() => this.addSuggestionChips(messageEl), 1000);
+                    }
+                }
+                
                 messageEl.appendChild(avatar);
                 messageEl.appendChild(content);
                 
                 this.chatMessages.appendChild(messageEl);
                 this.scrollToBottom();
+            }
+
+            addSuggestionChips(messageEl) {
+                const suggestions = [
+                    "Tell me more",
+                    "What else can you help with?",
+                    "Any tips?",
+                    "Thanks!"
+                ];
+                
+                const chipContainer = document.createElement('div');
+                chipContainer.className = 'suggestion-chips';
+                
+                suggestions.slice(0, 2).forEach(suggestion => {
+                    const chip = document.createElement('span');
+                    chip.className = 'suggestion-chip';
+                    chip.textContent = suggestion;
+                    chip.onclick = () => {
+                        this.messageInput.value = suggestion;
+                        this.sendMessage();
+                    };
+                    chipContainer.appendChild(chip);
+                });
+                
+                messageEl.appendChild(chipContainer);
             }
 
             formatMessage(text) {
@@ -1009,63 +1476,178 @@
                     this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
                 }, 100);
             }
+
+            toggleTheme(save = true) {
+                const body = document.body;
+                const container = document.querySelector('.chat-container');
+                const button = document.querySelector('.theme-toggle i');
+                
+                body.classList.toggle('dark-theme');
+                container.classList.toggle('dark-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    button.className = 'fas fa-sun';
+                    if (save) localStorage.setItem('buddyTheme', 'dark');
+                } else {
+                    button.className = 'fas fa-moon';
+                    if (save) localStorage.setItem('buddyTheme', 'light');
+                }
+            }
         }
 
-        // Enhanced feature interaction functions
+        // Global utility functions
+        function toggleTheme() {
+            if (chatUI) {
+                chatUI.toggleTheme();
+            }
+        }
+
+        function toggleVoiceRecording() {
+            if (!chatUI.recognition) {
+                chatUI.showNotification('Voice recognition not supported in this browser', 'error');
+                return;
+            }
+
+            if (chatUI.isRecording) {
+                chatUI.stopVoiceRecording();
+            } else {
+                chatUI.startVoiceRecording();
+            }
+        }
+
+        function copyMessage(button) {
+            const messageContent = button.closest('.message-content');
+            const text = messageContent.querySelector('div:not(.message-actions):not(.message-timestamp)').textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                chatUI.showNotification('Message copied to clipboard!', 'success');
+            }).catch(() => {
+                chatUI.showNotification('Failed to copy message', 'error');
+            });
+        }
+
+        function shareMessage(button) {
+            const messageContent = button.closest('.message-content');
+            const text = messageContent.querySelector('div:not(.message-actions):not(.message-timestamp)').textContent;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'BUDDY AI Response',
+                    text: text
+                });
+            } else {
+                copyMessage(button);
+                chatUI.showNotification('Message copied for sharing!', 'success');
+            }
+        }
+
+        // Add voice recording methods to BuddyChatUI class
+        BuddyChatUI.prototype.startVoiceRecording = function() {
+            if (this.isRecording) return;
+            
+            this.isRecording = true;
+            const voiceButton = document.getElementById('voiceButton');
+            voiceButton.classList.add('active');
+            voiceButton.querySelector('i').className = 'fas fa-stop';
+            
+            this.recognition.start();
+            this.showNotification('Voice recording started. Speak now...', 'info');
+        };
+
+        BuddyChatUI.prototype.stopVoiceRecording = function() {
+            if (!this.isRecording) return;
+            
+            this.isRecording = false;
+            const voiceButton = document.getElementById('voiceButton');
+            voiceButton.classList.remove('active');
+            voiceButton.querySelector('i').className = 'fas fa-microphone';
+            
+            if (this.recognition) {
+                this.recognition.stop();
+            }
+        };
+
+        // Enhanced feature interaction functions with usage tracking
         const featureQueries = {
             weather: [
                 "What's the weather in Chennai?",
                 "Today's weather forecast",
                 "Weather conditions now",
-                "Tomorrow's weather"
+                "Tomorrow's weather",
+                "Weekly weather outlook",
+                "Is it going to rain today?"
             ],
             tasks: [
                 "Show my tasks",
                 "Add task: Call the dentist",
                 "Create new to-do list",
-                "What tasks do I have?"
+                "What tasks do I have?",
+                "Mark task as complete",
+                "Set reminder for tomorrow"
             ],
             calendar: [
                 "Show my calendar",
                 "What's my schedule today?",
                 "Add meeting tomorrow at 2 PM",
-                "Free time this week"
+                "Free time this week",
+                "Schedule appointment",
+                "Cancel meeting"
             ],
             datetime: [
                 "What time is it?",
                 "Current date and time",
                 "Time in different timezones",
-                "Days until weekend"
+                "Days until weekend",
+                "Time in Tokyo",
+                "Set an alarm for 7 AM"
             ],
             entertainment: [
                 "Tell me a programming joke",
                 "Inspire me with a quote",
                 "Random fun fact",
-                "Motivational quote"
+                "Motivational quote",
+                "Tell me a story",
+                "What's trending in tech?"
             ],
             notes: [
                 "Show my notes",
                 "Save note: Meeting summary",
                 "Find notes about project",
-                "Create new note"
+                "Create new note",
+                "Search my notes",
+                "Delete old notes"
             ],
             contacts: [
                 "Show my contacts",
                 "Add contact: Sarah Johnson",
                 "Find John's phone number",
-                "Contact management"
+                "Contact management",
+                "Update contact info",
+                "Group contacts by category"
             ],
             ai: [
                 "What can you help me with?",
                 "Explain artificial intelligence",
                 "Help me plan my day",
-                "Research latest tech trends"
+                "Research latest tech trends",
+                "Solve this problem",
+                "Give me advice"
             ]
         };
+
+        // Usage tracking
+        let featureUsage = JSON.parse(localStorage.getItem('buddyFeatureUsage') || '{}');
 
         function handleFeatureClick(category) {
             const queries = featureQueries[category];
             const randomQuery = queries[Math.floor(Math.random() * queries.length)];
+            
+            // Update usage count
+            featureUsage[category] = (featureUsage[category] || 0) + 1;
+            localStorage.setItem('buddyFeatureUsage', JSON.stringify(featureUsage));
+            
+            // Update usage indicator
+            updateUsageIndicator(category);
             
             // Add visual feedback
             const card = event.currentTarget;
@@ -1077,8 +1659,18 @@
             // Send the query
             sendQuickMessage(randomQuery);
             
-            // Track usage (optional analytics)
-            console.log(`Feature used: ${category} - Query: ${randomQuery}`);
+            // Show notification
+            chatUI.showNotification(`${category.charAt(0).toUpperCase() + category.slice(1)} feature activated!`, 'success');
+        }
+
+        function updateUsageIndicator(category) {
+            const card = document.querySelector(`[data-category="${category}"]`);
+            if (card) {
+                const indicator = card.querySelector('.feature-usage-indicator');
+                if (indicator) {
+                    indicator.textContent = featureUsage[category] || 0;
+                }
+            }
         }
 
         function showFeaturePreview(category) {
@@ -1086,14 +1678,14 @@
             const example = card.querySelector('.feature-example');
             
             // Add glow effect
-            card.style.boxShadow = '0 0 20px rgba(42, 117, 255, 0.3)';
+            card.style.boxShadow = '0 0 25px rgba(42, 117, 255, 0.4)';
             
-            // Show example queries with typing effect
+            // Show random example with animation
             if (example && featureQueries[category]) {
                 const queries = featureQueries[category];
                 const randomQuery = queries[Math.floor(Math.random() * queries.length)];
                 example.style.opacity = '1';
-                example.style.transform = 'translateY(0)';
+                example.style.transform = 'translateY(0) scale(1.05)';
             }
         }
 
@@ -1108,73 +1700,78 @@
             }
         }
 
-        // Keyboard shortcuts for features
+        // Enhanced keyboard shortcuts
         document.addEventListener('keydown', (e) => {
-            if (e.altKey) { // Alt + Letter for feature shortcuts
-                switch(e.key.toLowerCase()) {
-                    case 'w':
-                        e.preventDefault();
-                        handleFeatureClick('weather');
-                        break;
-                    case 't':
-                        e.preventDefault();
-                        handleFeatureClick('tasks');
-                        break;
-                    case 'c':
-                        e.preventDefault();
-                        handleFeatureClick('calendar');
-                        break;
-                    case 'd':
-                        e.preventDefault();
-                        handleFeatureClick('datetime');
-                        break;
-                    case 'e':
-                        e.preventDefault();
-                        handleFeatureClick('entertainment');
-                        break;
-                    case 'n':
-                        e.preventDefault();
-                        handleFeatureClick('notes');
-                        break;
-                    case 'o':
-                        e.preventDefault();
-                        handleFeatureClick('contacts');
-                        break;
-                    case 'a':
-                        e.preventDefault();
-                        handleFeatureClick('ai');
-                        break;
+            if (e.altKey) {
+                const shortcuts = {
+                    'w': 'weather', 't': 'tasks', 'c': 'calendar', 'd': 'datetime',
+                    'e': 'entertainment', 'n': 'notes', 'o': 'contacts', 'a': 'ai'
+                };
+                
+                if (shortcuts[e.key.toLowerCase()]) {
+                    e.preventDefault();
+                    const category = shortcuts[e.key.toLowerCase()];
+                    handleFeatureClick(category);
                 }
+            }
+            
+            // ESC to stop voice recording
+            if (e.key === 'Escape' && chatUI.isRecording) {
+                chatUI.stopVoiceRecording();
             }
         });
 
-        // Quick message function (enhanced)
+        // Enhanced quick message function
         function sendQuickMessage(message) {
             const input = document.getElementById('messageInput');
             input.value = message;
             
             // Add typing animation
             input.style.transform = 'scale(1.05)';
+            input.style.background = 'rgba(42, 117, 255, 0.1)';
+            
             setTimeout(() => {
                 input.style.transform = '';
+                input.style.background = '';
                 chatUI.sendMessage();
-            }, 200);
+            }, 300);
         }
 
         // Initialize chat UI when DOM is loaded
         let chatUI;
         document.addEventListener('DOMContentLoaded', () => {
             chatUI = new BuddyChatUI();
+            
+            // Load usage indicators
+            Object.keys(featureUsage).forEach(category => {
+                updateUsageIndicator(category);
+            });
+            
+            // Welcome notification
+            setTimeout(() => {
+                chatUI.showNotification('Welcome to BUDDY AI! Try voice commands or click feature cards.', 'success', 6000);
+            }, 1000);
         });
 
-        // Service Worker for offline support (optional)
+        // Service Worker for offline support
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(() => {
+                navigator.serviceWorker.register('/static/sw.js').catch(() => {
                     console.log('Service Worker registration failed');
                 });
             });
         }
+
+        // Auto-save conversation
+        setInterval(() => {
+            const messages = Array.from(document.querySelectorAll('.message')).map(msg => ({
+                type: msg.classList.contains('user') ? 'user' : 'bot',
+                content: msg.querySelector('.message-content').textContent,
+                timestamp: new Date().toISOString()
+            }));
+            
+            localStorage.setItem('buddyConversation', JSON.stringify(messages.slice(-50))); // Keep last 50 messages
+        }, 30000); // Save every 30 seconds
     </script>
 </body>
 </html>
