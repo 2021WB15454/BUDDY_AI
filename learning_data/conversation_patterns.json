@@ -1,0 +1,53 @@
+{
+  "general_conversation": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "joke": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "openai": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "weather": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "identity": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "learning": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "weather_no_location": [
+    "what's the weather"
+  ],
+  "health": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "datetime": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  }
+}

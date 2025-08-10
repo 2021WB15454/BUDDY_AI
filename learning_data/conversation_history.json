@@ -1,0 +1,2798 @@
+[
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T18:05:38.845889",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "who are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:13:44.768266",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "who are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:18:06.848361",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:22:15.607675",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:26:08.930549",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "joke",
+    "response": "",
+    "timestamp": "2025-08-09T18:26:16.395229",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "joke"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:28:24.943614",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "hoe are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:40:15.883076",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "hoe are you"
+    }
+  },
+  {
+    "user_input": "gi",
+    "response": "",
+    "timestamp": "2025-08-09T18:40:18.471874",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "gi"
+    }
+  },
+  {
+    "user_input": "gemini",
+    "response": "",
+    "timestamp": "2025-08-09T18:40:21.121041",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "gemini"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:42:05.856716",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:46:42.562162",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "where are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:46:50.998489",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "where are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:49:07.179657",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "where are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:49:13.069970",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "where are you"
+    }
+  },
+  {
+    "user_input": "weather in agra",
+    "response": "",
+    "timestamp": "2025-08-09T18:49:22.185756",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "agra"
+      },
+      "text": "weather in agra"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T18:53:01.587464",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "no",
+    "response": "",
+    "timestamp": "2025-08-09T18:53:03.799256",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "no"
+    }
+  },
+  {
+    "user_input": "joke",
+    "response": "",
+    "timestamp": "2025-08-09T18:53:05.788831",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "joke"
+    }
+  },
+  {
+    "user_input": "help",
+    "response": "",
+    "timestamp": "2025-08-09T18:53:08.132714",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "help"
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T19:02:29.666946",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T19:04:05.894307",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T19:06:50.943329",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T19:08:38.501286",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T19:09:14.985815",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:11:31.564483",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:19:00.513660",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:21:35.012550",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T19:22:02.132526",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "who are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:22:21.825036",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "who are you"
+    }
+  },
+  {
+    "user_input": "weather in London",
+    "response": "",
+    "timestamp": "2025-08-09T19:23:34.966801",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "London"
+      },
+      "text": "weather in London"
+    }
+  },
+  {
+    "user_input": "hello BUDDY",
+    "response": "",
+    "timestamp": "2025-08-09T19:27:51.484355",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "hello BUDDY"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:28:31.892315",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "joke",
+    "response": "",
+    "timestamp": "2025-08-09T19:28:36.527066",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "joke"
+    }
+  },
+  {
+    "user_input": "haha",
+    "response": "",
+    "timestamp": "2025-08-09T19:28:42.919490",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "haha"
+    }
+  },
+  {
+    "user_input": "weather in chennai",
+    "response": "",
+    "timestamp": "2025-08-09T19:28:53.422368",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "chennai"
+      },
+      "text": "weather in chennai"
+    }
+  },
+  {
+    "user_input": "who is google",
+    "response": "",
+    "timestamp": "2025-08-09T19:29:00.871653",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who is google"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:29:37.382089",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:29:46.764340",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "do a remainder",
+    "response": "",
+    "timestamp": "2025-08-09T19:30:33.091916",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "do a remainder"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:35:51.449833",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "assistant",
+    "response": "",
+    "timestamp": "2025-08-09T19:36:01.197329",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "assistant"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:40:57.632739",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:43:10.851420",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "fastest bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:43:20.955842",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "fastest bike in india"
+    }
+  },
+  {
+    "user_input": "do a remainder",
+    "response": "",
+    "timestamp": "2025-08-09T19:44:10.451675",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "do a remainder"
+    }
+  },
+  {
+    "user_input": "assistant",
+    "response": "",
+    "timestamp": "2025-08-09T19:44:20.331237",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "assistant"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:46:04.883353",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:46:14.499579",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:47:45.583967",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:48:00.266016",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:48:47.254201",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:50:15.628618",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:51:31.326586",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:52:23.804373",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:53:38.326356",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T19:53:55.421135",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "do a remainder",
+    "response": "",
+    "timestamp": "2025-08-09T19:54:09.923694",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "do a remainder"
+    }
+  },
+  {
+    "user_input": "assistant",
+    "response": "",
+    "timestamp": "2025-08-09T19:54:25.604060",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "assistant"
+    }
+  },
+  {
+    "user_input": "how are you",
+    "response": "",
+    "timestamp": "2025-08-09T19:55:52.913393",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T19:55:58.010000",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "who bild you",
+    "response": "",
+    "timestamp": "2025-08-09T19:56:21.483369",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who bild you"
+    }
+  },
+  {
+    "user_input": "who bild you",
+    "response": "",
+    "timestamp": "2025-08-09T20:02:18.442289",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who bild you"
+    }
+  },
+  {
+    "user_input": "who bild you",
+    "response": "",
+    "timestamp": "2025-08-09T20:03:21.619420",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who bild you"
+    }
+  },
+  {
+    "user_input": "who are you",
+    "response": "",
+    "timestamp": "2025-08-09T20:03:30.996155",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who are you"
+    }
+  },
+  {
+    "user_input": "what is your name",
+    "response": "",
+    "timestamp": "2025-08-09T20:03:55.104284",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what is your name"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T20:04:06.350408",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "which is faster bike in india",
+    "response": "",
+    "timestamp": "2025-08-09T20:04:19.812867",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "which is faster bike in india"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T20:04:35.137582",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "weather in chennai",
+    "response": "",
+    "timestamp": "2025-08-09T20:04:52.692580",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "chennai"
+      },
+      "text": "weather in chennai"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T20:06:13.030138",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "who am i",
+    "response": "",
+    "timestamp": "2025-08-09T20:06:20.475275",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who am i"
+    }
+  },
+  {
+    "user_input": "how do you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:06:49.681864",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how do you developed"
+    }
+  },
+  {
+    "user_input": "how do you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:40:46.588423",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how do you developed"
+    }
+  },
+  {
+    "user_input": "how do you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:41:34.746210",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how do you developed"
+    }
+  },
+  {
+    "user_input": "how were you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:41:40.655000",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how were you developed"
+    }
+  },
+  {
+    "user_input": "tell me about your development process",
+    "response": "",
+    "timestamp": "2025-08-09T20:41:46.190593",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "tell me about your development process"
+    }
+  },
+  {
+    "user_input": "how you were trained",
+    "response": "",
+    "timestamp": "2025-08-09T20:41:51.554202",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how you were trained"
+    }
+  },
+  {
+    "user_input": "what is machine learning",
+    "response": "",
+    "timestamp": "2025-08-09T20:41:57.156274",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "what is machine learning"
+    }
+  },
+  {
+    "user_input": "what is machine learning",
+    "response": "",
+    "timestamp": "2025-08-09T20:42:02.823466",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "what is machine learning"
+    }
+  },
+  {
+    "user_input": "what is quantum computing",
+    "response": "",
+    "timestamp": "2025-08-09T20:42:09.737898",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is quantum computing"
+    }
+  },
+  {
+    "user_input": "how do you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:42:54.722363",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how do you developed"
+    }
+  },
+  {
+    "user_input": "who did you develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:43:37.670573",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who did you develop"
+    }
+  },
+  {
+    "user_input": "what you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:45:07.796642",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what you developed"
+    }
+  },
+  {
+    "user_input": "what you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:46:58.589846",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what you developed"
+    }
+  },
+  {
+    "user_input": "what you developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:47:55.628839",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what you developed"
+    }
+  },
+  {
+    "user_input": "what did you develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:48:01.377010",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what did you develop"
+    }
+  },
+  {
+    "user_input": "what were you developed for",
+    "response": "",
+    "timestamp": "2025-08-09T20:48:29.790018",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what were you developed for"
+    }
+  },
+  {
+    "user_input": "what is artificial intelligence",
+    "response": "",
+    "timestamp": "2025-08-09T20:48:43.640670",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is artificial intelligence"
+    }
+  },
+  {
+    "user_input": "how should i deveop you",
+    "response": "",
+    "timestamp": "2025-08-09T20:50:05.898471",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how should i deveop you"
+    }
+  },
+  {
+    "user_input": "how should i deveop you",
+    "response": "",
+    "timestamp": "2025-08-09T20:52:17.741529",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how should i deveop you"
+    }
+  },
+  {
+    "user_input": "how should i deveop you",
+    "response": "",
+    "timestamp": "2025-08-09T20:53:20.530611",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how should i deveop you"
+    }
+  },
+  {
+    "user_input": "how can i improve you",
+    "response": "",
+    "timestamp": "2025-08-09T20:53:27.629210",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can i improve you"
+    }
+  },
+  {
+    "user_input": "how to develop you",
+    "response": "",
+    "timestamp": "2025-08-09T20:53:33.389149",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how to develop you"
+    }
+  },
+  {
+    "user_input": "enhance you",
+    "response": "",
+    "timestamp": "2025-08-09T20:53:39.496030",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "enhance you"
+    }
+  },
+  {
+    "user_input": "what is machine learning",
+    "response": "",
+    "timestamp": "2025-08-09T20:53:49.093859",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "what is machine learning"
+    }
+  },
+  {
+    "user_input": "explain neural networks",
+    "response": "",
+    "timestamp": "2025-08-09T20:54:00.735366",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "explain neural networks"
+    }
+  },
+  {
+    "user_input": "what did you develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:55:03.776999",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what did you develop"
+    }
+  },
+  {
+    "user_input": "what did u develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:55:18.967047",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what did u develop"
+    }
+  },
+  {
+    "user_input": "what did u develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:58:37.621142",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what did u develop"
+    }
+  },
+  {
+    "user_input": "what did u develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:58:44.385432",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what did u develop"
+    }
+  },
+  {
+    "user_input": "what u developed",
+    "response": "",
+    "timestamp": "2025-08-09T20:58:50.798193",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what u developed"
+    }
+  },
+  {
+    "user_input": "how can i improve u",
+    "response": "",
+    "timestamp": "2025-08-09T20:58:59.049641",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can i improve u"
+    }
+  },
+  {
+    "user_input": "enhance u",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:04.809623",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "enhance u"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:10.624083",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "explain quantum physics",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:16.105164",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "explain quantum physics"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:31.894306",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "who built you",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:31.963740",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who built you"
+    }
+  },
+  {
+    "user_input": "what did u develop",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:32.018650",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what did u develop"
+    }
+  },
+  {
+    "user_input": "how can i improve u",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:32.067443",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can i improve u"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T20:59:32.114058",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "how did u deveop",
+    "response": "",
+    "timestamp": "2025-08-09T21:00:08.993583",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how did u deveop"
+    }
+  },
+  {
+    "user_input": "how did u deveop",
+    "response": "",
+    "timestamp": "2025-08-09T21:02:04.931116",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how did u deveop"
+    }
+  },
+  {
+    "user_input": "how did u deveop",
+    "response": "",
+    "timestamp": "2025-08-09T21:02:14.611978",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how did u deveop"
+    }
+  },
+  {
+    "user_input": "how did you deveop",
+    "response": "",
+    "timestamp": "2025-08-09T21:02:14.672496",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how did you deveop"
+    }
+  },
+  {
+    "user_input": "how u deveop",
+    "response": "",
+    "timestamp": "2025-08-09T21:02:14.724524",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how u deveop"
+    }
+  },
+  {
+    "user_input": "how did u develop",
+    "response": "",
+    "timestamp": "2025-08-09T21:02:14.777179",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how did u develop"
+    }
+  },
+  {
+    "user_input": "can you develop",
+    "response": "",
+    "timestamp": "2025-08-09T21:03:08.564263",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "can you develop"
+    }
+  },
+  {
+    "user_input": "who r u",
+    "response": "",
+    "timestamp": "2025-08-09T21:03:17.377966",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who r u"
+    }
+  },
+  {
+    "user_input": "how r u",
+    "response": "",
+    "timestamp": "2025-08-09T21:03:25.852750",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how r u"
+    }
+  },
+  {
+    "user_input": "what shrihari did ?",
+    "response": "",
+    "timestamp": "2025-08-09T21:03:36.537949",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what shrihari did ?"
+    }
+  },
+  {
+    "user_input": "your developer shrihari",
+    "response": "",
+    "timestamp": "2025-08-09T21:03:54.301817",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "your developer shrihari"
+    }
+  },
+  {
+    "user_input": "i want u r developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:04:13.479172",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "i want u r developer"
+    }
+  },
+  {
+    "user_input": "i want u r developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:03.545431",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "i want u r developer"
+    }
+  },
+  {
+    "user_input": "i want u r developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:12.279606",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "i want u r developer"
+    }
+  },
+  {
+    "user_input": "i want your developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:12.336146",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "i want your developer"
+    }
+  },
+  {
+    "user_input": "i want ur developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:12.388368",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "i want ur developer"
+    }
+  },
+  {
+    "user_input": "ur developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:12.445439",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "ur developer"
+    }
+  },
+  {
+    "user_input": "your developer",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:12.497619",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "your developer"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:28.378868",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:28.427974",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "what's the weather",
+    "response": "",
+    "timestamp": "2025-08-09T21:07:28.465552",
+    "metadata": {
+      "intent": "weather",
+      "entities": {},
+      "text": "what's the weather"
+    }
+  },
+  {
+    "user_input": "developed by who",
+    "response": "",
+    "timestamp": "2025-08-09T21:08:03.481979",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "developed by who"
+    }
+  },
+  {
+    "user_input": "u r developed",
+    "response": "",
+    "timestamp": "2025-08-09T21:08:18.528968",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "u r developed"
+    }
+  },
+  {
+    "user_input": "u r developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:08:29.863153",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "u r developed by"
+    }
+  },
+  {
+    "user_input": "u r developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:37.957133",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "u r developed by"
+    }
+  },
+  {
+    "user_input": "u r developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.411955",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "u r developed by"
+    }
+  },
+  {
+    "user_input": "you are developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.549282",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "you are developed by"
+    }
+  },
+  {
+    "user_input": "ur developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.616777",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "ur developed by"
+    }
+  },
+  {
+    "user_input": "developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.662198",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "developed by"
+    }
+  },
+  {
+    "user_input": "u r created by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.708703",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "u r created by"
+    }
+  },
+  {
+    "user_input": "created by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.756495",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "created by"
+    }
+  },
+  {
+    "user_input": "u r built by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.806871",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "u r built by"
+    }
+  },
+  {
+    "user_input": "built by",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:45.859472",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "built by"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:54.940901",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:54.995276",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "what's the weather in London",
+    "response": "",
+    "timestamp": "2025-08-09T21:12:55.034698",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "London"
+      },
+      "text": "what's the weather in London"
+    }
+  },
+  {
+    "user_input": "why should you get developed",
+    "response": "",
+    "timestamp": "2025-08-09T21:13:28.162338",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "why should you get developed"
+    }
+  },
+  {
+    "user_input": "who r u",
+    "response": "",
+    "timestamp": "2025-08-09T21:13:38.998628",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who r u"
+    }
+  },
+  {
+    "user_input": "what is your speacility",
+    "response": "",
+    "timestamp": "2025-08-09T21:13:57.448440",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is your speacility"
+    }
+  },
+  {
+    "user_input": "what is your speacility",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:16.687952",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what is your speacility"
+    }
+  },
+  {
+    "user_input": "what is your speacility",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.184187",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what is your speacility"
+    }
+  },
+  {
+    "user_input": "what is your specialty",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.247413",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what is your specialty"
+    }
+  },
+  {
+    "user_input": "what are your specialties",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.298608",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what are your specialties"
+    }
+  },
+  {
+    "user_input": "what do you specialize in",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.349245",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what do you specialize in"
+    }
+  },
+  {
+    "user_input": "what is your expertise",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.395299",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what is your expertise"
+    }
+  },
+  {
+    "user_input": "what are you good at",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:28.452313",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what are you good at"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:37.263431",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:37.311842",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "what's the weather in London",
+    "response": "",
+    "timestamp": "2025-08-09T21:16:37.345556",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "London"
+      },
+      "text": "what's the weather in London"
+    }
+  },
+  {
+    "user_input": "what r u abilities",
+    "response": "",
+    "timestamp": "2025-08-09T21:17:12.147669",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what r u abilities"
+    }
+  },
+  {
+    "user_input": "how can u describe u r selfs",
+    "response": "",
+    "timestamp": "2025-08-09T21:17:23.601837",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how can u describe u r selfs"
+    }
+  },
+  {
+    "user_input": "how can u describe u r selfs",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:44.345003",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can u describe u r selfs"
+    }
+  },
+  {
+    "user_input": "how can u describe u r selfs",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:52.970193",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can u describe u r selfs"
+    }
+  },
+  {
+    "user_input": "describe yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:53.021942",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "describe yourself"
+    }
+  },
+  {
+    "user_input": "describe urself",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:53.071979",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "describe urself"
+    }
+  },
+  {
+    "user_input": "how would you describe yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:53.127425",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how would you describe yourself"
+    }
+  },
+  {
+    "user_input": "how do you describe yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:53.183085",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how do you describe yourself"
+    }
+  },
+  {
+    "user_input": "how can you describe yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:20:53.238909",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how can you describe yourself"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T21:21:12.794307",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T21:21:12.873255",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "what's the weather in Tokyo",
+    "response": "",
+    "timestamp": "2025-08-09T21:21:12.924517",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "Tokyo"
+      },
+      "text": "what's the weather in Tokyo"
+    }
+  },
+  {
+    "user_input": "who developing you",
+    "response": "",
+    "timestamp": "2025-08-09T21:23:14.143989",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who developing you"
+    }
+  },
+  {
+    "user_input": "how you optimize u r self",
+    "response": "",
+    "timestamp": "2025-08-09T21:23:29.925992",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how you optimize u r self"
+    }
+  },
+  {
+    "user_input": "how do you optimize yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:26:33.911639",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how do you optimize yourself"
+    }
+  },
+  {
+    "user_input": "how do you improve",
+    "response": "",
+    "timestamp": "2025-08-09T21:26:39.259636",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how do you improve"
+    }
+  },
+  {
+    "user_input": "how are you optimized",
+    "response": "",
+    "timestamp": "2025-08-09T21:26:42.797337",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how are you optimized"
+    }
+  },
+  {
+    "user_input": "self optimization",
+    "response": "",
+    "timestamp": "2025-08-09T21:26:42.855306",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "self optimization"
+    }
+  },
+  {
+    "user_input": "your optimization",
+    "response": "",
+    "timestamp": "2025-08-09T21:26:48.405625",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "your optimization"
+    }
+  },
+  {
+    "user_input": "how do you optimize yourself",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:05.016268",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how do you optimize yourself"
+    }
+  },
+  {
+    "user_input": "how are you optimized",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:05.085068",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "how are you optimized"
+    }
+  },
+  {
+    "user_input": "your optimization",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:05.135230",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "your optimization"
+    }
+  },
+  {
+    "user_input": "self optimization",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:05.178126",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "self optimization"
+    }
+  },
+  {
+    "user_input": "how do you learn",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:05.238208",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "how do you learn"
+    }
+  },
+  {
+    "user_input": "optimization process",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:43.597203",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "optimization process"
+    }
+  },
+  {
+    "user_input": "learning process",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:43.677301",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "learning process"
+    }
+  },
+  {
+    "user_input": "who created you",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:43.734450",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who created you"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:43.784245",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "what's the weather",
+    "response": "",
+    "timestamp": "2025-08-09T21:30:43.827125",
+    "metadata": {
+      "intent": "weather",
+      "entities": {},
+      "text": "what's the weather"
+    }
+  },
+  {
+    "user_input": "which is your code",
+    "response": "",
+    "timestamp": "2025-08-09T21:32:11.464167",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "which is your code"
+    }
+  },
+  {
+    "user_input": "code was developed for you by",
+    "response": "",
+    "timestamp": "2025-08-09T21:56:33.279666",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "code was developed for you by"
+    }
+  },
+  {
+    "user_input": "u r code was developed by",
+    "response": "",
+    "timestamp": "2025-08-09T21:58:28.315930",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "u r code was developed by"
+    }
+  },
+  {
+    "user_input": "who are you",
+    "response": "",
+    "timestamp": "2025-08-09T21:58:35.233678",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who are you"
+    }
+  },
+  {
+    "user_input": "where is u r birthplace",
+    "response": "",
+    "timestamp": "2025-08-09T21:58:45.300340",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "where is u r birthplace"
+    }
+  },
+  {
+    "user_input": "when did you born",
+    "response": "",
+    "timestamp": "2025-08-09T22:04:50.016271",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "when did you born"
+    }
+  },
+  {
+    "user_input": "where did you birtyh",
+    "response": "",
+    "timestamp": "2025-08-09T22:06:57.050890",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "where did you birtyh"
+    }
+  },
+  {
+    "user_input": "birthday of BUDDY",
+    "response": "",
+    "timestamp": "2025-08-09T22:07:09.936398",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "birthday of BUDDY"
+    }
+  },
+  {
+    "user_input": "birthtime of buddy",
+    "response": "",
+    "timestamp": "2025-08-09T22:09:12.227547",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "birthtime of buddy"
+    }
+  },
+  {
+    "user_input": "BUDDY AI assistant",
+    "response": "",
+    "timestamp": "2025-08-09T22:09:25.658915",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "BUDDY AI assistant"
+    }
+  },
+  {
+    "user_input": "BUDDYwas developed by",
+    "response": "",
+    "timestamp": "2025-08-09T22:11:58.262219",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "BUDDYwas developed by"
+    }
+  },
+  {
+    "user_input": "Who u r helping now",
+    "response": "",
+    "timestamp": "2025-08-09T22:12:09.423995",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "Who u r helping now"
+    }
+  },
+  {
+    "user_input": "chat",
+    "response": "",
+    "timestamp": "2025-08-09T22:12:14.390149",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "chat"
+    }
+  },
+  {
+    "user_input": "chat",
+    "response": "",
+    "timestamp": "2025-08-09T22:13:32.656534",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "chat"
+    }
+  },
+  {
+    "user_input": "joke",
+    "response": "",
+    "timestamp": "2025-08-09T22:13:45.907510",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "joke"
+    }
+  },
+  {
+    "user_input": "what",
+    "response": "",
+    "timestamp": "2025-08-09T22:13:50.324123",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what"
+    }
+  },
+  {
+    "user_input": "what r u r capabilitis",
+    "response": "",
+    "timestamp": "2025-08-09T22:15:52.089158",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what r u r capabilitis"
+    }
+  },
+  {
+    "user_input": "favour",
+    "response": "",
+    "timestamp": "2025-08-09T22:15:57.179365",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "favour"
+    }
+  },
+  {
+    "user_input": "who r u",
+    "response": "",
+    "timestamp": "2025-08-09T22:18:56.598685",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "who r u"
+    }
+  },
+  {
+    "user_input": "what r u",
+    "response": "",
+    "timestamp": "2025-08-09T22:19:07.773133",
+    "metadata": {
+      "intent": "identity",
+      "entities": {},
+      "text": "what r u"
+    }
+  },
+  {
+    "user_input": "howri",
+    "response": "",
+    "timestamp": "2025-08-09T22:19:13.824781",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "howri"
+    }
+  },
+  {
+    "user_input": "dengue remedy",
+    "response": "",
+    "timestamp": "2025-08-09T22:21:49.925076",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "dengue remedy"
+    }
+  },
+  {
+    "user_input": "dengue remedy",
+    "response": "",
+    "timestamp": "2025-08-09T22:24:18.191259",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "dengue remedy"
+    }
+  },
+  {
+    "user_input": "dengue remedy",
+    "response": "",
+    "timestamp": "2025-08-09T22:26:29.826075",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "dengue remedy"
+    }
+  },
+  {
+    "user_input": "give me any solutions",
+    "response": "",
+    "timestamp": "2025-08-09T22:26:50.156083",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "give me any solutions"
+    }
+  },
+  {
+    "user_input": "what is dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:30:07.811371",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is dengue"
+    }
+  },
+  {
+    "user_input": "what is maleria",
+    "response": "",
+    "timestamp": "2025-08-09T22:33:09.463368",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is maleria"
+    }
+  },
+  {
+    "user_input": "what is viral fever",
+    "response": "",
+    "timestamp": "2025-08-09T22:34:52.329359",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is viral fever"
+    }
+  },
+  {
+    "user_input": "what is ameoba",
+    "response": "",
+    "timestamp": "2025-08-09T22:36:34.279901",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is ameoba"
+    }
+  },
+  {
+    "user_input": "what is dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:36:43.807474",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is dengue"
+    }
+  },
+  {
+    "user_input": "what is maleria",
+    "response": "",
+    "timestamp": "2025-08-09T22:36:49.743749",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is maleria"
+    }
+  },
+  {
+    "user_input": "what is maleria",
+    "response": "",
+    "timestamp": "2025-08-09T22:37:03.843276",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "what is maleria"
+    }
+  },
+  {
+    "user_input": "how can viral fever be treATED",
+    "response": "",
+    "timestamp": "2025-08-09T22:39:54.883329",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how can viral fever be treATED"
+    }
+  },
+  {
+    "user_input": "what is viral fever",
+    "response": "",
+    "timestamp": "2025-08-09T22:47:31.530023",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is viral fever"
+    }
+  },
+  {
+    "user_input": "symptoms of dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:53:13.020144",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "symptoms of dengue"
+    }
+  },
+  {
+    "user_input": "what is dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:54:20.004386",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is dengue"
+    }
+  },
+  {
+    "user_input": "what is dengue fever?",
+    "response": "",
+    "timestamp": "2025-08-09T22:58:09.030486",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is dengue fever?"
+    }
+  },
+  {
+    "user_input": "symptoms of dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:58:19.498208",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "symptoms of dengue"
+    }
+  },
+  {
+    "user_input": "symptoms of dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:59:07.201222",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "symptoms of dengue"
+    }
+  },
+  {
+    "user_input": "what is dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:59:28.352139",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is dengue"
+    }
+  },
+  {
+    "user_input": "what is dengue",
+    "response": "",
+    "timestamp": "2025-08-09T22:59:54.453485",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is dengue"
+    }
+  },
+  {
+    "user_input": "malaria symptoms",
+    "response": "",
+    "timestamp": "2025-08-09T23:00:01.410915",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "malaria symptoms"
+    }
+  },
+  {
+    "user_input": "what is malaria",
+    "response": "",
+    "timestamp": "2025-08-09T23:00:28.885153",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is malaria"
+    }
+  },
+  {
+    "user_input": "what is malaria",
+    "response": "",
+    "timestamp": "2025-08-09T23:00:46.477092",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is malaria"
+    }
+  },
+  {
+    "user_input": "what is malaria",
+    "response": "",
+    "timestamp": "2025-08-09T23:01:51.919231",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is malaria"
+    }
+  },
+  {
+    "user_input": "what is diabetes",
+    "response": "",
+    "timestamp": "2025-08-09T23:02:26.135925",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is diabetes"
+    }
+  },
+  {
+    "user_input": "diabetes symptoms",
+    "response": "",
+    "timestamp": "2025-08-09T23:02:38.186207",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "diabetes symptoms"
+    }
+  },
+  {
+    "user_input": "how is dengue treated",
+    "response": "",
+    "timestamp": "2025-08-09T23:03:07.578298",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "how is dengue treated"
+    }
+  },
+  {
+    "user_input": "how to treat malaria",
+    "response": "",
+    "timestamp": "2025-08-09T23:03:29.780849",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "how to treat malaria"
+    }
+  },
+  {
+    "user_input": "who invented coc",
+    "response": "",
+    "timestamp": "2025-08-09T23:05:15.888053",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who invented coc"
+    }
+  },
+  {
+    "user_input": "what is malaria",
+    "response": "",
+    "timestamp": "2025-08-09T23:07:45.290316",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is malaria"
+    }
+  },
+  {
+    "user_input": "in poco which mobile is good",
+    "response": "",
+    "timestamp": "2025-08-09T23:08:12.878093",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "in poco which mobile is good"
+    }
+  },
+  {
+    "user_input": "in poco which mobile is good",
+    "response": "",
+    "timestamp": "2025-08-09T23:08:43.000510",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "in poco which mobile is good"
+    }
+  },
+  {
+    "user_input": "in poco which mobile is good",
+    "response": "",
+    "timestamp": "2025-08-09T23:10:12.077959",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "in poco which mobile is good"
+    }
+  },
+  {
+    "user_input": "in poco which mobile is good",
+    "response": "",
+    "timestamp": "2025-08-09T23:10:52.242541",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "in poco which mobile is good"
+    }
+  },
+  {
+    "user_input": "best smartphone under 20000",
+    "response": "",
+    "timestamp": "2025-08-09T23:11:23.874662",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "best smartphone under 20000"
+    }
+  },
+  {
+    "user_input": "hello how are you",
+    "response": "",
+    "timestamp": "2025-08-09T23:11:48.510037",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "hello how are you"
+    }
+  },
+  {
+    "user_input": "wjat is the latest technology",
+    "response": "",
+    "timestamp": "2025-08-09T23:12:22.282537",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "wjat is the latest technology"
+    }
+  },
+  {
+    "user_input": "who developed u",
+    "response": "",
+    "timestamp": "2025-08-09T23:13:02.910239",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who developed u"
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:14:36.746607",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:14:56.654135",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:16:25.620841",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:17:02.882815",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "how is dengue caused",
+    "response": "",
+    "timestamp": "2025-08-09T23:18:26.478792",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "how is dengue caused"
+    }
+  },
+  {
+    "user_input": "how dengue virus looks",
+    "response": "",
+    "timestamp": "2025-08-09T23:18:48.251514",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "how dengue virus looks"
+    }
+  },
+  {
+    "user_input": "weather in chennai",
+    "response": "",
+    "timestamp": "2025-08-09T23:22:11.200778",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "chennai"
+      },
+      "text": "weather in chennai"
+    }
+  },
+  {
+    "user_input": "what is BITS",
+    "response": "",
+    "timestamp": "2025-08-09T23:22:20.395195",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is BITS"
+    }
+  },
+  {
+    "user_input": "Personal assistant",
+    "response": "",
+    "timestamp": "2025-08-09T23:22:36.650226",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "Personal assistant"
+    }
+  },
+  {
+    "user_input": "how can you help me",
+    "response": "",
+    "timestamp": "2025-08-09T23:22:47.595192",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how can you help me"
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:30:04.097817",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "",
+    "response": "",
+    "timestamp": "2025-08-09T23:30:28.480535",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": ""
+    }
+  },
+  {
+    "user_input": "hi",
+    "response": "",
+    "timestamp": "2025-08-10T07:24:57.723857",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "hi"
+    }
+  },
+  {
+    "user_input": "whatb you can do",
+    "response": "",
+    "timestamp": "2025-08-10T07:25:04.407283",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "whatb you can do"
+    }
+  },
+  {
+    "user_input": "AI",
+    "response": "",
+    "timestamp": "2025-08-10T07:52:56.279155",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "AI"
+    }
+  },
+  {
+    "user_input": "hi",
+    "response": "",
+    "timestamp": "2025-08-10T07:53:23.040392",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "hi"
+    }
+  },
+  {
+    "user_input": "what is the cause of dengue fever",
+    "response": "",
+    "timestamp": "2025-08-10T07:53:53.559430",
+    "metadata": {
+      "intent": "health",
+      "entities": {},
+      "text": "what is the cause of dengue fever"
+    }
+  },
+  {
+    "user_input": "what is precaution we can take",
+    "response": "",
+    "timestamp": "2025-08-10T07:54:26.027110",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is precaution we can take"
+    }
+  },
+  {
+    "user_input": "what is today",
+    "response": "",
+    "timestamp": "2025-08-10T15:41:36.177250",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "what is today"
+    }
+  },
+  {
+    "user_input": "special avout today",
+    "response": "",
+    "timestamp": "2025-08-10T15:41:45.480917",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "special avout today"
+    }
+  },
+  {
+    "user_input": "Any upcoming events",
+    "response": "",
+    "timestamp": "2025-08-10T15:41:59.641013",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "Any upcoming events"
+    }
+  },
+  {
+    "user_input": "give me a syntax for hellow world in java",
+    "response": "",
+    "timestamp": "2025-08-10T15:42:29.261064",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "give me a syntax for hellow world in java"
+    }
+  },
+  {
+    "user_input": "date",
+    "response": "",
+    "timestamp": "2025-08-10T15:42:54.141297",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "date"
+    }
+  },
+  {
+    "user_input": "date",
+    "response": "",
+    "timestamp": "2025-08-10T16:07:40.064212",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "date"
+    }
+  },
+  {
+    "user_input": "what is today",
+    "response": "",
+    "timestamp": "2025-08-10T16:07:48.699497",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "what is today"
+    }
+  },
+  {
+    "user_input": "current time",
+    "response": "",
+    "timestamp": "2025-08-10T16:07:53.820365",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "current time"
+    }
+  },
+  {
+    "user_input": "date",
+    "response": "",
+    "timestamp": "2025-08-10T16:39:55.167718",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "date"
+    }
+  },
+  {
+    "user_input": "who is u r god",
+    "response": "",
+    "timestamp": "2025-08-10T16:40:02.839484",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "who is u r god"
+    }
+  },
+  {
+    "user_input": "how do you worship",
+    "response": "",
+    "timestamp": "2025-08-10T16:40:17.922276",
+    "metadata": {
+      "intent": "openai",
+      "entities": {},
+      "text": "how do you worship"
+    }
+  },
+  {
+    "user_input": "how can you assist me in my tasks",
+    "response": "",
+    "timestamp": "2025-08-10T16:40:35.420241",
+    "metadata": {
+      "intent": "general_conversation",
+      "entities": {},
+      "text": "how can you assist me in my tasks"
+    }
+  }
+]

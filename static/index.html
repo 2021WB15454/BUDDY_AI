@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDDY AI Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 24px; }
+        h1 { color: #2b7cff; }
+        #chat { min-height: 200px; margin-bottom: 16px; }
+        .msg { margin: 8px 0; }
+        .user { color: #333; }
+        .bot { color: #2b7cff; white-space: pre-wrap; font-family: inherit; }
+        #input { width: 80%; padding: 8px; }
+        #send { padding: 8px 16px; background: #2b7cff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        #send:hover { background: #1a5dcc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BUDDY AI Assistant</h1>
+        <div id="chat"></div>
+        <input id="input" type="text" placeholder="Ask me anything...">
+        <button id="send">Send</button>
+    </div>
+    <script>
+        const chat = document.getElementById('chat');
+        const input = document.getElementById('input');
+        const send = document.getElementById('send');
+
+        function appendMsg(text, sender) {
+            const div = document.createElement('div');
+            div.className = 'msg ' + sender;
+            div.textContent = (sender === 'user' ? 'You: ' : 'BUDDY: ') + text;
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        send.onclick = async function() {
+            const text = input.value.trim();
+            if (!text) return;
+            appendMsg(text, 'user');
+            input.value = '';
+            const res = await fetch('/api/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ input: text })
+            });
+            const data = await res.json();
+            appendMsg(data.response, 'bot');
+        };
+
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') send.onclick();
+        });
+    </script>
+</body>
+</html>
