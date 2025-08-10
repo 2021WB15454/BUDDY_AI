@@ -1,43 +1,34 @@
 {
-  "general_conversation": [
-    "hello"
-  ],
+  "general_conversation": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
   "joke": {
     "patterns": [],
     "count": 0,
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "openai": [
-    "show me the time"
-  ],
-  "weather": [
-    "weather today"
-  ],
-  "identity": [
-    "whats your language",
-    "what is your language",
-    "what language are you coded in",
-    "what is the code used for creating you",
-    "who created you",
-    "what are you",
-    "tell me about yourself",
-    "who made you",
-    "what programming language",
-    "your code",
-    "programming details",
-    "who built you",
-    "what is buddy",
-    "whoch language you are using",
-    "what language you using",
-    "which language you are using",
-    "language you use",
-    "what can you do for me",
-    "what can u do",
-    "what are your capabilities",
-    "how can you help",
-    "what do you do"
-  ],
+  "openai": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "weather": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "identity": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
   "learning": {
     "patterns": [],
     "count": 0,
@@ -53,20 +44,10 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "datetime": [
-    "what is the time",
-    "what time is it",
-    "current time",
-    "show time",
-    "what's the time",
-    "what date is today",
-    "today's date",
-    "what day is it",
-    "time now"
-  ],
-  "calendar": [
-    "schedule a meeting",
-    "my calendar",
-    "book appointment"
-  ]
+  "datetime": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  }
 }

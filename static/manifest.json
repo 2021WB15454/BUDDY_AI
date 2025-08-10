@@ -1,0 +1,79 @@
+{
+  "name": "BUDDY AI Assistant",
+  "short_name": "BUDDY AI",
+  "description": "Your intelligent personal assistant powered by AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#4285f4",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities", "education"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMzIiIGZpbGw9IiM0Mjg1ZjQiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDNjMS42NiAwIDMgMS4zNCAzIDNzLTEuMzQgMy0zIDMtMy0xLjM0LTMtM3MxLjM0LTMgMy0zem0wIDEwLjJjLTIuNSAwLTQuNzEtMS4yOC02LTMuMjIuMDMtMS45OSA0LTMuMDggNi0zLjA4czUuOTcgMS4wOSA2IDMuMDhjLTEuMjkgMS45NC0zLjUgMy4yMi02IDMuMjJ6Ii8+Cjwvc3ZnPgo8L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiM0Mjg1ZjQiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAzYzEuNjYgMCAzIDEuMzQgMyAzcy0xLjM0IDMtMyAzLTMtMS4zNC0zLTNzMS4zNC0zIDMtM3ptMCAxMC4yYy0yLjUgMC00LjcxLTEuMjgtNi0zLjIyLjAzLTEuOTkgNC0zLjA4IDYtMy4wOHM1Ljk3IDEuMDkgNiAzLjA4Yy0xLjI5IDEuOTQtMy41IDMuMjItNiAzLjIyeiIvPgo8L3N2Zz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjY2NyIgdmlld0JveD0iMCAwIDM3NSA2NjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNzUiIGhlaWdodD0iNjY3IiBmaWxsPSIjMWExYTJlIi8+CjxyZWN0IHg9IjIwIiB5PSI2MCIgd2lkdGg9IjMzNSIgaGVpZ2h0PSI1ODciIHJ4PSIxNiIgZmlsbD0id2hpdGUiLz4KPHN2ZyB4PSIyMCIgeT0iNjAiIHdpZHRoPSIzMzUiIGhlaWdodD0iODAiIGZpbGw9IiM0Mjg1ZjQiPgo8dGV4dCB4PSIyMCIgeT0iNDAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPkJVRERZIEFJIEFzc2lzdGFudDwvdGV4dD4KPC9zdmc+Cjx0ZXh0IHg9IjQwIiB5PSIyMDAiIGZpbGw9IiMzMzMiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtZmFtaWx5PSJBcmlhbCI+SGVsbG8hIEknbSBCVUREWSwgeW91ciBBSSBhc3Npc3RhbnQuPC90ZXh0Pgo8dGV4dCB4PSI0MCIgeT0iMjQwIiBmaWxsPSIjMzMzIiBmb250LXNpemU9IjE0IiBmb250LWZhbWlseT0iQXJpYWwiPkhvdyBjYW4gSSBoZWxwIHlvdSB0b2RheT88L3RleHQ+Cjx0ZXh0IHg9IjQwIiB5PSIzMDAiIGZpbGw9IiM2NjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSJBcmlhbCI+VHJ5IHNheWluZzogIldoYXQncyB0aGUgd2VhdGhlcj8iPC90ZXh0Pgo8L3N2Zz4=",
+      "sizes": "375x667",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "BUDDY AI mobile interface"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ask Weather",
+      "short_name": "Weather",
+      "description": "Get current weather information",
+      "url": "/?q=weather",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNDI4NWY0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xOSA5Ljc3VjloMmMxLjEgMCAyIC45IDIgMnMtLjkgMi0yIDJoLTEuMjNjLS4zNC42My0uOCAxLjE5LTEuMzQgMS42NUwyMC40OSAxN0gxOVYxOWgyLjQ5TDE5IDE2LjUxVjE5aDJjMS4xIDAgMi0uOSAyLTJzLS45LTItMi0yaC0yVjloMmMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJoLTJWM2gtMnYyaDJ6bS01LjI3LTJoLS4yNmMtLjQ3IDAtLjkuMzQtMS4wMy44MUw5LjkgMTNIOS43NmMtLjU1IDAtMS0uNDUtMS0xczQ1LTEgMS0xaDQuMjN6Ii8+PC9zdmc+",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Check Calendar",
+      "short_name": "Calendar",
+      "description": "View your calendar and events",
+      "url": "/?q=calendar",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNDI4NWY0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0xLjk5Ljg5LTEuOTkgMkwzIDE5YzAgMS4xLjg5IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjExLS45LTItMi0yem0wIDE2SDVWOGgxNHYxMXpNNyAxMGg1djVIN3oiLz48L3N2Zz4=",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Set Reminder",
+      "short_name": "Reminder",
+      "description": "Create a new reminder or task",
+      "url": "/?q=reminder",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNDI4NWY0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xOSA3aC02VjJIOXY1SDNjLTEuMSAwLTIgLjktMiAydjEyYzAgMS4xLjkgMiAyIDJoMTZjMS4xIDAgMi0uOSAyLTJWOWMwLTEuMS0uOS0yLTItMnoiLz48L3N2Zz4=",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

@@ -2894,5 +2894,25 @@
       "entities": {},
       "text": "time"
     }
+  },
+  {
+    "user_input": "show u r stats",
+    "response": "",
+    "timestamp": "2025-08-10T23:05:14.257095",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "show u r stats"
+    }
+  },
+  {
+    "user_input": "get stats",
+    "response": "",
+    "timestamp": "2025-08-10T23:05:24.315065",
+    "metadata": {
+      "intent": "learning",
+      "entities": {},
+      "text": "get stats"
+    }
   }
 ]

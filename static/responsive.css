@@ -1,0 +1,273 @@
+/* BUDDY AI Assistant - Additional Responsive Styles */
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 360px) {
+    .chat-header {
+        padding: 0.75rem;
+    }
+    
+    .chat-header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .chat-header .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .message-content {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .quick-action-btn {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .feature-card {
+        padding: 0.5rem;
+    }
+    
+    .feature-card i {
+        font-size: 1.25rem;
+    }
+    
+    .feature-card h4 {
+        font-size: 0.8rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Tablet landscape optimization */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .chat-container {
+        height: 85vh;
+        max-width: 90%;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .message-content {
+        max-width: 70%;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1200px) {
+    .chat-container {
+        max-width: 900px;
+    }
+    
+    .message-content {
+        max-width: 65%;
+    }
+    
+    .chat-input {
+        padding: 2rem;
+    }
+    
+    #messageInput {
+        font-size: 1.1rem;
+        padding: 1rem 1.25rem;
+    }
+    
+    #sendButton {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* High DPI display support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .message-avatar {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .chat-header h1 {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .quick-action-btn,
+    #sendButton {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .message-content {
+        user-select: text;
+        -webkit-user-select: text;
+    }
+}
+
+/* Landscape phone optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .chat-container {
+        height: 100vh;
+    }
+    
+    .chat-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .chat-header .subtitle {
+        display: none;
+    }
+    
+    .welcome-message {
+        padding: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .feature-card {
+        padding: 0.5rem;
+    }
+    
+    .quick-actions {
+        margin-bottom: 0.5rem;
+    }
+    
+    .chat-input {
+        padding: 0.75rem;
+    }
+}
+
+/* PWA and fullscreen support */
+@media (display-mode: standalone) {
+    .chat-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    body {
+        padding: 0;
+    }
+}
+
+/* Accessibility enhancements */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0056b3;
+        --primary-dark: #004085;
+        --border-color: #333;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .message.bot .message-content {
+        border: 1px solid var(--border-color);
+    }
+    
+    .message.user .message-content {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.quick-action-btn:focus,
+#sendButton:focus,
+#messageInput:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.message-content.loading {
+    opacity: 0.7;
+    position: relative;
+}
+
+.message-content.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Error states */
+.message.error .message-content {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Success states */
+.message.success .message-content {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Offline indicator */
+.offline-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #dc3545;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.offline-indicator.show {
+    transform: translateY(0);
+}
+
+/* Network status styles */
+.network-slow .typing-indicator {
+    color: #ffc107;
+}
+
+.network-slow .typing-indicator::before {
+    content: '⚠️ ';
+}
+
+/* Custom scrollbar for webkit browsers */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}

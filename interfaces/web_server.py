@@ -21,6 +21,14 @@ class WebServer:
         async def root():
             return FileResponse("static/index.html")
 
+        @self.app.get("/sw.js")
+        async def service_worker():
+            return FileResponse("static/sw.js", media_type="application/javascript")
+
+        @self.app.get("/manifest.json")
+        async def manifest():
+            return FileResponse("static/manifest.json", media_type="application/json")
+
         @self.app.get("/{full_path:path}")
         async def catch_all(full_path: str, request: Request):
             # Only serve index.html for non-API routes

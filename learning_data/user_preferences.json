@@ -5,7 +5,7 @@
     "openai": 293,
     "joke": 27,
     "identity": 243,
-    "learning": 15,
+    "learning": 21,
     "weather_no_location": 2,
     "health": 57,
     "datetime": 21
@@ -398,7 +398,13 @@
       21,
       21,
       21,
-      21
+      21,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
     ],
     "weather_no_location": [
       21,
