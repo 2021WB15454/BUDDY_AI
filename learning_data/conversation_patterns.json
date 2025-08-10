@@ -1,10 +1,7 @@
 {
-  "general_conversation": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "general_conversation": [
+    "hello"
+  ],
   "joke": {
     "patterns": [],
     "count": 0,
@@ -18,14 +15,15 @@
     "successful_interactions": 1
   },
   "weather": [
-    "what's the weather?"
+    "what's the weather?",
+    "weather today"
   ],
-  "identity": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "identity": [
+    "whoch language you are using",
+    "what is your language",
+    "who created you",
+    "what are you"
+  ],
   "learning": {
     "patterns": [],
     "count": 0,
@@ -42,7 +40,17 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "datetime": {
+  "datetime": [
+    "what time is it",
+    "current time"
+  ],
+  "task_management": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
+  "calendar": {
     "patterns": [],
     "count": 0,
     "success_rate": 1.0,

@@ -12,5 +12,19 @@
     "status": "scheduled",
     "reminder_minutes": 15,
     "created_at": "2025-08-10T18:25:29.971955"
+  },
+  {
+    "id": "f5a0cf34",
+    "title": "show my",
+    "description": "Event created from: Show my schedule for today",
+    "start_time": "2025-08-11T02:10:21.955907",
+    "end_time": "2025-08-11T03:10:21.955907",
+    "location": "",
+    "attendees": [],
+    "category": "general",
+    "priority": "medium",
+    "status": "scheduled",
+    "reminder_minutes": 15,
+    "created_at": "2025-08-11T01:10:21.955907"
   }
 ]

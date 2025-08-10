@@ -2934,5 +2934,25 @@
       "entities": {},
       "text": "indonesia"
     }
+  },
+  {
+    "user_input": "Add task: Call mom",
+    "response": "",
+    "timestamp": "2025-08-11T01:10:06.851518",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "Add task: Call mom"
+    }
+  },
+  {
+    "user_input": "Show my schedule for today",
+    "response": "",
+    "timestamp": "2025-08-11T01:10:21.947071",
+    "metadata": {
+      "intent": "calendar",
+      "entities": {},
+      "text": "Show my schedule for today"
+    }
   }
 ]

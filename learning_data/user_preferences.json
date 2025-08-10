@@ -8,7 +8,9 @@
     "learning": 21,
     "weather_no_location": 3,
     "health": 57,
-    "datetime": 21
+    "datetime": 21,
+    "task_management": 3,
+    "calendar": 3
   },
   "time_preferences": {
     "general_conversation": [
@@ -495,6 +497,16 @@
       22,
       22,
       22
+    ],
+    "task_management": [
+      1,
+      1,
+      1
+    ],
+    "calendar": [
+      1,
+      1,
+      1
     ]
   }
 }
