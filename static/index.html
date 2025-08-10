@@ -989,7 +989,7 @@
                         <i class="fas fa-cloud-sun"></i>
                         <h4>Weather & Forecast</h4>
                         <p>Real-time weather conditions, temperature, humidity, and 7-day forecasts</p>
-                        <div class="feature-example">🌡️ "Weather in Chennai" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
+                        <div class="feature-example">🌡️ "Weather in Madurai" | 🌦️ "Tomorrow's forecast" | 🌍 "Global weather"</div>
                         <div class="feature-shortcut">Alt+W</div>
                         <div class="feature-stats">Updated every 10 minutes</div>
                         <div class="feature-usage-indicator">12</div>
@@ -1094,8 +1094,11 @@
         
         <div class="chat-input">
             <div class="quick-actions">
+                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Madurai?')" title="Get Madurai weather">
+                    <i class="fas fa-cloud-sun"></i> Madurai Weather
+                </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Chennai?')" title="Get Chennai weather">
-                    <i class="fas fa-cloud-sun"></i> Chennai Weather
+                    <i class="fas fa-thermometer-half"></i> Chennai Weather
                 </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What time is it now?')" title="Current time and date">
                     <i class="fas fa-clock"></i> Current Time
@@ -1175,11 +1178,17 @@
                     }
                 });
 
-                // Auto-resize textarea and show suggestions
+                // Auto-resize textarea and show suggestions with smart formatting
                 this.messageInput.addEventListener('input', () => {
                     this.adjustTextareaHeight();
                     this.updateSendButtonState();
                     this.showSmartSuggestions();
+                    this.handleSmartFormatting();
+                });
+
+                // Handle smart formatting for common queries
+                this.messageInput.addEventListener('blur', () => {
+                    this.applySmartFormatting();
                 });
 
                 // Hide suggestions when clicking outside
@@ -1225,6 +1234,11 @@
             initializeSmartSuggestions() {
                 this.commonSuggestions = [
                     "What's the weather like today?",
+                    "Weather in Madurai",
+                    "Weather in Chennai", 
+                    "Weather in London",
+                    "Weather in Tokyo",
+                    "Current temperature in Madurai",
                     "Show my tasks for today",
                     "What time is it?",
                     "Tell me a joke",
@@ -1235,7 +1249,21 @@
                     "Check the forecast",
                     "Save a note",
                     "Find my contacts",
-                    "Research something"
+                    "Research something",
+                    "Today's weather forecast",
+                    "Humidity and temperature",
+                    "Wind speed today",
+                    "Weekly weather outlook",
+                    "Is it going to rain?",
+                    "Best time to go outside",
+                    "Weather comparison between cities"
+                ];
+                
+                // Popular locations for weather queries
+                this.popularLocations = [
+                    "Madurai", "Chennai", "London", "Tokyo", "New York", 
+                    "Mumbai", "Delhi", "Bangalore", "Paris", "Sydney",
+                    "Singapore", "Dubai", "Berlin", "Vancouver", "Toronto"
                 ];
             }
 
@@ -1267,9 +1295,36 @@
                 }
 
                 this.suggestionTimeout = setTimeout(() => {
-                    const matches = this.commonSuggestions.filter(suggestion => 
-                        suggestion.toLowerCase().includes(query)
-                    ).slice(0, 5);
+                    let matches = [];
+                    
+                    // Smart weather location detection
+                    if (query.includes('weather') || query.includes('temperature') || query.includes('forecast')) {
+                        // Add location-specific weather suggestions
+                        const locationMatches = this.popularLocations
+                            .filter(location => location.toLowerCase().includes(query.replace(/weather|temperature|forecast/gi, '').trim()))
+                            .map(location => `Weather in ${location}`)
+                            .slice(0, 3);
+                        matches.push(...locationMatches);
+                        
+                        // Add general weather suggestions
+                        const weatherSuggestions = [
+                            "Weather in Madurai",
+                            "Weather in Chennai", 
+                            "Today's weather forecast",
+                            "Current temperature",
+                            "Humidity levels"
+                        ].filter(s => s.toLowerCase().includes(query)).slice(0, 2);
+                        matches.push(...weatherSuggestions);
+                    }
+                    
+                    // Add general suggestions
+                    const generalMatches = this.commonSuggestions
+                        .filter(suggestion => suggestion.toLowerCase().includes(query))
+                        .slice(0, 3);
+                    matches.push(...generalMatches);
+                    
+                    // Remove duplicates and limit to 5
+                    matches = [...new Set(matches)].slice(0, 5);
 
                     if (matches.length > 0) {
                         this.displaySuggestions(matches);
@@ -1299,6 +1354,67 @@
 
             hideSuggestions() {
                 this.searchSuggestions.style.display = 'none';
+            }
+
+            handleSmartFormatting() {
+                const text = this.messageInput.value.toLowerCase().trim();
+                
+                // Show real-time formatting hints
+                if (text.match(/^(madurai|chennai|london|tokyo|mumbai|delhi) weather$/)) {
+                    const location = text.split(' ')[0];
+                    this.showFormattingSuggestion(`Try: "Weather in ${location.charAt(0).toUpperCase() + location.slice(1)}"`);
+                } else if (text === 'weather') {
+                    this.showFormattingSuggestion('Try: "Weather in Madurai" or specify your location');
+                } else {
+                    this.hideFormattingSuggestion();
+                }
+            }
+
+            applySmartFormatting() {
+                const text = this.messageInput.value.trim();
+                const lowerText = text.toLowerCase();
+                
+                // Auto-format weather queries
+                if (lowerText.match(/^(madurai|chennai|london|tokyo|mumbai|delhi) weather$/)) {
+                    const location = lowerText.split(' ')[0];
+                    this.messageInput.value = `Weather in ${location.charAt(0).toUpperCase() + location.slice(1)}`;
+                    this.showNotification(`✨ Auto-formatted: "${this.messageInput.value}"`, 'info', 2000);
+                } else if (lowerText === 'weather') {
+                    this.messageInput.value = 'Weather in Madurai';
+                    this.showNotification('✨ Auto-completed with default location: Madurai', 'info', 2000);
+                }
+                
+                this.hideFormattingSuggestion();
+            }
+
+            showFormattingSuggestion(suggestion) {
+                if (!this.formatHint) {
+                    this.formatHint = document.createElement('div');
+                    this.formatHint.className = 'format-hint';
+                    this.formatHint.style.cssText = `
+                        position: absolute;
+                        bottom: 100%;
+                        left: 0;
+                        right: 0;
+                        background: rgba(42, 117, 255, 0.1);
+                        border: 1px solid rgba(42, 117, 255, 0.2);
+                        border-radius: 8px;
+                        padding: 0.5rem;
+                        font-size: 0.8rem;
+                        color: var(--primary-color);
+                        z-index: 99;
+                        animation: fadeIn 0.2s ease;
+                    `;
+                    this.messageInput.parentElement.appendChild(this.formatHint);
+                }
+                this.formatHint.textContent = `💡 ${suggestion}`;
+                this.formatHint.style.display = 'block';
+            }
+
+            hideFormattingSuggestion() {
+                if (this.formatHint) {
+                    this.formatHint.style.display = 'none';
+                }
             }
 
             showNotification(message, type = 'info', duration = 4000) {
@@ -1571,11 +1687,17 @@
         const featureQueries = {
             weather: [
                 "What's the weather in Chennai?",
+                "Weather in Madurai",
                 "Today's weather forecast",
                 "Weather conditions now",
                 "Tomorrow's weather",
                 "Weekly weather outlook",
-                "Is it going to rain today?"
+                "Is it going to rain today?",
+                "Weather in London",
+                "Weather in Tokyo",
+                "Current temperature",
+                "Humidity levels",
+                "Wind speed and direction"
             ],
             tasks: [
                 "Show my tasks",
@@ -1583,7 +1705,10 @@
                 "Create new to-do list",
                 "What tasks do I have?",
                 "Mark task as complete",
-                "Set reminder for tomorrow"
+                "Set reminder for tomorrow",
+                "Priority tasks today",
+                "Overdue tasks",
+                "Task categories"
             ],
             calendar: [
                 "Show my calendar",
@@ -1591,7 +1716,10 @@
                 "Add meeting tomorrow at 2 PM",
                 "Free time this week",
                 "Schedule appointment",
-                "Cancel meeting"
+                "Cancel meeting",
+                "Next appointment",
+                "Weekly schedule",
+                "Meeting reminders"
             ],
             datetime: [
                 "What time is it?",
@@ -1599,7 +1727,10 @@
                 "Time in different timezones",
                 "Days until weekend",
                 "Time in Tokyo",
-                "Set an alarm for 7 AM"
+                "Set an alarm for 7 AM",
+                "Time zone converter",
+                "Date calculator",
+                "Working hours left today"
             ],
             entertainment: [
                 "Tell me a programming joke",
@@ -1607,7 +1738,10 @@
                 "Random fun fact",
                 "Motivational quote",
                 "Tell me a story",
-                "What's trending in tech?"
+                "What's trending in tech?",
+                "Daily inspiration",
+                "Tech news",
+                "Random trivia"
             ],
             notes: [
                 "Show my notes",
@@ -1615,7 +1749,10 @@
                 "Find notes about project",
                 "Create new note",
                 "Search my notes",
-                "Delete old notes"
+                "Delete old notes",
+                "Note categories",
+                "Recent notes",
+                "Important notes"
             ],
             contacts: [
                 "Show my contacts",
@@ -1623,7 +1760,10 @@
                 "Find John's phone number",
                 "Contact management",
                 "Update contact info",
-                "Group contacts by category"
+                "Group contacts by category",
+                "Recent contacts",
+                "Favorite contacts",
+                "Contact search"
             ],
             ai: [
                 "What can you help me with?",
@@ -1631,7 +1771,10 @@
                 "Help me plan my day",
                 "Research latest tech trends",
                 "Solve this problem",
-                "Give me advice"
+                "Give me advice",
+                "Learning recommendations",
+                "Career guidance",
+                "Technology insights"
             ]
         };
 
@@ -1640,7 +1783,21 @@
 
         function handleFeatureClick(category) {
             const queries = featureQueries[category];
-            const randomQuery = queries[Math.floor(Math.random() * queries.length)];
+            let randomQuery = queries[Math.floor(Math.random() * queries.length)];
+            
+            // Special handling for weather category to prioritize Madurai
+            if (category === 'weather') {
+                const weatherQueries = [
+                    "Weather in Madurai",
+                    "What's the weather in Madurai?", 
+                    "Current temperature in Madurai",
+                    "Madurai weather forecast",
+                    "Weather in Chennai",
+                    "Weather in London",
+                    "Weather in Tokyo"
+                ];
+                randomQuery = weatherQueries[Math.floor(Math.random() * weatherQueries.length)];
+            }
             
             // Update usage count
             featureUsage[category] = (featureUsage[category] || 0) + 1;
@@ -1649,18 +1806,39 @@
             // Update usage indicator
             updateUsageIndicator(category);
             
-            // Add visual feedback
+            // Add visual feedback with category-specific colors
             const card = event.currentTarget;
+            const originalTransform = card.style.transform;
             card.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                card.style.transform = '';
-            }, 150);
             
-            // Send the query
+            // Category-specific feedback colors
+            const categoryColors = {
+                weather: 'rgba(30, 144, 255, 0.2)',
+                tasks: 'rgba(138, 43, 226, 0.2)',
+                calendar: 'rgba(34, 139, 34, 0.2)',
+                datetime: 'rgba(255, 140, 0, 0.2)',
+                entertainment: 'rgba(255, 215, 0, 0.2)',
+                notes: 'rgba(219, 112, 147, 0.2)',
+                contacts: 'rgba(32, 178, 170, 0.2)',
+                ai: 'rgba(138, 43, 226, 0.2)'
+            };
+            
+            card.style.background = categoryColors[category] || 'rgba(42, 117, 255, 0.1)';
+            
+            setTimeout(() => {
+                card.style.transform = originalTransform;
+                card.style.background = '';
+            }, 200);
+            
+            // Send the query with smart formatting
             sendQuickMessage(randomQuery);
             
-            // Show notification
-            chatUI.showNotification(`${category.charAt(0).toUpperCase() + category.slice(1)} feature activated!`, 'success');
+            // Show enhanced notification with location for weather
+            if (category === 'weather' && randomQuery.includes('Madurai')) {
+                chatUI.showNotification(`🌤️ Checking Madurai weather conditions...`, 'success', 3000);
+            } else {
+                chatUI.showNotification(`${category.charAt(0).toUpperCase() + category.slice(1)} feature activated!`, 'success');
+            }
         }
 
         function updateUsageIndicator(category) {
@@ -1721,18 +1899,40 @@
             }
         });
 
-        // Enhanced quick message function
+        // Enhanced quick message function with smart location detection
         function sendQuickMessage(message) {
             const input = document.getElementById('messageInput');
+            
+            // Smart location detection for weather queries
+            if (message.toLowerCase().includes('weather') && !message.toLowerCase().includes(' in ')) {
+                // If user just typed "weather" or "madurai weather", auto-format it
+                const locationMatch = message.match(/(madurai|chennai|london|tokyo|mumbai|delhi|bangalore|paris|sydney)/i);
+                if (locationMatch) {
+                    message = `What's the weather in ${locationMatch[1]}?`;
+                } else if (message.toLowerCase() === 'weather') {
+                    message = "What's the weather in Madurai?"; // Default to Madurai
+                }
+            }
+            
             input.value = message;
             
-            // Add typing animation
+            // Add enhanced typing animation with location awareness
             input.style.transform = 'scale(1.05)';
             input.style.background = 'rgba(42, 117, 255, 0.1)';
+            input.style.borderColor = 'var(--primary-color)';
+            
+            // Show location detected notification for weather queries
+            if (message.toLowerCase().includes('weather in')) {
+                const location = message.match(/weather in (\w+)/i);
+                if (location) {
+                    chatUI.showNotification(`🌍 Location detected: ${location[1]}`, 'success', 2000);
+                }
+            }
             
             setTimeout(() => {
                 input.style.transform = '';
                 input.style.background = '';
+                input.style.borderColor = '';
                 chatUI.sendMessage();
             }, 300);
         }
