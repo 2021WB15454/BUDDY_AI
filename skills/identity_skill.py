@@ -125,6 +125,17 @@ class IdentitySkill:
             ]
             return random.choice(responses)
         
+        # Capabilities questions (what can you do)
+        capabilities_keywords = ["what can you do", "what can u do", "what are your capabilities", "what are ur capabilities", "your capabilities", "ur capabilities", "what can you help with", "what can u help with", "how can you help", "how can u help", "what do you do", "what do u do", "what are your features", "what are ur features", "your features", "ur features", "help me", "assist me", "what can you offer", "what can u offer", "what services", "your services", "ur services", "what functions", "your functions", "ur functions"]
+        if any(keyword in text for keyword in capabilities_keywords):
+            responses = [
+                "I'm BUDDY AI Assistant, built by Shrihari! I can help you with: 🌤️ Weather updates and forecasts, 😄 Jokes and entertainment, 💭 Inspirational quotes, 📝 Task and notes management, 📅 Calendar scheduling, 👥 Contact management, 📁 File organization, ✉️ Email templates, 📚 Research assistance, 💡 Health information, and much more! I also learn from our conversations to provide better assistance over time.",
+                "Hi! I'm BUDDY, created by Shrihari to be your comprehensive AI assistant! My capabilities include: Weather information for any location, Entertaining you with jokes and quotes, Managing your tasks and notes, Calendar and scheduling assistance, Contact management, File organization, Email template creation, Research support, Health and wellness information, Personal productivity tools, and Adaptive learning to understand your preferences better!",
+                "I'm BUDDY, your AI companion built by Shrihari! Here's what I can do for you: 🌍 Provide weather forecasts worldwide, 🎭 Share jokes and motivational quotes, ✅ Help manage tasks and to-do lists, 📖 Create and organize notes, 🗓️ Schedule appointments and events, 📞 Manage your contacts, 📂 Organize files and documents, 💌 Create email templates, 🔍 Assist with research, 🏥 Provide health information, and continuously learn from our interactions to serve you better!",
+                "As BUDDY AI Assistant, developed by Shrihari, I offer a wide range of services: Weather updates and forecasting, Entertainment with jokes and quotes, Productivity tools (tasks, notes, calendar), Contact and file management, Communication assistance (email templates), Research and knowledge support, Health and wellness information, Learning capabilities that adapt to your needs, and much more! I'm designed to be your all-in-one digital assistant."
+            ]
+            return random.choice(responses)
+        
         # Default identity response
         default_responses = [
             "I'm BUDDY, your AI assistant created by Shrihari! How can I help you today?",

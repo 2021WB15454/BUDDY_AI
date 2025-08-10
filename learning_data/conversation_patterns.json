@@ -1,10 +1,7 @@
 {
-  "general_conversation": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "general_conversation": [
+    "hello"
+  ],
   "joke": {
     "patterns": [],
     "count": 0,
@@ -14,12 +11,9 @@
   "openai": [
     "show me the time"
   ],
-  "weather": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "weather": [
+    "weather today"
+  ],
   "identity": [
     "whats your language",
     "what is your language",
@@ -37,7 +31,12 @@
     "whoch language you are using",
     "what language you using",
     "which language you are using",
-    "language you use"
+    "language you use",
+    "what can you do for me",
+    "what can u do",
+    "what are your capabilities",
+    "how can you help",
+    "what do you do"
   ],
   "learning": {
     "patterns": [],

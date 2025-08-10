@@ -38,7 +38,12 @@ async def test_specific_query():
         "what language you using", 
         "which language you are using",
         "what programming language",
-        "language you use"
+        "language you use",
+        "what can you do for me",
+        "what can u do",
+        "what are your capabilities",
+        "how can you help",
+        "what do you do"
     ]
     
     print("\n🔍 Testing multiple language query variations:")
