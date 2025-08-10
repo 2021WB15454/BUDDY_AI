@@ -60,7 +60,7 @@ class WebServer:
         port = int(os.environ.get("PORT", port))
         
         # For production, bind to all interfaces
-        if os.environ.get("ENVIRONMENT") == "production":
+        if os.environ.get("ENVIRONMENT") == "production" or os.environ.get("PORT"):
             host = "0.0.0.0"
         
         self.logger.info(f"🌐 Starting BUDDY WebServer on {host}:{port} ...")
