@@ -1766,28 +1766,84 @@
         }
 
         function copyMessage(button) {
-            const messageContent = button.closest('.message-content');
-            const text = messageContent.querySelector('div:not(.message-actions):not(.message-timestamp)').textContent;
-            
-            navigator.clipboard.writeText(text).then(() => {
-                chatUI.showNotification('Message copied to clipboard!', 'success');
-            }).catch(() => {
-                chatUI.showNotification('Failed to copy message', 'error');
-            });
-        }
+            try {
+                const messageContent = button.closest('.message-content');
+                if (!messageContent) {
+                    chatUI.showNotification('Could not find message content', 'error');
+                    return;
+                }
+                
+                // Get the text content excluding the message actions
+                const contentClone = messageContent.cloneNode(true);
+                const actionsClone = contentClone.querySelector('.message-actions');
+                const timestampClone = contentClone.querySelector('.message-timestamp');
+                
+                if (actionsClone) actionsClone.remove();
+                if (timestampClone) timestampClone.remove();
+                
+                const text = contentClone.textContent.trim();
+                
+                if (!text) {
+                    chatUI.showNotification('No text to copy', 'error');
+                    return;
+                }
 
-        function shareMessage(button) {
-            const messageContent = button.closest('.message-content');
-            const text = messageContent.querySelector('div:not(.message-actions):not(.message-timestamp)').textContent;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'BUDDY AI Response',
-                    text: text
+                navigator.clipboard.writeText(text).then(() => {
+                    chatUI.showNotification('Message copied to clipboard!', 'success');
+                }).catch((err) => {
+                    console.error('Copy failed:', err);
+                    chatUI.showNotification('Failed to copy message', 'error');
                 });
-            } else {
-                copyMessage(button);
-                chatUI.showNotification('Message copied for sharing!', 'success');
+            } catch (error) {
+                console.error('Copy message error:', error);
+                chatUI.showNotification('Copy failed: ' + error.message, 'error');
+            }
+        }        function shareMessage(button) {
+            try {
+                const messageContent = button.closest('.message-content');
+                if (!messageContent) {
+                    chatUI.showNotification('Could not find message content', 'error');
+                    return;
+                }
+                
+                // Get the text content excluding the message actions
+                const contentClone = messageContent.cloneNode(true);
+                const actionsClone = contentClone.querySelector('.message-actions');
+                const timestampClone = contentClone.querySelector('.message-timestamp');
+                
+                if (actionsClone) actionsClone.remove();
+                if (timestampClone) timestampClone.remove();
+                
+                const text = contentClone.textContent.trim();
+                
+                if (!text) {
+                    chatUI.showNotification('No text to share', 'error');
+                    return;
+                }
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'BUDDY AI Response',
+                        text: text
+                    }).catch((err) => {
+                        console.error('Share failed, falling back to copy:', err);
+                        // Fallback to copy if share fails
+                        navigator.clipboard.writeText(text).then(() => {
+                            chatUI.showNotification('Message copied for sharing!', 'success');
+                        });
+                    });
+                } else {
+                    // Fallback for browsers without native sharing
+                    navigator.clipboard.writeText(text).then(() => {
+                        chatUI.showNotification('Message copied for sharing!', 'success');
+                    }).catch((err) => {
+                        console.error('Copy fallback failed:', err);
+                        chatUI.showNotification('Failed to copy message', 'error');
+                    });
+                }
+            } catch (error) {
+                console.error('Share message error:', error);
+                chatUI.showNotification('Share failed: ' + error.message, 'error');
             }
         }
 
