@@ -31,18 +31,25 @@ class DecisionEngine:
         else:
             self.logger.debug(f"🔍 Decision engine - conversation_context length: {len(conversation_context)}")
         
-        # Check for personalized responses first
-        self.logger.debug(f"🔍 About to call get_personalized_response for intent: {intent}")
-        try:
-            personalized_response = self.adaptive_learning.get_personalized_response(intent, None)
-            self.logger.debug(f"🔍 get_personalized_response returned: {type(personalized_response)}")
-        except Exception as e:
-            self.logger.error(f"❌ Error in get_personalized_response: {e}")
-            personalized_response = None
-            
-        if personalized_response:
-            self.logger.debug(f"Using personalized response for intent: {intent}")
-            return {"success": True, "response": personalized_response, "source": "adaptive_learning"}
+        # Check for personalized responses only for conversational intents
+        # Don't intercept skill-specific intents like joke, weather, etc.
+        skill_intents = ["weather", "forecast", "joke", "quote", "learning", "datetime", "identity", 
+                        "personal_assistant", "task_management", "notes_management", "calendar", 
+                        "contact_management", "file_management", "communication", "research", 
+                        "automotive", "openai"]
+        
+        if intent not in skill_intents:
+            self.logger.debug(f"🔍 About to call get_personalized_response for conversational intent: {intent}")
+            try:
+                personalized_response = self.adaptive_learning.get_personalized_response(intent, None)
+                self.logger.debug(f"🔍 get_personalized_response returned: {type(personalized_response)}")
+            except Exception as e:
+                self.logger.error(f"❌ Error in get_personalized_response: {e}")
+                personalized_response = None
+                
+            if personalized_response:
+                self.logger.debug(f"Using personalized response for conversational intent: {intent}")
+                return {"success": True, "response": personalized_response, "source": "adaptive_learning"}
         
         self.logger.debug(f"🔍 About to route intent: {intent}")
         

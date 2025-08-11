@@ -2984,5 +2984,115 @@
       "entities": {},
       "text": "Inspire me with a motivational quote"
     }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:01:35.170983",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "I want to hear a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:01:35.200851",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "I want to hear a joke"
+    }
+  },
+  {
+    "user_input": "make me laugh",
+    "response": "",
+    "timestamp": "2025-08-11T19:01:35.228978",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "make me laugh"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:03:05.145895",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "I want to hear a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:03:05.166071",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "I want to hear a joke"
+    }
+  },
+  {
+    "user_input": "make me laugh",
+    "response": "",
+    "timestamp": "2025-08-11T19:03:05.191559",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "make me laugh"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:04:05.119311",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:04:05.142905",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:04:05.184844",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:04:05.210518",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
+  },
+  {
+    "user_input": "tell me a joke",
+    "response": "",
+    "timestamp": "2025-08-11T19:04:05.233572",
+    "metadata": {
+      "intent": "joke",
+      "entities": {},
+      "text": "tell me a joke"
+    }
   }
 ]

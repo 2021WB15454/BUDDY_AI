@@ -3,9 +3,12 @@
     "hey",
     "hello"
   ],
-  "joke": [
-    "tell me a joke"
-  ],
+  "joke": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
+  },
   "openai": [
     "madurai"
   ],
