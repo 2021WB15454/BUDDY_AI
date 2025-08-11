@@ -222,16 +222,10 @@ class NLPProcessor:
                     is_educational = True
                     break
         
-        # Intent detection - GREETING FIRST (absolute highest priority), then identity, then weather/forecast
-        # Check for pure greetings - must handle before any other classification
-        text_words = text.strip().split()
-        if len(text_words) <= 3 and fuzzy(text, greeting_keywords):
-            # Pure greeting with 3 words or less - handle as general conversation
-            intent = "general_conversation"
-        elif fuzzy(text, identity_keywords):
-            intent = "identity"  # Route identity queries first (highest priority)
-        elif fuzzy(text, weather_keywords):
-            intent = "weather"  # Route weather queries (high priority to avoid datetime conflicts)
+        # Intent detection - WEATHER FIRST (absolute highest priority), then greeting, then identity
+        # Check for weather queries first - they must not be intercepted by greeting detection
+        if fuzzy(text, weather_keywords):
+            intent = "weather"  # Route weather queries (absolute highest priority)
             location = extract_location(user_input)
             if location:
                 entities["location"] = location
@@ -240,6 +234,12 @@ class NLPProcessor:
             location = extract_location(user_input)
             if location:
                 entities["location"] = location
+        # Check for pure greetings ONLY if no weather keywords detected
+        elif len(text.strip().split()) <= 3 and fuzzy(text, greeting_keywords) and not any(w in text for w in ["weather", "temperature", "forecast", "rain", "sunny", "cloudy"]):
+            # Pure greeting with 3 words or less AND no weather terms - handle as general conversation
+            intent = "general_conversation"
+        elif fuzzy(text, identity_keywords):
+            intent = "identity"  # Route identity queries
         elif fuzzy(text, ["my calendar", "show calendar", "view calendar", "calendar", "my schedule", "show schedule", "schedule", "appointment", "meeting", "event"]):
             intent = "calendar"  # Route calendar-specific queries
         elif fuzzy(text, datetime_keywords):
