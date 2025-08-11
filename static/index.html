@@ -1094,26 +1094,20 @@
         
         <div class="chat-input">
             <div class="quick-actions">
+                <button class="quick-action-btn" onclick="sendQuickMessage('Hello! How are you?')" title="Friendly greeting">
+                    <i class="fas fa-smile"></i> Say Hello
+                </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Tirunelveli?')" title="Get Tirunelveli weather">
                     <i class="fas fa-cloud-sun"></i> Tirunelveli Weather
-                </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Madurai?')" title="Get Madurai weather">
-                    <i class="fas fa-thermometer-half"></i> Madurai Weather
-                </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Chennai?')" title="Get Chennai weather">
-                    <i class="fas fa-cloud"></i> Chennai Weather
                 </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('What time is it now?')" title="Current time and date">
                     <i class="fas fa-clock"></i> Current Time
                 </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('Add task: Call mom')" title="Quick task example">
-                    <i class="fas fa-plus-circle"></i> Add Task
-                </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('Tell me a programming joke')" title="Get a tech joke">
                     <i class="fas fa-code"></i> Tech Joke
                 </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('Show my schedule for today')" title="View today's schedule">
-                    <i class="fas fa-calendar-day"></i> Today's Schedule
+                <button class="quick-action-btn" onclick="sendQuickMessage('Add task: Call mom')" title="Quick task example">
+                    <i class="fas fa-plus-circle"></i> Add Task
                 </button>
                 <button class="quick-action-btn" onclick="sendQuickMessage('Inspire me with a motivational quote')" title="Get inspiration">
                     <i class="fas fa-star"></i> Motivate Me
@@ -1236,6 +1230,8 @@
 
             initializeSmartSuggestions() {
                 this.commonSuggestions = [
+                    "Hello! How can I help you today?",
+                    "Hi there! What would you like to know?",
                     "What's the weather like today?",
                     "Weather in Tirunelveli",
                     "Weather in Madurai",
@@ -1323,10 +1319,22 @@
                 this.suggestionTimeout = setTimeout(() => {
                     let matches = [];
                     
-                    // Smart weather location detection with variations
-                    if (query.includes('weather') || query.includes('temperature') || query.includes('forecast')) {
+                    // Handle greetings and casual queries first
+                    const greetings = ['hey', 'hello', 'hi', 'good morning', 'good evening', 'how are you'];
+                    const isGreeting = greetings.some(greeting => query.includes(greeting));
+                    
+                    if (isGreeting) {
+                        matches = [
+                            "Hello! How can I help you today?",
+                            "Hi there! What would you like to know?",
+                            "Hey! Try asking about weather, tasks, or jokes",
+                            "Good day! I'm here to assist you"
+                        ];
+                    }
+                    // Smart weather location detection with variations (only for explicit weather queries)
+                    else if (query.includes('weather') || query.includes('temperature') || query.includes('forecast') || query.includes('climate')) {
                         // Extract location from query
-                        let locationQuery = query.replace(/weather|temperature|forecast/gi, '').trim();
+                        let locationQuery = query.replace(/weather|temperature|forecast|climate/gi, '').trim();
                         
                         // Check for city variations
                         const normalizedLocation = this.cityVariations[locationQuery] || 
@@ -1353,22 +1361,51 @@
                             matches.push(...cityMatches);
                         }
                     }
-                    
                     // Handle direct city name queries (like "thirunelveli weather")
-                    const cityMatch = query.match(/^(\w+)\s*(weather|temperature|forecast)$/);
-                    if (cityMatch) {
-                        const cityName = cityMatch[1];
-                        const normalizedCity = this.cityVariations[cityName] || 
-                            this.popularLocations.find(city => city.toLowerCase() === cityName) ||
-                            (cityName.charAt(0).toUpperCase() + cityName.slice(1));
-                        matches.unshift(`Weather in ${normalizedCity}`);
+                    else if (query.match(/^(\w+)\s*(weather|temperature|forecast)$/)) {
+                        const cityMatch = query.match(/^(\w+)\s*(weather|temperature|forecast)$/);
+                        if (cityMatch) {
+                            const cityName = cityMatch[1];
+                            const normalizedCity = this.cityVariations[cityName] || 
+                                this.popularLocations.find(city => city.toLowerCase() === cityName) ||
+                                (cityName.charAt(0).toUpperCase() + cityName.slice(1));
+                            matches.unshift(`Weather in ${normalizedCity}`);
+                        }
                     }
-                    
-                    // Add general suggestions
-                    const generalMatches = this.commonSuggestions
-                        .filter(suggestion => suggestion.toLowerCase().includes(query))
-                        .slice(0, 2);
-                    matches.push(...generalMatches);
+                    // Handle task-related queries
+                    else if (query.includes('task') || query.includes('todo') || query.includes('remind')) {
+                        matches = [
+                            "Show my tasks",
+                            "Add a new task",
+                            "What tasks do I have?",
+                            "Create reminder"
+                        ];
+                    }
+                    // Handle time-related queries
+                    else if (query.includes('time') || query.includes('clock') || query.includes('date')) {
+                        matches = [
+                            "What time is it?",
+                            "Current date and time",
+                            "Time in different timezones",
+                            "Set an alarm"
+                        ];
+                    }
+                    // Handle entertainment queries
+                    else if (query.includes('joke') || query.includes('funny') || query.includes('laugh') || query.includes('quote')) {
+                        matches = [
+                            "Tell me a programming joke",
+                            "Inspire me with a quote",
+                            "Random fun fact",
+                            "Motivational quote"
+                        ];
+                    }
+                    // Add general suggestions for other queries
+                    else {
+                        const generalMatches = this.commonSuggestions
+                            .filter(suggestion => suggestion.toLowerCase().includes(query))
+                            .slice(0, 4);
+                        matches.push(...generalMatches);
+                    }
                     
                     // Remove duplicates and limit to 5
                     matches = [...new Set(matches)].slice(0, 5);
@@ -1406,10 +1443,17 @@
             handleSmartFormatting() {
                 const text = this.messageInput.value.toLowerCase().trim();
                 
-                // Enhanced pattern matching for Indian cities
+                // Handle greetings first - don't format these
+                const greetings = ['hey', 'hello', 'hi', 'good morning', 'good evening', 'how are you', 'thanks', 'thank you'];
+                if (greetings.includes(text)) {
+                    this.hideFormattingSuggestion();
+                    return;
+                }
+                
+                // Enhanced pattern matching for Indian cities (only for explicit weather queries)
                 const cityWeatherPattern = /^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem|trichy|tiruchirappalli|vellore|thanjavur|erode|tiruppur|dindigul|karur|thoothukudi|tuticorin|kanyakumari|nagercoil|sivakasi|virudhunagar|london|tokyo|mumbai|delhi|bangalore|kolkata|hyderabad|pune)\s*(weather|temperature|forecast)$/;
                 
-                // Show real-time formatting hints
+                // Show real-time formatting hints only for weather queries
                 if (cityWeatherPattern.test(text)) {
                     const match = text.match(cityWeatherPattern);
                     const cityName = match[1];
@@ -1418,11 +1462,11 @@
                     this.showFormattingSuggestion(`Try: "Weather in ${normalizedCity}"`);
                 } else if (text === 'weather') {
                     this.showFormattingSuggestion('Try: "Weather in Tirunelveli" or specify your location');
-                } else if (text.match(/^(thirunelveli|tirunelveli|madurai|chennai)$/)) {
+                } else if (text.match(/^(thirunelveli|tirunelveli|madurai|chennai)$/) && text.length > 3) {
                     const cityName = text;
                     const normalizedCity = this.cityVariations[cityName] || 
                         (cityName.charAt(0).toUpperCase() + cityName.slice(1));
-                    this.showFormattingSuggestion(`Try: "Weather in ${normalizedCity}"`);
+                    this.showFormattingSuggestion(`Try: "Weather in ${normalizedCity}" or just say hello!`);
                 } else {
                     this.hideFormattingSuggestion();
                 }
@@ -1432,7 +1476,14 @@
                 const text = this.messageInput.value.trim();
                 const lowerText = text.toLowerCase();
                 
-                // Enhanced auto-format weather queries with Indian city variations
+                // Don't auto-format greetings and casual conversations
+                const greetings = ['hey', 'hello', 'hi', 'good morning', 'good evening', 'how are you', 'thanks', 'thank you', 'yes', 'no', 'ok', 'okay'];
+                if (greetings.includes(lowerText)) {
+                    this.hideFormattingSuggestion();
+                    return;
+                }
+                
+                // Enhanced auto-format weather queries with Indian city variations (only explicit weather queries)
                 const cityWeatherPattern = /^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem|trichy|tiruchirappalli|vellore|thanjavur|erode|tiruppur|dindigul|karur|thoothukudi|tuticorin|kanyakumari|nagercoil|sivakasi|virudhunagar|london|tokyo|mumbai|delhi|bangalore|kolkata|hyderabad|pune)\s*(weather|temperature|forecast)$/;
                 
                 if (cityWeatherPattern.test(lowerText)) {
@@ -1445,12 +1496,14 @@
                 } else if (lowerText === 'weather') {
                     this.messageInput.value = 'Weather in Tirunelveli';
                     this.showNotification('✨ Auto-completed with default location: Tirunelveli', 'info', 2000);
-                } else if (lowerText.match(/^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem)$/)) {
+                }
+                // Only auto-complete city names if they're longer than 3 characters to avoid false positives
+                else if (lowerText.match(/^(thirunelveli|tirunelveli|madurai|chennai|coimbatore|salem)$/) && lowerText.length > 5) {
                     const cityName = lowerText;
                     const normalizedCity = this.cityVariations[cityName] || 
                         (cityName.charAt(0).toUpperCase() + cityName.slice(1));
-                    this.messageInput.value = `Weather in ${normalizedCity}`;
-                    this.showNotification(`✨ Auto-completed: "${this.messageInput.value}"`, 'info', 2000);
+                    // Only suggest, don't auto-complete for standalone city names
+                    this.showNotification(`💡 Did you mean "Weather in ${normalizedCity}"?`, 'info', 3000);
                 }
                 
                 this.hideFormattingSuggestion();

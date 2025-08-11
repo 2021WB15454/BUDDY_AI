@@ -59,5 +59,11 @@
     "count": 0,
     "success_rate": 1.0,
     "successful_interactions": 1
+  },
+  "quote": {
+    "patterns": [],
+    "count": 0,
+    "success_rate": 1.0,
+    "successful_interactions": 1
   }
 }
