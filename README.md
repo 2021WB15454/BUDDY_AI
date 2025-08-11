@@ -15,7 +15,7 @@ A comprehensive AI assistant with personal productivity features, health guidanc
 
 ## 🚀 Live Demo
 
-Visit: [Your deployed URL will go here]
+Visit: https://buddy-ai-0t6c.onrender.com/
 
 ## 💻 Local Development
 
@@ -105,4 +105,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by SHRI HARI M
