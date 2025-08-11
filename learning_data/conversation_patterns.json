@@ -3,30 +3,23 @@
     "hey",
     "hello"
   ],
-  "joke": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "joke": [
+    "tell me a joke"
+  ],
   "openai": [
-    "madurai"
+    "madurai",
+    "random fun fact"
   ],
-  "weather": [
-    "what's the weather?",
-    "madurai weather",
-    "what's the weather",
-    "weather in chennai",
-    "tirunelveli weather",
-    "coimbatore weather",
-    "madurai"
-  ],
-  "identity": {
+  "weather": {
     "patterns": [],
     "count": 0,
     "success_rate": 1.0,
     "successful_interactions": 1
   },
+  "identity": [
+    "tell me a programming joke",
+    "what can you do?"
+  ],
   "learning": {
     "patterns": [],
     "count": 0,
@@ -49,21 +42,20 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "task_management": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
-  "calendar": [
-    "car service schedule"
+  "task_management": [
+    "show my tasks",
+    "add task: call the dentist",
+    "what tasks do i have?"
   ],
-  "quote": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "calendar": [
+    "car service schedule",
+    "show my calendar",
+    "what's my schedule today?"
+  ],
+  "quote": [
+    "inspire me with a quote",
+    "give me an inspirational quote"
+  ],
   "automotive": [
     "maruti swift price",
     "honda city specifications",
@@ -100,6 +92,11 @@
     "hyundai manufacturer info",
     "tata motors company profile",
     "tell me about maruti brand",
-    "hyundai company information"
+    "hyundai company information",
+    "honda city price and specifications",
+    "bmw dealers in chennai"
+  ],
+  "forecast": [
+    "add meeting tomorrow at 2 pm"
   ]
 }

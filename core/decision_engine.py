@@ -105,6 +105,9 @@ class DecisionEngine:
         elif intent == "research":
             self.logger.debug(f"🔍 Routing to research skill")
             response = await self.skill_manager.handle_skill("research", nlp_result, conversation_context)
+        elif intent == "automotive":
+            self.logger.debug(f"🔍 Routing to automotive skill")
+            response = await self.skill_manager.handle_skill("automotive", nlp_result, conversation_context)
         elif intent == "openai":
             self.logger.debug(f"🔍 Routing to Gemini for openai intent")
             # Route all unmatched queries to Gemini

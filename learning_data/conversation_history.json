@@ -3094,5 +3094,27 @@
       "entities": {},
       "text": "tell me a joke"
     }
+  },
+  {
+    "user_input": "What time is it?",
+    "response": "",
+    "timestamp": "2025-08-11T22:50:06.491498",
+    "metadata": {
+      "intent": "datetime",
+      "entities": {},
+      "text": "What time is it?"
+    }
+  },
+  {
+    "user_input": "What's the weather in Tirunelveli?",
+    "response": "",
+    "timestamp": "2025-08-11T22:50:57.611363",
+    "metadata": {
+      "intent": "weather",
+      "entities": {
+        "location": "Tirunelveli"
+      },
+      "text": "What's the weather in Tirunelveli?"
+    }
   }
 ]

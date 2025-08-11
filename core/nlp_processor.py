@@ -70,7 +70,7 @@ class NLPProcessor:
         
         weather_keywords = ["weather", "wether", "wethe", "wheather", "temperature", "forecast", "forcast", "rain", "sunny", "cloudy", "clody", "climate"] + learned_weather
         forecast_keywords = ["forecast", "forcast", "prediction", "outlook", "tomorrow", "next few days", "week ahead"]
-        joke_keywords = ["joke", "jok", "funny", "laugh", "make me laugh", "make me laf", "make me lough"] + learned_jokes
+        joke_keywords = ["joke", "jok", "funny", "laugh", "make me laugh", "make me laf", "make me lough", "programming joke", "tell me a joke", "random joke", "funny story"] + learned_jokes
         quote_keywords = ["quote", "qoute", "inspire", "inspaire", "motivate", "motivation", "motive"] + learned_quotes
         learning_keywords = ["learn", "teach", "remember", "forget", "stats", "learning stats", "show stats", "what have you learned", "good job", "well done", "bad", "wrong", "try again"]
         

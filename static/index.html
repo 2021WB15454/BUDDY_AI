@@ -455,6 +455,10 @@
             background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
         }
 
+        .automotive-card:hover {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+        }
+
         .notes-card:hover {
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
         }
@@ -1044,6 +1048,18 @@
                         <div class="feature-stats">Daily updates</div>
                         <div class="feature-usage-indicator">22</div>
                     </div>
+                    <div class="feature-card automotive-card" onclick="handleFeatureClick('automotive')" 
+                         onmouseenter="showFeaturePreview('automotive')" 
+                         onmouseleave="hideFeaturePreview()"
+                         data-category="automotive" title="Click for automotive assistance">
+                        <i class="fas fa-car"></i>
+                        <h4>Automotive Assistant</h4>
+                        <p>Car information, specifications, pricing, maintenance, and dealership locator</p>
+                        <div class="feature-example">🚗 "Honda City price" | 🔧 "Car maintenance tips" | 🏢 "BMW dealers in Chennai"</div>
+                        <div class="feature-shortcut">Alt+U</div>
+                        <div class="feature-stats">8 car database</div>
+                        <div class="feature-usage-indicator">0</div>
+                    </div>
                     <div class="feature-card notes-card" onclick="handleFeatureClick('notes')" 
                          onmouseenter="showFeaturePreview('notes')" 
                          onmouseleave="hideFeaturePreview()"
@@ -1096,23 +1112,17 @@
         
         <div class="chat-input">
             <div class="quick-actions">
-                <button class="quick-action-btn" onclick="sendQuickMessage('Hello! How are you?')" title="Friendly greeting">
-                    <i class="fas fa-smile"></i> Say Hello
+                <button class="quick-action-btn" onclick="sendQuickMessage('What can you do?')" title="Learn about BUDDY's capabilities">
+                    <i class="fas fa-question-circle"></i> What can you do?
                 </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Tirunelveli?')" title="Get Tirunelveli weather">
-                    <i class="fas fa-cloud-sun"></i> Tirunelveli Weather
+                <button class="quick-action-btn" onclick="sendQuickMessage('What\'s the weather in Tirunelveli?')" title="Get weather information">
+                    <i class="fas fa-cloud-sun"></i> Weather
                 </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('What time is it now?')" title="Current time and date">
-                    <i class="fas fa-clock"></i> Current Time
+                <button class="quick-action-btn" onclick="sendQuickMessage('Tell me a joke')" title="Get a funny joke">
+                    <i class="fas fa-laugh"></i> Joke
                 </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('Tell me a programming joke')" title="Get a tech joke">
-                    <i class="fas fa-code"></i> Tech Joke
-                </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('Add task: Call mom')" title="Quick task example">
-                    <i class="fas fa-plus-circle"></i> Add Task
-                </button>
-                <button class="quick-action-btn" onclick="sendQuickMessage('Inspire me with a motivational quote')" title="Get inspiration">
-                    <i class="fas fa-star"></i> Motivate Me
+                <button class="quick-action-btn" onclick="sendQuickMessage('Give me an inspirational quote')" title="Get motivational quote">
+                    <i class="fas fa-star"></i> Quote
                 </button>
             </div>
             
@@ -1903,6 +1913,17 @@
                 "Learning recommendations",
                 "Career guidance",
                 "Technology insights"
+            ],
+            automotive: [
+                "Honda City price and specifications",
+                "Best car under 15 lakhs",
+                "Car maintenance tips",
+                "Fuel efficient cars",
+                "Compare Hyundai Creta vs Tata Nexon",
+                "BMW dealers in Chennai",
+                "Car insurance guide",
+                "Maruti company information",
+                "Vehicle loan information"
             ]
         };
 
@@ -1949,6 +1970,7 @@
                 calendar: 'rgba(34, 139, 34, 0.2)',
                 datetime: 'rgba(255, 140, 0, 0.2)',
                 entertainment: 'rgba(255, 215, 0, 0.2)',
+                automotive: 'rgba(76, 175, 80, 0.2)',
                 notes: 'rgba(219, 112, 147, 0.2)',
                 contacts: 'rgba(32, 178, 170, 0.2)',
                 ai: 'rgba(138, 43, 226, 0.2)'
@@ -1973,6 +1995,14 @@
                     chatUI.showNotification(`🌤️ Checking ${location[1]} weather conditions...`, 'success', 3000);
                 } else {
                     chatUI.showNotification(`🌤️ Weather feature activated!`, 'success');
+                }
+            } else if (category === 'automotive') {
+                if (randomQuery.includes('price') || randomQuery.includes('specifications')) {
+                    chatUI.showNotification(`🚗 Getting car information...`, 'success', 3000);
+                } else if (randomQuery.includes('dealers') || randomQuery.includes('dealership')) {
+                    chatUI.showNotification(`🏢 Finding nearby dealerships...`, 'success', 3000);
+                } else {
+                    chatUI.showNotification(`🚗 Automotive assistant activated!`, 'success');
                 }
             } else {
                 chatUI.showNotification(`${category.charAt(0).toUpperCase() + category.slice(1)} feature activated!`, 'success');
@@ -2021,7 +2051,7 @@
             if (e.altKey) {
                 const shortcuts = {
                     'w': 'weather', 't': 'tasks', 'c': 'calendar', 'd': 'datetime',
-                    'e': 'entertainment', 'n': 'notes', 'o': 'contacts', 'a': 'ai'
+                    'e': 'entertainment', 'u': 'automotive', 'n': 'notes', 'o': 'contacts', 'a': 'ai'
                 };
                 
                 if (shortcuts[e.key.toLowerCase()]) {
