@@ -56,6 +56,17 @@ class NLPProcessor:
         learned_quotes = [str(p) for p in learned_quotes if p]
         learned_general = [str(p) for p in learned_general if p]
         
+        # GREETING DETECTION - HIGHEST PRIORITY (must be first to prevent misclassification)
+        greeting_keywords = [
+            "hey", "hello", "hi", "hii", "hiii", "hiiii", "helo", "hllo", "helo", 
+            "good morning", "good afternoon", "good evening", "good night",
+            "greetings", "salutations", "howdy", "sup", "what's up", "whats up",
+            "how are you", "how you doing", "how r u", "how are u",
+            "thanks", "thank you", "thankyou", "thx", "ty", "thnx", "appreciate",
+            "yes", "yeah", "yep", "yup", "okay", "ok", "sure", "alright", "right",
+            "no", "nope", "nah", "not really", "bye", "goodbye", "see you", "later", "cya"
+        ]
+        
         weather_keywords = ["weather", "wether", "wethe", "wheather", "temperature", "forecast", "forcast", "rain", "sunny", "cloudy", "clody", "climate"] + learned_weather
         forecast_keywords = ["forecast", "forcast", "prediction", "outlook", "tomorrow", "next few days", "week ahead"]
         joke_keywords = ["joke", "jok", "funny", "laugh", "make me laugh", "make me laf", "make me lough"] + learned_jokes
@@ -211,8 +222,13 @@ class NLPProcessor:
                     is_educational = True
                     break
         
-        # Intent detection - identity first (highest priority), then weather/forecast (high priority), then specific calendar terms, then datetime
-        if fuzzy(text, identity_keywords):
+        # Intent detection - GREETING FIRST (absolute highest priority), then identity, then weather/forecast
+        # Check for pure greetings - must handle before any other classification
+        text_words = text.strip().split()
+        if len(text_words) <= 3 and fuzzy(text, greeting_keywords):
+            # Pure greeting with 3 words or less - handle as general conversation
+            intent = "general_conversation"
+        elif fuzzy(text, identity_keywords):
             intent = "identity"  # Route identity queries first (highest priority)
         elif fuzzy(text, weather_keywords):
             intent = "weather"  # Route weather queries (high priority to avoid datetime conflicts)
