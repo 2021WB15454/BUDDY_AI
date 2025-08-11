@@ -1,7 +1,7 @@
 {
   "intent_frequency": {
     "general_conversation": 114,
-    "weather": 38,
+    "weather": 45,
     "openai": 296,
     "joke": 27,
     "identity": 247,
@@ -154,7 +154,14 @@
       23,
       0,
       0,
-      0
+      0,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      17
     ],
     "openai": [
       22,

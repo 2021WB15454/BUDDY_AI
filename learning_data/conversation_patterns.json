@@ -1,24 +1,22 @@
 {
-  "general_conversation": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
-  "joke": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
-  "openai": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "general_conversation": [
+    "hey",
+    "hello"
+  ],
+  "joke": [
+    "tell me a joke"
+  ],
+  "openai": [
+    "madurai"
+  ],
   "weather": [
-    "what's the weather?"
+    "what's the weather?",
+    "madurai weather",
+    "what's the weather",
+    "weather in chennai",
+    "tirunelveli weather",
+    "coimbatore weather",
+    "madurai"
   ],
   "identity": {
     "patterns": [],
@@ -54,16 +52,51 @@
     "success_rate": 1.0,
     "successful_interactions": 1
   },
-  "calendar": {
-    "patterns": [],
-    "count": 0,
-    "success_rate": 1.0,
-    "successful_interactions": 1
-  },
+  "calendar": [
+    "car service schedule"
+  ],
   "quote": {
     "patterns": [],
     "count": 0,
     "success_rate": 1.0,
     "successful_interactions": 1
-  }
+  },
+  "automotive": [
+    "maruti swift price",
+    "honda city specifications",
+    "hyundai creta vs tata nexon",
+    "bmw 3 series features",
+    "mercedes c class mileage",
+    "best car under 10 lakhs",
+    "fuel efficient cars",
+    "car insurance guide",
+    "car maintenance tips",
+    "automatic vs manual transmission",
+    "oil change frequency",
+    "car loan emi calculator",
+    "used car buying guide",
+    "best family car",
+    "car dealers in chennai",
+    "bmw showroom bangalore",
+    "service center near me",
+    "maruti swift price and mileage",
+    "best car under 15 lakhs",
+    "honda city vs hyundai verna comparison",
+    "bmw 3 series specifications",
+    "fuel efficient family cars",
+    "car service schedule",
+    "honda dealers in chennai",
+    "bmw showroom in bangalore",
+    "maruti service center in mumbai",
+    "car dealerships in delhi",
+    "service centers near me in pune",
+    "hyundai showroom locations",
+    "tell me about honda brand",
+    "maruti company information",
+    "bmw brand details",
+    "hyundai manufacturer info",
+    "tata motors company profile",
+    "tell me about maruti brand",
+    "hyundai company information"
+  ]
 }

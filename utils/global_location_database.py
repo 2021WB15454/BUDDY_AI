@@ -24,6 +24,13 @@ class GlobalLocationDatabase:
             "Hyderabad": {"coordinates": {"lat": 17.3850, "lon": 78.4867}, "country": "IN", "type": "city"},
             "Kanyakumari": {"coordinates": {"lat": 8.0883, "lon": 77.5385}, "country": "IN", "type": "city"},
             "Madurai": {"coordinates": {"lat": 9.9252, "lon": 78.1198}, "country": "IN", "type": "city"},
+            "Tirunelveli": {"coordinates": {"lat": 8.7139, "lon": 77.7567}, "country": "IN", "type": "city"},
+            "Coimbatore": {"coordinates": {"lat": 11.0168, "lon": 76.9558}, "country": "IN", "type": "city"},
+            "Tiruchirappalli": {"coordinates": {"lat": 10.7905, "lon": 78.7047}, "country": "IN", "type": "city"},
+            "Salem": {"coordinates": {"lat": 11.6643, "lon": 78.1460}, "country": "IN", "type": "city"},
+            "Erode": {"coordinates": {"lat": 11.3410, "lon": 77.7172}, "country": "IN", "type": "city"},
+            "Vellore": {"coordinates": {"lat": 12.9165, "lon": 79.1325}, "country": "IN", "type": "city"},
+            "Thoothukudi": {"coordinates": {"lat": 8.7642, "lon": 78.1348}, "country": "IN", "type": "city"},
             "Singapore": {"coordinates": {"lat": 1.3521, "lon": 103.8198}, "country": "SG", "type": "city"},
             "Kuala Lumpur": {"coordinates": {"lat": 3.1390, "lon": 101.6869}, "country": "MY", "type": "city"},
             "Bangkok": {"coordinates": {"lat": 13.7563, "lon": 100.5018}, "country": "TH", "type": "city"},
@@ -52,6 +59,23 @@ class GlobalLocationDatabase:
             "China": {"coordinates": {"lat": 35.8617, "lon": 104.1954}, "type": "country"},
             "Russia": {"coordinates": {"lat": 61.5240, "lon": 105.3188}, "type": "country"},
             "California": {"coordinates": {"lat": 36.7783, "lon": -119.4179}, "type": "state"},
+            
+            # Automotive Industry Hubs
+            "Detroit": {"coordinates": {"lat": 42.3314, "lon": -83.0458}, "country": "US", "type": "city"},
+            "Stuttgart": {"coordinates": {"lat": 48.7758, "lon": 9.1829}, "country": "DE", "type": "city"},
+            "Turin": {"coordinates": {"lat": 45.0703, "lon": 7.6869}, "country": "IT", "type": "city"},
+            "Wolfsburg": {"coordinates": {"lat": 52.4227, "lon": 10.7865}, "country": "DE", "type": "city"},
+            "Maranello": {"coordinates": {"lat": 44.5311, "lon": 10.8669}, "country": "IT", "type": "city"},
+            "Gothenburg": {"coordinates": {"lat": 57.7089, "lon": 11.9746}, "country": "SE", "type": "city"},
+            "Hiroshima": {"coordinates": {"lat": 34.3853, "lon": 132.4553}, "country": "JP", "type": "city"},
+            "Toyota City": {"coordinates": {"lat": 35.0828, "lon": 137.1561}, "country": "JP", "type": "city"},
+            
+            # Indian Automotive Centers
+            "Aurangabad": {"coordinates": {"lat": 19.8762, "lon": 75.3433}, "country": "IN", "type": "city"},
+            "Pune": {"coordinates": {"lat": 18.5204, "lon": 73.8567}, "country": "IN", "type": "city"},
+            "Gurgaon": {"coordinates": {"lat": 28.4595, "lon": 77.0266}, "country": "IN", "type": "city"},
+            "Pithampur": {"coordinates": {"lat": 22.6168, "lon": 75.6907}, "country": "IN", "type": "city"},
+            "Hosur": {"coordinates": {"lat": 12.7409, "lon": 77.8253}, "country": "IN", "type": "city"},
         }
         
         # Alternative names and aliases
@@ -72,7 +96,15 @@ class GlobalLocationDatabase:
             "austrialia": "Australia",
             "aussie": "Australia",
             "oz": "Australia",
-            "ciatel": "Israel"
+            "ciatel": "Israel",
+            
+            # Automotive aliases
+            "Motor City": "Detroit",
+            "Auto City": "Detroit",
+            "Motown": "Detroit",
+            "Cyber City": "Gurgaon",
+            "Millennium City": "Gurgaon",
+            "Gurugram": "Gurgaon"
         }
     
     def find_location(self, query: str) -> Tuple[Optional[str], str, float, List[str]]:

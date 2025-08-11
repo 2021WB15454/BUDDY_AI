@@ -24,6 +24,7 @@ class SkillManager:
         from skills.file_management_skill import FileManagementSkill
         from skills.communication_skill import CommunicationSkill
         from skills.research_skill import ResearchSkill
+        from skills.automotive_skill import AutomotiveSkill
         
         # Initialize skills with proper interfaces
         self.skills = {
@@ -42,6 +43,7 @@ class SkillManager:
             "file_management": FileManagementSkill(),
             "communication": CommunicationSkill(),
             "research": ResearchSkill(),
+            "automotive": AutomotiveSkill(self.config),
         }
         
         # Add health skill with different interface

@@ -1,5 +1,6 @@
 import logging
 from utils.adaptive_learning import adaptive_learning
+from utils.weather import extract_location
 
 class NLPProcessor:
     def __init__(self, config):
@@ -165,6 +166,30 @@ class NLPProcessor:
             "diabetis", "diabities", "hypertentions", "astma", "pnemonia", "migrane", "diarrhoea", "diarria", "constipations", "anxeity", "depresion", "insomnea", "anemea", "alergy", "infecton", "inflamation", "swellings", "bleedings", "fractur", "sprayn", "bruzes", "hedache", "bckpain", "chestpain", "muscel pain", "stomac ache", "hart burn", "acidity", "gastrik", "ulser", "kidny stone", "livr disease", "hepatites", "jandice"
         ]
         
+        # Automotive keywords for car-related queries
+        automotive_keywords = [
+            # Car brands
+            "maruti", "suzuki", "hyundai", "tata", "mahindra", "honda", "toyota", "ford", "chevrolet", "bmw", "mercedes", "audi", "volkswagen", "skoda", "nissan", "renault", "jeep", "land rover", "jaguar", "volvo", "kia", "mg", "citroen", "peugeot", "fiat", "mini", "porsche", "lamborghini", "ferrari", "bentley", "rolls royce",
+            
+            # Car models
+            "swift", "baleno", "dzire", "ertiga", "brezza", "xl6", "creta", "venue", "verna", "tucson", "santa fe", "nexon", "harrier", "safari", "punch", "altroz", "tiago", "tigor", "thar", "scorpio", "xuv", "bolero", "city", "amaze", "jazz", "wr-v", "cr-v", "civic", "accord", "innova", "fortuner", "camry", "corolla", "etios", "glanza", "urban cruiser", "ecosport", "figo", "aspire", "endeavour", "mustang", "3 series", "5 series", "x1", "x3", "x5", "c class", "e class", "s class", "gla", "glc", "gle", "a4", "a6", "q3", "q5", "q7",
+            
+            # Car types
+            "car", "cars", "vehicle", "vehicles", "automobile", "automobiles", "auto", "hatchback", "sedan", "suv", "muv", "cuv", "crossover", "coupe", "convertible", "wagon", "pickup", "truck", "van", "mini van", "compact car", "mid size", "full size", "luxury car", "premium car", "sports car", "electric car", "hybrid car", "petrol car", "diesel car", "cng car", "automatic car", "manual car",
+            
+            # Car features and specifications
+            "engine", "motor", "horsepower", "hp", "bhp", "torque", "mileage", "fuel efficiency", "fuel economy", "kmpl", "mpg", "displacement", "cc", "litre", "cylinder", "turbo", "turbo charged", "naturally aspirated", "transmission", "gearbox", "automatic", "manual", "cvt", "amt", "dct", "suspension", "ground clearance", "boot space", "seating capacity", "airbags", "abs", "ebd", "esp", "traction control", "cruise control", "keyless entry", "push button start", "sunroof", "touchscreen", "infotainment", "navigation", "gps", "bluetooth", "usb", "aux", "wireless charging", "climate control", "ac", "heater",
+            
+            # Car-related queries
+            "price", "cost", "budget", "expensive", "cheap", "affordable", "value for money", "financing", "loan", "emi", "down payment", "insurance", "registration", "ownership", "buying", "purchase", "selling", "resale", "trade in", "exchange", "new car", "used car", "second hand", "pre owned", "certified", "warranty", "guarantee", "service", "maintenance", "repair", "spare parts", "accessories", "modification", "upgrade", "tuning", "performance", "racing", "track", "off road", "city driving", "highway", "long drive", "road trip", "parking", "garage", "showroom", "dealer", "test drive", "booking", "delivery", "launch", "facelift", "generation", "variant", "trim", "top model", "base model",
+            
+            # Automotive services
+            "service center", "authorized service", "workshop", "garage", "mechanic", "technician", "oil change", "brake service", "tire change", "wheel alignment", "balancing", "washing", "cleaning", "detailing", "polish", "wax", "ceramic coating", "insurance claim", "accident", "breakdown", "towing", "roadside assistance", "emergency", "flat tire", "battery", "jump start", "fuel", "petrol", "diesel", "cng", "electric charging", "charging station", "fuel station", "petrol pump", "gas station",
+            
+            # Comparison and advice
+            "compare", "comparison", "versus", "vs", "difference", "better", "best", "good", "bad", "recommend", "recommendation", "suggest", "suggestion", "advice", "guide", "review", "rating", "pros", "cons", "advantages", "disadvantages", "should i buy", "which car", "which is better", "best car", "top cars", "family car", "first car", "luxury car", "sports car", "fuel efficient", "most reliable", "safest car"
+        ]
+        
         # Personal assistant and educational keywords
         personal_assistant_keywords = [
             # Direct personal assistant terms
@@ -234,48 +259,57 @@ class NLPProcessor:
             location = extract_location(user_input)
             if location:
                 entities["location"] = location
-        # Check for pure greetings ONLY if no weather keywords detected
-        elif len(text.strip().split()) <= 3 and fuzzy(text, greeting_keywords) and not any(w in text for w in ["weather", "temperature", "forecast", "rain", "sunny", "cloudy"]):
-            # Pure greeting with 3 words or less AND no weather terms - handle as general conversation
-            intent = "general_conversation"
-        elif fuzzy(text, identity_keywords):
-            intent = "identity"  # Route identity queries
-        elif fuzzy(text, ["my calendar", "show calendar", "view calendar", "calendar", "my schedule", "show schedule", "schedule", "appointment", "meeting", "event"]):
-            intent = "calendar"  # Route calendar-specific queries
-        elif fuzzy(text, datetime_keywords):
-            intent = "datetime"  # Route date/time queries to datetime skill
-        elif fuzzy(text, learning_keywords):
-            intent = "learning"
-        elif fuzzy(text, task_keywords):
-            intent = "task_management"  # Route task-related queries to task management skill
-        elif fuzzy(text, notes_keywords):
-            intent = "notes_management"  # Route notes-related queries to notes management skill
-        elif fuzzy(text, calendar_keywords):
-            intent = "calendar"  # Route other calendar/scheduling queries
-        elif fuzzy(text, contact_keywords):
-            intent = "contact_management"  # Route contact-related queries to contact management skill
-        elif fuzzy(text, file_keywords):
-            intent = "file_management"  # Route file-related queries to file management skill
-        elif fuzzy(text, communication_keywords):
-            intent = "communication"  # Route communication-related queries to communication skill
-        elif fuzzy(text, research_keywords):
-            intent = "research"  # Route research/knowledge queries to research skill
-        elif fuzzy(text, health_keywords):
-            intent = "health"  # Route health questions to specialized health handling
-        elif fuzzy(text, personal_assistant_keywords):
-            intent = "personal_assistant"  # Route personal assistant and educational topics locally
-        elif fuzzy(text, tech_keywords):
-            intent = "openai"  # Route technology/product questions to Gemini
-        elif is_educational and not fuzzy(text, health_keywords) and not fuzzy(text, personal_assistant_keywords):
-            intent = "openai"  # Route educational questions directly to Gemini (but not health or personal assistant ones)
-        elif fuzzy(text, joke_keywords):
-            intent = "joke"
-        elif fuzzy(text, quote_keywords):
-            intent = "quote"
-        elif fuzzy(text, conv_keywords, threshold=70):  # Lower threshold for conversation to catch short words
-            intent = "general_conversation"
         else:
-            intent = "openai"  # Route all unmatched queries to Gemini
+            # Check if input is a standalone location name (for weather queries)
+            location = extract_location(user_input)
+            if location and len(text.strip().split()) <= 2:
+                # Single location name detected - treat as weather query
+                intent = "weather"
+                entities["location"] = location
+            # Check for pure greetings ONLY if no weather keywords detected and not a location
+            elif len(text.strip().split()) <= 3 and fuzzy(text, greeting_keywords) and not any(w in text for w in ["weather", "temperature", "forecast", "rain", "sunny", "cloudy"]):
+                # Pure greeting with 3 words or less AND no weather terms - handle as general conversation
+                intent = "general_conversation"
+            elif fuzzy(text, identity_keywords):
+                intent = "identity"  # Route identity queries
+            elif fuzzy(text, automotive_keywords):
+                intent = "automotive"  # Route automotive/car queries to automotive skill (high priority before calendar)
+            elif fuzzy(text, ["my calendar", "show calendar", "view calendar", "calendar", "my schedule", "show schedule", "schedule", "appointment", "meeting", "event"]):
+                intent = "calendar"  # Route calendar-specific queries
+            elif fuzzy(text, datetime_keywords):
+                intent = "datetime"  # Route date/time queries to datetime skill
+            elif fuzzy(text, learning_keywords):
+                intent = "learning"
+            elif fuzzy(text, task_keywords):
+                intent = "task_management"  # Route task-related queries to task management skill
+            elif fuzzy(text, notes_keywords):
+                intent = "notes_management"  # Route notes-related queries to notes management skill
+            elif fuzzy(text, calendar_keywords):
+                intent = "calendar"  # Route other calendar/scheduling queries
+            elif fuzzy(text, contact_keywords):
+                intent = "contact_management"  # Route contact-related queries to contact management skill
+            elif fuzzy(text, file_keywords):
+                intent = "file_management"  # Route file-related queries to file management skill
+            elif fuzzy(text, communication_keywords):
+                intent = "communication"  # Route communication-related queries to communication skill
+            elif fuzzy(text, research_keywords):
+                intent = "research"  # Route research/knowledge queries to research skill
+            elif fuzzy(text, health_keywords):
+                intent = "health"  # Route health questions to specialized health handling
+            elif fuzzy(text, personal_assistant_keywords):
+                intent = "personal_assistant"  # Route personal assistant and educational topics locally
+            elif fuzzy(text, tech_keywords):
+                intent = "openai"  # Route technology/product questions to Gemini
+            elif is_educational and not fuzzy(text, health_keywords) and not fuzzy(text, personal_assistant_keywords):
+                intent = "openai"  # Route educational questions directly to Gemini (but not health or personal assistant ones)
+            elif fuzzy(text, joke_keywords):
+                intent = "joke"
+            elif fuzzy(text, quote_keywords):
+                intent = "quote"
+            elif fuzzy(text, conv_keywords, threshold=70):  # Lower threshold for conversation to catch short words
+                intent = "general_conversation"
+            else:
+                intent = "openai"  # Route all unmatched queries to Gemini
         
         result = {"intent": intent, "entities": entities, "text": user_input}
         
