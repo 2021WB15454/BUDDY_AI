@@ -16,8 +16,8 @@ This file is used to trigger automatic redeployment on hosting platforms.
 - ✅ Production hosting configuration
 
 ## Deployment Status:
-🔄 **FORCE REDEPLOY REQUIRED** - Render auto-deploy not triggered
-⚠️ **Issue**: Weather queries still routing to datetime skill
-🎯 **Expected**: New responsive UI with proper intent routing
+� **CRITICAL ISSUE DETECTED** - Intent classification broken on hosted server
+⚠️ **Problem**: All queries returning identity response instead of proper skill routing
+🎯 **Solution**: Force complete redeploy with environment reset
 
-**Deployment ID**: deploy_20250811_225200_INTERACTIVE_UI
+**Deployment ID**: deploy_20250812_000500_EMERGENCY_FIX
