@@ -10,6 +10,15 @@ class DecisionEngine:
         self.learning_engine = learning_engine
         self.config = config
         self.logger = logging.getLogger(__name__)
+        
+        # Initialize feature module manager for enhanced functionality
+        try:
+            from .feature_module_manager import FeatureModuleManager
+            self.feature_manager = FeatureModuleManager(config)
+            self.logger.info("Feature module manager initialized")
+        except ImportError as e:
+            self.logger.warning(f"Feature module manager not available: {e}")
+            self.feature_manager = None
         self.adaptive_learning = adaptive_learning
 
     async def initialize(self):
@@ -108,6 +117,21 @@ class DecisionEngine:
         elif intent == "automotive":
             self.logger.debug(f"🔍 Routing to automotive skill")
             response = await self.skill_manager.handle_skill("automotive", nlp_result, conversation_context)
+        
+        # Enhanced Feature Card Processing with Module Manager
+        elif self.feature_manager and intent in ['weather', 'tasks', 'calendar', 'datetime', 'entertainment', 'notes', 'contacts', 'ai']:
+            self.logger.debug(f"🔍 Routing to enhanced feature module: {intent}")
+            try:
+                enhanced_response = await self.feature_manager.process_feature_request(intent, user_text, {
+                    'nlp_result': nlp_result,
+                    'conversation_context': conversation_context
+                })
+                response = {"success": True, "response": enhanced_response, "source": f"feature_module_{intent}"}
+            except Exception as e:
+                self.logger.error(f"Feature module error for {intent}: {e}")
+                # Fallback to regular skill manager
+                response = await self.skill_manager.handle_skill(intent, nlp_result, conversation_context)
+        
         elif intent == "openai":
             self.logger.debug(f"🔍 Routing to Gemini for openai intent")
             # Route all unmatched queries to Gemini

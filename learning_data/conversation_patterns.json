@@ -43,14 +43,13 @@
     "successful_interactions": 1
   },
   "task_management": [
-    "show my tasks",
-    "add task: call the dentist",
-    "what tasks do i have?"
+    "create a task to finish the project"
   ],
   "calendar": [
     "car service schedule",
     "show my calendar",
-    "what's my schedule today?"
+    "what's my schedule today?",
+    "add a note about the meeting"
   ],
   "quote": [
     "inspire me with a quote",
@@ -97,6 +96,19 @@
     "bmw dealers in chennai"
   ],
   "forecast": [
-    "add meeting tomorrow at 2 pm"
+    "add meeting tomorrow at 2 pm",
+    "schedule a meeting for tomorrow"
+  ],
+  "contact_management": [
+    "add john's contact information"
+  ],
+  "file_management": [
+    "find my documents"
+  ],
+  "communication": [
+    "draft an email to the team"
+  ],
+  "research": [
+    "research artificial intelligence"
   ]
 }

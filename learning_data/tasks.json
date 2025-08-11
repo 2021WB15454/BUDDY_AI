@@ -34,5 +34,17 @@
     "completed_at": null,
     "category": "general",
     "tags": []
+  },
+  {
+    "id": "bb8de3a4",
+    "title": ": jira update",
+    "description": "",
+    "priority": "medium",
+    "status": "pending",
+    "due_date": null,
+    "created_at": "2025-08-12T00:31:15.786902",
+    "completed_at": null,
+    "category": "general",
+    "tags": []
   }
 ]

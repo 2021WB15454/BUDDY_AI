@@ -9,7 +9,7 @@
     "weather_no_location": 3,
     "health": 57,
     "datetime": 24,
-    "task_management": 6,
+    "task_management": 18,
     "calendar": 3,
     "quote": 4
   },
@@ -556,7 +556,19 @@
       1,
       1,
       1,
-      1
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "calendar": [
       1,

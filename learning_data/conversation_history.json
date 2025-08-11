@@ -3116,5 +3116,45 @@
       },
       "text": "What's the weather in Tirunelveli?"
     }
+  },
+  {
+    "user_input": "Task categories",
+    "response": "",
+    "timestamp": "2025-08-12T00:30:36.504118",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "Task categories"
+    }
+  },
+  {
+    "user_input": "make task",
+    "response": "",
+    "timestamp": "2025-08-12T00:31:00.320464",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "make task"
+    }
+  },
+  {
+    "user_input": "add task : jira update",
+    "response": "",
+    "timestamp": "2025-08-12T00:31:15.768203",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "add task : jira update"
+    }
+  },
+  {
+    "user_input": "list task",
+    "response": "",
+    "timestamp": "2025-08-12T00:31:31.209276",
+    "metadata": {
+      "intent": "task_management",
+      "entities": {},
+      "text": "list task"
+    }
   }
 ]
