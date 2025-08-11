@@ -8,6 +8,7 @@ import sys
 import asyncio
 import logging
 from pathlib import Path
+from threading import Thread
 
 # Setup paths
 sys.path.append(str(Path(__file__).parent))
@@ -16,6 +17,17 @@ sys.path.append(str(Path(__file__).parent))
 from core.assistant import BuddyAssistant
 from interfaces.web_server import WebServer
 from utils.config import Config
+
+# ---------------------------
+# Optional: Heartbeat to keep logs alive
+# ---------------------------
+def keep_alive():
+    import time
+    while True:
+        time.sleep(300)  # every 5 minutes
+        print("💓 Heartbeat: BUDDY AI still running...")
+
+Thread(target=keep_alive, daemon=True).start()
 
 async def main():
     """Main application entry point for production"""
@@ -41,25 +53,23 @@ async def main():
         await buddy.initialize()
         logger.info("✅ BUDDY AI Assistant initialized")
         
-        # Get port from environment (for hosting platforms)
-        port = int(os.environ.get("PORT", 8000))
+        # Get port from environment (Render sets PORT)
+        port = int(os.environ.get("PORT", 10000))
         host = "0.0.0.0"  # Bind to all interfaces for hosting
         
-        # Initialize and start web server
+        # Initialize web server
         web_server = WebServer(buddy, config)
-        
-        # Update the web server to use environment port
+
+        # Add HEAD route for Render health check
+        @web_server.app.head("/", include_in_schema=False)
+        async def head_root():
+            return {}
+
         import uvicorn
         logger.info(f"🌐 Starting web server on {host}:{port}")
-        
-        config_uvicorn = uvicorn.Config(
-            web_server.app, 
-            host=host, 
-            port=port, 
-            log_level="info"
-        )
-        server = uvicorn.Server(config_uvicorn)
-        await server.serve()
+        await uvicorn.Server(
+            uvicorn.Config(web_server.app, host=host, port=port, log_level="info")
+        ).serve()
         
     except Exception as e:
         logger.error(f"❌ Failed to start BUDDY AI Assistant: {e}")
